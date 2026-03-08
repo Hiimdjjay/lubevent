@@ -1,17 +1,16 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
 import { BurgerButton } from './BurgerButton';
+import { useState } from 'react';
+import Logo from '../../../../public/Logo/lubevent-logo.svg';
 
 export function Header() {
-	return (
-		<header className='fixed flex justify-between items-center w-full px-4 py-3 border-b border-white/15'>
-			<Link href='/'>
-				<img src='/Logo/lubevent-logo.svg' alt='LubEvent' className='h-[40px]'></img>
-			</Link>
-			<nav className='hidden'>
-				<Link href='/'>Home</Link>
-				<Link href='/o-nas'>O nas</Link>
-			</nav>
-			<BurgerButton />
-		</header>
+	const [open, setOpen] = useState(false);
+	return (<header>
+				
+			</header>
+		
 	);
 }

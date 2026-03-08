@@ -13,9 +13,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='pl'>
-			<Header />
-			<body>{children}</body>
+		<html lang='pl' suppressHydrationWarning>
+			<body>
+				{' '}
+				<Header />
+				{children}
+			</body>
 		</html>
 	);
 }

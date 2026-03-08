@@ -1,8 +1,13 @@
 @import 'tailwindcss';
 
+@theme {
+	--color-bg-dark: rgba(26, 26, 26, 1);
+	--color-bg-button: rgba(255, 255, 255, 1);
+}
+
 :root {
-	--background: #1a1a1a;
-	--foreground: #ffffff;
+	--background: #FAFAFA;
+	--foreground: #FFFFFF;
 }
 
 body {
@@ -14,8 +19,4 @@ button {
 	cursor: pointer;
 }
 
-@layer base {
-	button {
-		@apply cursor-pointer transition-all duration-200;
-	}
-}
+
