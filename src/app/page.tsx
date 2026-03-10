@@ -1,6 +1,6 @@
 export default function Home() {
 	return (
-		<div className='relative h-[200vh] p-10'>
+		<div className='relative h-[200vh] py-60 px-10'>
 			<h1 className='text-black-500'>Witajcie</h1>
 			<p>
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic qui fugit cumque

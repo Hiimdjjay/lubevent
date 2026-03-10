@@ -1,12 +1,13 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-bg-white-blur: rgba(255, 255, 255, 0.6);
-	--color-bg-button: rgba(255, 255, 255, 1);
+	--color-bg-white-blur: rgba(255, 255, 255, 0.5);
+	--color-bg-btn-blue: #5b78f9;
+	--color-bg-btn-purple: #764ba2;
 }
 
 :root {
-	--background: #FAFAFA;
+	--background: #fafafa;
 	--foreground: #000000;
 }
 
@@ -19,4 +20,6 @@ button {
 	cursor: pointer;
 }
 
-
+.active {
+	color: rgb(0, 0, 0, 1);
+}
