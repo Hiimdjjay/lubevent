@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { BurgerButton } from './BurgerButton';
 import { usePathname } from 'next/navigation';
-import { HighlightedButton } from '@/components/HighlightedButton/HighlightedButton';
+import { PrimaryButton } from '@/components/PrimaryButton/PrimaryButton';
 import { Logo } from './Logo';
 import { DesktopNav } from './DesktopNav';
 import { SocialMedias } from './SocialMedias';
@@ -19,7 +19,7 @@ export function Header() {
 				<Logo setOpen={setOpen} />
 				<DesktopNav activePath={activePath} />
 				<div className='hidden lg:block lg:justify-self-end'>
-					<HighlightedButton>Zacznij współpracę</HighlightedButton>
+					<PrimaryButton>Zacznij współpracę</PrimaryButton>
 				</div>
 				<div className='lg:hidden'>
 					<BurgerButton open={open} setOpen={setOpen} />
@@ -31,7 +31,7 @@ export function Header() {
 					<div
 						className={`flex flex-col items-center gap-4 p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 delay-250' : 'opacity-0 -translate-y-2'}`}>
 						<MobileNav activePath={activePath} setOpen={setOpen} />
-						<HighlightedButton>Zacznij współpracę</HighlightedButton>
+						<PrimaryButton>Zacznij współpracę</PrimaryButton>
 						<SocialMedias />
 					</div>
 				</div>

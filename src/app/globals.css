@@ -4,10 +4,11 @@
 	--color-bg-white-blur: rgba(255, 255, 255, 0.5);
 	--color-bg-btn-blue: #5b78f9;
 	--color-bg-btn-purple: #764ba2;
+	--color-subtitle: rgba(0, 0, 0, 0.6);
 }
 
 :root {
-	--background: #F3F1EF;
+	--background: #f3f1ef;
 	--foreground: #000000;
 }
 
