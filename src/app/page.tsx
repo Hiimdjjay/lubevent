@@ -1,7 +1,6 @@
 import { ImagesCarousel } from '@/components/Landing-page/ImagesCarousel';
 import { PrimaryButton } from '@/components/PrimaryButton/PrimaryButton';
 import { SecondaryButton } from '@/components/SecondaryButton/SecondaryButton';
-import Image from 'next/image';
 
 export default function Home() {
 	return (
@@ -23,8 +22,8 @@ export default function Home() {
 							Nasza realizacja.
 						</h1>
 						<h2 className='text-subtitle'>
-							Z pasją i precyzją budujemy niepowtarzalny klimat, który na długo pozostaje
-							w pamięci gości i sprawia, że każda chwila staje się wyjątkowa.
+							Z pasją budujemy niepowtarzalny klimat, który na długo pozostaje w pamięci
+							naszych gości.
 						</h2>
 						<div className='flex justify-start align-center mt-2'>
 							<PrimaryButton>Zacznij Współpracę</PrimaryButton>

@@ -24,3 +24,31 @@ button {
 .active {
 	color: rgb(0, 0, 0, 1);
 }
+
+.animate-carousel-left {
+	animation: carousel-left 95s linear infinite;
+}
+
+.animate-carousel-right {
+	animation: carousel-right 95s linear infinite;
+}
+
+@keyframes carousel-left {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes carousel-right {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
