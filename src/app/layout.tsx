@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import { Header } from '../components/Header/Header';
+import '../styles/globals.css';
+import '../styles/animation.css';
+import { Header } from '../components/Layout/Header/Header';
 import { Manrope } from 'next/font/google';
 
 export const metadata: Metadata = {

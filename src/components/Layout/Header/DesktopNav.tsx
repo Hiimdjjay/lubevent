@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NavItems } from '../../constans/Header';
+import { NavItems } from '../../../constans/header';
 
 type ActivePathProps = {
 	activePath: string;

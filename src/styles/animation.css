@@ -1,0 +1,54 @@
+.animate-carousel-1 {
+	animation: carousel-left 120s linear infinite;
+}
+
+.animate-carousel-2 {
+	animation: carousel-right 120s linear infinite;
+}
+
+@keyframes carousel-left {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes carousel-right {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes carousel-up {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100%);
+	}
+}
+
+@keyframes carousel-down {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@media (min-width: 1024px) {
+	.animate-carousel-1 {
+		animation: carousel-up 180s linear infinite;
+	}
+    .animate-carousel-2 {
+		animation: carousel-down 180s linear infinite;
+	}
+}

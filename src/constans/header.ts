@@ -1,6 +1,3 @@
-import { Facebook, Instagram } from 'lucide-react';
-import { ReactNode } from 'react';
-
 export type NavItem = {
 	name: string;
 	path: string;
@@ -9,7 +6,7 @@ export type NavItem = {
 export type SocialItem = {
 	name: string;
 	path: string;
-	icon: ReactNode;
+	icon: 'instagram' | 'facebook';
 };
 
 export const NavItems: NavItem[] = [
@@ -24,11 +21,11 @@ export const SocialItems: SocialItem[] = [
 	{
 		name: 'Instagram',
 		path: 'https://www.instagram.com',
-		icon: <Instagram className='text-black/80 w-6.5 h-auto md:w-7.5' />
+		icon: 'instagram'
 	},
 	{
 		name: 'Facebook',
 		path: 'https://www.facebook.com',
-		icon: <Facebook className='text-black/80 w-6.5 h-auto md:w-7.5' />
+		icon: 'facebook'
 	}
 ];

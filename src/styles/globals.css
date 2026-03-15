@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-bg-white-blur: rgba(255, 255, 255, 0.6);
+	--color-bg-hero: #f3f1ef;
+	--color-bg-btn-blue: #5b78f9;
+	--color-bg-btn-purple: #764ba2;
+	--color-bg-sectionLabel: rgba(0, 0, 0, 0.05);
+	--color-text-sectionLabel: rgba(255, 255, 255, 0.8);
+}
+
+:root {
+	--background: #ffffff;
+	--foreground: #000000;
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+}
+
+button {
+	cursor: pointer;
+}
+
+.active {
+	color: rgb(0, 0, 0, 1);
+}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import LogoImage from '../../../public/Logo/lubevent-logo.svg';
+import LogoImage from '../../../../public/Logo/lubevent-logo.svg';
 
 type LogoProps = {
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;

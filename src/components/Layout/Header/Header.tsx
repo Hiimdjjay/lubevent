@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { BurgerButton } from './BurgerButton';
 import { usePathname } from 'next/navigation';
-import { PrimaryButton } from '@/components/PrimaryButton/PrimaryButton';
+import { PrimaryButton } from '@/components/UI/PrimaryButton';
 import { Logo } from './Logo';
 import { DesktopNav } from './DesktopNav';
 import { SocialMedias } from './SocialMedias';
