@@ -5,9 +5,10 @@
 	--color-bg-hero: #f3f1ef;
 	--color-bg-btn-blue: #5b78f9;
 	--color-bg-btn-purple: #764ba2;
-	--color-bg-sectionLabel: rgba(0, 0, 0, 0.05);
+	--color-bg-sectionLabel: #F3F1EF;
 	--color-text-sectionLabel: rgba(255, 255, 255, 0.8);
 }
+
 
 :root {
 	--background: #ffffff;

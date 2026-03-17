@@ -1,3 +1,4 @@
+import { SingleImage } from './SingleImage';
 import Conference from '../../../../public/LandingPage/conference-2-unsplash.png';
 import Conference2 from '../../../../public/LandingPage/Premiere.png';
 import Gala from '../../../../public/LandingPage/Concert-unsplash.png';
@@ -10,7 +11,6 @@ import Conference3 from '../../../../public/LandingPage/conference-grok.png';
 import Newlyweds from '../../../../public/LandingPage/newlyweds-unsplash.png';
 import Weddingparty from '../../../../public/LandingPage/wedding-party.webp';
 import Corporate2 from '../../../../public/LandingPage/Corporate-event-ChatGPT.png';
-import { SingleImage } from './SingleImage';
 
 const images = [
 	{ name: 'Corporate', src: Corporate },
@@ -29,6 +29,8 @@ const images2 = [
 	{ name: 'Conference3', src: Conference3 },
 	{ name: 'People', src: People }
 ];
+
+
 
 const imagesForCarousel = [...images, ...images];
 const imagesForCarousel2 = [...images2, ...images2];

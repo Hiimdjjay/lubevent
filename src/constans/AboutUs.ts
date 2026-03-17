@@ -6,10 +6,10 @@ type CardsData = {
 };
 
 export const cardsData: CardsData[] = [
-    { name: 'Kompleksowa organizacja wydarzeń', icon: 'ListCheck' },
+    { name: 'Kompleksowa organizacja ', icon: 'ListCheck' },
     { name: 'Jasny i kontrolowany budżet', icon: 'HandCoins' },
     { name: 'Realizacja zawsze na czas', icon: 'AlarmClock' },
-    { name: 'Indywidualne dopasowanie do potrzeb klienta', icon: 'UserStar' }
+    { name: 'Indywidualne dopasowanie', icon: 'UserStar' }
 ];
 
 
