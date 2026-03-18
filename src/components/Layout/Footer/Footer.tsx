@@ -11,6 +11,7 @@ const footerNav = [
 	{ name: 'Realizacje', path: '/realizacje' },
 	{ name: 'Kontakt', path: '/kontakt' },
 	{ name: 'Polityka prywatności', path: '/polityka-prywatności' },
+	{ name: 'Regulamin', path: '/regulamin' },
 	{ name: '404', path: '/404' }
 ];
 
@@ -24,7 +25,7 @@ export function Footer() {
 		<footer>
 			<div className='max-w-325 m-auto w-full p-4 py-10 md:p-5 md:pb-10 md:pt-20 lg:p-7.5 lg:pb-10 lg:pt-20'>
 				<div className='flex flex-col justify-between sm:flex-row'>
-					<div className="mb-8 ">
+					<div className='mb-8 '>
 						<Logo size='h-12 md:h-16 lg:h-18' />
 					</div>
 					<div className='flex flex-col gap-5 w-full md:w-[30%]'>

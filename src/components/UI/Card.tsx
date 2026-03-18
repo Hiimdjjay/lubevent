@@ -1,11 +1,12 @@
 import { ListCheck, HandCoins, AlarmClock, UserStar } from 'lucide-react';
 
-export type IconName = keyof typeof icons;
 
 export type CardProps = {
 	children: string;
-	icon: IconName;
+	icon: string
 };
+
+
 
 const icons = {
 	ListCheck: <ListCheck size={46} strokeWidth={1} />,
