@@ -17,7 +17,7 @@ export function Hero() {
 							który na długo pozostaje w pamięci naszych gości.
 						</h2>
 						<div className='flex justify-start align-center mt-2 lg:gap-4'>
-							<PrimaryButton>Zacznij Współpracę</PrimaryButton>
+							<PrimaryButton link='/formularz'>Zacznij Współpracę</PrimaryButton>
 							<SecondaryButton>Sprawdź ofertę</SecondaryButton>
 						</div>
 					</div>

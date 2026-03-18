@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { BurgerButton } from './BurgerButton';
 import { usePathname } from 'next/navigation';
 import { PrimaryButton } from '@/components/UI/PrimaryButton';
-import { Logo } from './Logo';
+import { Logo } from '../../UI/Logo';
 import { DesktopNav } from './DesktopNav';
 import { SocialMedias } from './SocialMedias';
 import { MobileNav } from './MobileNav';
@@ -16,10 +16,10 @@ export function Header() {
 	return (
 		<header className='fixed top-0 left-0 w-full z-50 p-4 md:p-5 lg:p-7.5'>
 			<div className='mx-auto flex max-w-325 items-center justify-between rounded-lg p-3  bg-bg-white-blur backdrop-blur-md border border-white/40 shadow-lg md:p-3.5 lg:grid lg:grid-cols-[1fr_auto_1fr]'>
-				<Logo setOpen={setOpen} />
+				<Logo setOpen={setOpen} size="h-8.5 md:h-10.5 "/>
 				<DesktopNav activePath={activePath} />
 				<div className='hidden lg:block lg:justify-self-end'>
-					<PrimaryButton>Zacznij współpracę</PrimaryButton>
+					<PrimaryButton link='/formularz'>Zacznij współpracę</PrimaryButton>
 				</div>
 				<div className='lg:hidden'>
 					<BurgerButton open={open} setOpen={setOpen} />
@@ -31,7 +31,7 @@ export function Header() {
 					<div
 						className={`flex flex-col items-center gap-4 p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 delay-250' : 'opacity-0 -translate-y-2'}`}>
 						<MobileNav activePath={activePath} setOpen={setOpen} />
-						<PrimaryButton>Zacznij współpracę</PrimaryButton>
+						<PrimaryButton link='/formularz'>Zacznij współpracę</PrimaryButton>
 						<SocialMedias />
 					</div>
 				</div>

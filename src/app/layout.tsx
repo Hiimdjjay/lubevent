@@ -3,6 +3,7 @@ import '../styles/globals.css';
 import '../styles/animation.css';
 import { Header } from '../components/Layout/Header/Header';
 import { Manrope } from 'next/font/google';
+import { Footer } from '@/components/Layout/Footer/Footer';
 
 export const metadata: Metadata = {
 	title: 'LubEvent',
@@ -20,6 +21,7 @@ export default function RootLayout({
 			<body className={manrope.className}>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
