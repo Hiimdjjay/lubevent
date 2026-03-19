@@ -5,7 +5,7 @@ export type CardProps = {
 	icon: keyof typeof icons;
 };
 
-const icons = {
+export const icons = {
 	ListCheck: <ListCheck size={46} strokeWidth={1} />,
 	HandCoins: <HandCoins size={46} strokeWidth={1} />,
 	AlarmClock: <AlarmClock size={46} strokeWidth={1} />,

@@ -1,6 +1,8 @@
+import { icons } from '@/components/UI/Card';
+
 type CardsData = {
 	name: string;
-	icon: string;
+	icon: keyof typeof icons;
 };
 
 export const cardsData: CardsData[] = [
