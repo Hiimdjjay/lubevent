@@ -8,7 +8,7 @@ export function WhyChooseUs() {
 			<div className='max-w-325 w-full m-auto'>
 				<div className='flex flex-col justify-between gap-5 lg:flex-row'>
 					<div className='flex flex-col items-start w-full gap-3 md:gap-5  lg:max-w-120'>
-						<SectionLabel>Dlaczego wybrać nas</SectionLabel>
+						<SectionLabel bgColor="bg-bg-sectionLabel">Dlaczego wybrać nas</SectionLabel>
 						<SectionTitle>
 							Tworzymy wydarzenia dopracowane <br className='hidden md:block lg:hidden' />{' '}
 							w każdym szczególe

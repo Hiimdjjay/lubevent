@@ -2,16 +2,18 @@ type SectionTitleProps = {
 	children: React.ReactNode;
 	smallFont?: boolean;
 	textColor?: boolean;
+	textCenter?: boolean;
 };
 
 export function SectionTitle({
 	children,
 	smallFont = false,
-	textColor = false
+	textColor = false,
+	textCenter = false
 }: SectionTitleProps) {
 	return (
 		<h2
-			className={`font-medium ${textColor ? 'text-white' : 'text-black'} ${smallFont ? 'text-[20px]' : 'text-[34px]'} md:text-[36px] lg:text-[40px]`}>
+			className={`font-medium ${textCenter ? 'text-center' : ''} ${textColor ? 'text-white' : 'text-black'} ${smallFont ? 'text-[20px]' : 'text-[32px]'} md:text-[36px] lg:text-[40px]`}>
 			{children}
 		</h2>
 	);

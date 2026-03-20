@@ -1,4 +1,4 @@
-import { NavItems } from '../../../constans/header';
+import { NavItems } from '../../../constans/navigation';
 import Link from 'next/link';
 
 type ActivePathProps = {
@@ -14,7 +14,7 @@ export function MobileNav({ activePath, setOpen }: ActivePathProps) {
 					<Link
 						key={name}
 						href={path}
-						className={`text-black/60 font-medium text-lg md:text-xl transition-colors duration-200 hover:text-black ${activePath === path && 'active'}`}
+						className={`text-black font-medium text-lg md:text-xl  ${activePath === path && 'active'}`}
 						onClick={() => setOpen(false)}>
 						{name}
 					</Link>

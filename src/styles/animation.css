@@ -48,7 +48,11 @@
 	.animate-carousel-1 {
 		animation: carousel-up 180s linear infinite;
 	}
-    .animate-carousel-2 {
+	.animate-carousel-2 {
 		animation: carousel-down 180s linear infinite;
 	}
 }
+
+
+
+

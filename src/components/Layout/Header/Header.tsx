@@ -14,7 +14,7 @@ export function Header() {
 	const activePath = usePathname();
 
 	return (
-		<header className='fixed top-0 left-0 w-full z-50 p-4 md:p-5 lg:p-7.5'>
+		<header className='fixed top-0 left-0 w-full z-50 p-4 md:p-5 lg:absolute lg:p-7.5'>
 			<div className='mx-auto flex max-w-325 items-center justify-between rounded-lg p-3  bg-bg-white-blur backdrop-blur-md border border-white/40 shadow-lg md:p-3.5 lg:grid lg:grid-cols-[1fr_auto_1fr]'>
 				<Logo setOpen={setOpen} size="h-8.5 md:h-10.5 "/>
 				<DesktopNav activePath={activePath} />

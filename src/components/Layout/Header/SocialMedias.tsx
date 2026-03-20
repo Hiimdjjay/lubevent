@@ -1,4 +1,4 @@
-import { SocialItems } from '../../../constans/header';
+import { SocialItems } from '../../../constans/navigation';
 import { Facebook, Instagram } from 'lucide-react';
 
 const icons = {

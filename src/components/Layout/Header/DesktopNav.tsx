@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NavItems } from '../../../constans/header';
+import { NavItems } from '../../../constans/navigation';
 
 type ActivePathProps = {
 	activePath: string;
@@ -13,7 +13,7 @@ export function DesktopNav({ activePath }: ActivePathProps) {
 					<Link
 						key={name}
 						href={path}
-						className={`text-black/60 transition-colors duration-200 hover:text-black ${activePath === path && 'active'}`}>
+						className={`link ${activePath === path && 'active'}`}>
 						{name}
 					</Link>
 				);
