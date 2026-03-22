@@ -1,5 +1,5 @@
 import { Card } from '@/components/UI/Card';
-import { cardsData } from '@/constans/aboutUs';
+import { cardsData } from '@/constans/cardsData';
 
 export function Cards() {
 	return (
