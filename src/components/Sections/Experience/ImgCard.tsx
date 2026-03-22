@@ -3,12 +3,13 @@ import Image, { StaticImageData } from 'next/image';
 type ImgCardProps = {
 	src: StaticImageData;
 	alt: string;
+	className?: string;
 };
 
-export function ImgCard({ src, alt }: ImgCardProps) {
+export function ImgCard({ src, alt, className }: ImgCardProps) {
 	return (
-		<div className='relative w-full h-70 rounded-2xl  overflow-hidden '>
-			<Image src={src} className='object-cover object-top' fill alt={alt} />
+		<div className={` relative w-full h-87.5 rounded-2xl overflow-hidden md:h-full ${className}`}>
+			<Image src={src} className='object-cover ' fill alt={alt} />
 		</div>
 	);
 }
