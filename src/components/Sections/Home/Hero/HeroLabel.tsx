@@ -1,4 +1,4 @@
-import { PulsingDot } from '../../UI/PulsingDot';
+import { PulsingDot } from '../../../UI/PulsingDot';
 
 type HeroLabelProps = {
 	children: React.ReactNode;

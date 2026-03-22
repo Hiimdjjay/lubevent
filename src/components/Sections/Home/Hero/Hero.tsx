@@ -1,7 +1,7 @@
-import { ImagesCarousel } from '@/components/Sections/Hero/ImagesCarousel';
+import { ImagesCarousel } from '@/components/Sections/Home/Hero/ImagesCarousel';
 import { PrimaryButton } from '@/components/UI/PrimaryButton';
 import { SecondaryButton } from '@/components/UI/SecondaryButton';
-import { HeroLabel } from '@/components/Sections/Hero/HeroLabel';
+import { HeroLabel } from './HeroLabel';
 import { MainTitle } from './MainTitle';
 
 export function Hero() {
@@ -17,8 +17,8 @@ export function Hero() {
 							który na długo pozostaje w pamięci naszych gości.
 						</h2>
 						<div className='flex justify-start align-center mt-2 lg:gap-4'>
-							<PrimaryButton link='/formularz'>Zacznij Współpracę</PrimaryButton>
-							<SecondaryButton>Sprawdź ofertę</SecondaryButton>
+							<PrimaryButton link='/formularz'>Darmowa wycena</PrimaryButton>
+							<SecondaryButton href='/oferta'>Sprawdź ofertę</SecondaryButton>
 						</div>
 					</div>
 					<ImagesCarousel />

@@ -1,7 +1,7 @@
 import { ImgCard } from './ImgCard';
-import Conferencier from '../../../../public/Conference-guy.png';
-import HappyGuests from '../../../../public/LandingPage/Group-of-people-Chat-GPT .png';
-import BusinessMeeting from '../../../../public/Business-meeting2.jpg';
+import Conferencier from '../../../../../public/Conference-guy.png';
+import HappyGuests from '../../../../../public/LandingPage/Group-of-people-Chat-GPT .png';
+import BusinessMeeting from '../../../../../public/Business-meeting2.jpg';
 import { StatisticsCard } from './StatisticsCard';
 import { StaticImageData } from 'next/image';
 

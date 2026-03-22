@@ -1,16 +1,27 @@
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 type SecondaryButtonProps = {
 	children: React.ReactNode;
+	href: string;
+	textWhite?: boolean;
 };
 
-export function SecondaryButton({ children }: SecondaryButtonProps) {
+export function SecondaryButton({
+	children,
+	href,
+	textWhite = false
+}: SecondaryButtonProps) {
 	return (
 		<a
-			href='/offer'
-			className=' relative flex items-center gap-2 font-semibold py-3 px-4 w-fit'>
-			{children} <ArrowRight size={20} />
-			<span className='absolute bg-black  w-[70%] h-0.5 bottom-2.5 rounded-full cursor-pointer'></span>
+			href={href}
+			className={`flex items-center gap-1 font-semibold py-3 px-4 w-fit ${textWhite ? 'text-white' : 'text-black'} `}>
+			<p className='relative'>
+				{children}
+				<span
+					className={`absolute ${textWhite ? 'bg-white' : 'bg-black'}  w-full h-0.5 left-0 -bottom-px rounded-full cursor-pointer`}></span>
+			</p>
+			<ArrowRight size={20} />
 		</a>
 	);
 }
