@@ -12,7 +12,7 @@ export function Hero() {
 					<div className='flex flex-col justify-start pt-30 px-4 gap-4 md:gap-3 md:px-5 md:pt-44 lg:pt-0 lg:px-0'>
 						<HeroLabel>Dostępne terminy w tym roku!</HeroLabel>
 						<MainTitle />
-						<h2 className='text-subtitle md:text-lg'>
+						<h2 className='text-subtitle md:text-lg font-medium'>
 							Z pasją budujemy niepowtarzalny klimat, <br className='hidden md:block' />{' '}
 							który na długo pozostaje w pamięci naszych gości.
 						</h2>

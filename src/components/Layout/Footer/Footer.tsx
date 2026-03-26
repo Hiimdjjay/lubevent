@@ -9,7 +9,7 @@ export function Footer() {
 	return (
 		<footer>
 			<div className='max-w-325 m-auto w-full p-4 py-10 md:p-5 md:pb-10 md:pt-20 lg:p-7.5 lg:pb-10 lg:pt-20'>
-				<div className='flex flex-col justify-between sm:flex-row'>
+				<div className='flex flex-col justify-between md:flex-row'>
 					<div className='mb-8 '>
 						<Logo size='h-12 md:h-16 lg:h-18' />
 					</div>

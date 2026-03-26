@@ -1,3 +1,5 @@
+import { SubpageHero } from '@/components/Sections/AboutUs/SubpageHero/SubpageHero';
+
 export default function AboutUs() {
-	return <p className="p-50">Tu będzie opis o nas</p>;
+	return <SubpageHero />;
 }
