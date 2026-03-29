@@ -19,8 +19,8 @@ const repeatedImages = [...imagesData, ...imagesData];
 
 export function AboutUsCarousel() {
 	return (
-		<div className='flex'>
-			<div className='flex h-65 lg:h-140 aboutUsCarousel'>
+		<div className='flex h-65 lg:h-135'>
+			<div className='flex  aboutUsCarousel'>
 				{repeatedImages.map(({ src, alt }, index) => {
 					return (
 						<SingleImage
@@ -31,7 +31,7 @@ export function AboutUsCarousel() {
 					);
 				})}
 			</div>
-			<div className='aria-disabled flex h-65 lg:h-140 aboutUsCarousel'>
+			<div className='aria-disabled flex aboutUsCarousel'>
 				{repeatedImages.map(({ src, alt }, index) => {
 					return (
 						<SingleImage

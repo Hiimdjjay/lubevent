@@ -1,5 +1,5 @@
+import { SubpageHero } from '@/components/Sections/Home/SubpageHero/SubpageHero';
 import { WhyChooseUs } from '@/components/Sections/Home/WhyChooseUs/WhyChooseUs';
-import { Hero } from '@/components/Sections/Home/Hero/Hero';
 import { Offer } from '@/components/Sections/Home/WhatWeOffer/Offer';
 import { Experience } from '@/components/Sections/Home/Experience/Experience';
 import { Contact } from '@/components/UI/Contact/Contact';
@@ -9,11 +9,11 @@ import { Video } from '@/components/Sections/Home/Video/Video';
 export default function Home() {
 	return (
 		<main>
-			<Hero />
+			<SubpageHero />
 			<WhyChooseUs />
 			<Offer />
 			<Experience />
-			<Video/>
+			<Video />
 			<Testimonials />
 			<Contact />
 		</main>

@@ -1,10 +1,6 @@
 import Image from 'next/image';
-import Google from '../../../../../public/google.svg';
-import Star from '../../../../../public/star.svg';
+
 import Opinion1 from '../../../../../public/Testimonials/1-man.jpg';
-import Opinion2 from '../../../../../public/Testimonials/2-man.jpg';
-import Opinion3 from '../../../../../public/Testimonials/3-woman.jpg';
-import Opinion4 from '../../../../../public/Testimonials/4-woman.jpg';
 
 type TestimonialsCardProps = {
 	name: string;
@@ -18,14 +14,18 @@ export function TestimonialsCard({ name, surname, content }: TestimonialsCardPro
 			<div className='flex flex-col gap-5'>
 				<div className='flex items-center gap-2'>
 					<div>
-						<Image src={Google} width='28' height='28' alt='Ikona Google' />
+						<Image src='/Icons/google.svg' width='28' height='28' alt='Ikona Google' />
 					</div>
 					<div className='flex gap-0.5'>
-						<Image src={Star} width='13' height='13' alt='Ikona Google' />
-						<Image src={Star} width='13' height='13' alt='Ikona Google' />
-						<Image src={Star} width='13' height='13' alt='Ikona Google' />
-						<Image src={Star} width='13' height='13' alt='Ikona Google' />
-						<Image src={Star} width='13' height='13' alt='Ikona Google' />
+						{Array.from({ length: 5 }).map((_, i) => (
+							<Image
+								key={i}
+								src='/Icons/star.svg'
+								width={13}
+								height={13}
+								alt='Ikona gwiazdki'
+							/>
+						))}
 					</div>
 				</div>
 				<p className='font-medium text-lg '>{content}</p>

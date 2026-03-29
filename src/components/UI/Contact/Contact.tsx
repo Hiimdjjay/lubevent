@@ -10,7 +10,7 @@ export function Contact() {
 			<Image src='/LandingPage/Concert-unsplash.png' fill className='object-cover -z-2' alt='Koncer - tło sekcji kontaktowej' />
 			<div className='absolute inset-0 bg-black/70 -z-1'></div>
 
-			<div className=' max-w-95 mx-auto w-full px-4 py-20 md:max-w-170 md:px-7 md:py-20  lg:py-30'>
+			<div className=' max-w-95 mx-auto w-full px-4 py-20 md:max-w-170 md:px-7 md:py-20  lg:py-40'>
 				<div className='flex flex-col gap-3 items-center'>
 					<SectionLabel bgColor='bg-white'>Zacznijmy współpracę</SectionLabel>
 					<SectionTitle textCenter textColor>
