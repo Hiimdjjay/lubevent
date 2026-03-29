@@ -7,6 +7,7 @@
 	--color-bg-btn-purple: #764ba2;
 	--color-bg-sectionLabel: #f3f1ef;
 	--color-text-sectionLabel: rgba(255, 255, 255, 0.8);
+	--breakpoint-3xl: 1800px;
 }
 
 :root {
@@ -56,4 +57,10 @@ button {
 	height: 2px;
 	width: 100%;
 	background-image: linear-gradient(90deg, #5b78f9, #764ba2);
+}
+
+@media (min-width: 1800px) {
+	.largeScreen {
+		width: 25%;
+	}
 }

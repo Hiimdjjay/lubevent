@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 type AccordionTabProps = {
 	children: string;
 };
@@ -12,7 +12,7 @@ export function AccordionTab({ children }: AccordionTabProps) {
 					<h4 className="">{children}</h4>
 				</div>
 				<div className='p-1 rounded-full bg-linear-to-r from-bg-btn-blue to-bg-btn-purple transition-colors duration-300 group-hover:rom-bg-btn-purple group-hover:to-bg-btn-blue '>
-					<ArrowRight />
+					<ArrowUpRight />
 				</div>
 			</div>
 		</Link>

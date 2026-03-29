@@ -3,12 +3,11 @@ import { SecondaryButton } from '@/components/UI/SecondaryButton';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import Image from 'next/image';
-import BgImg from '../../../../../public/LandingPage/Concert-unsplash.png';
 
 export function Contact() {
 	return (
 		<section className='relative'>
-			<Image src={BgImg} fill className='object-cover -z-2' alt='Koncer - tło sekcji kontaktowej' />
+			<Image src='/LandingPage/Concert-unsplash.png' fill className='object-cover -z-2' alt='Koncer - tło sekcji kontaktowej' />
 			<div className='absolute inset-0 bg-black/70 -z-1'></div>
 
 			<div className=' max-w-95 mx-auto w-full px-4 py-20 md:max-w-170 md:px-7 md:py-20  lg:py-30'>

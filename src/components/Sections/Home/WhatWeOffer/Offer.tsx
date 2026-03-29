@@ -1,18 +1,16 @@
 import Image from 'next/image';
-
-import Corporate2 from '../../../../../public/LandingPage/Corporate-event-ChatGPT.png';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import { OfferAccordion } from './OfferAccordion';
 import { PrimaryButton } from '@/components/UI/PrimaryButton';
 
-export function WhatWeOffer() {
+export function Offer() {
 	return (
 		<section className='bg-black'>
 			<div className='flex flex-col max-w-325 m-auto lg:flex-row'>
 				<div className='relative min-h-70 w-full md:min-h-120 lg:max-w-1/2'>
 					<Image
-						src={Corporate2}
+						src='/LandingPage/conference-3-unsplash.jpg'
 						alt='Realizacja eventu, scena i oświetlenie'
 						fill
 						className='object-cover'

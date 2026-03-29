@@ -9,11 +9,12 @@ import Opinion4 from '../../../../../public/Testimonials/4-woman.jpg';
 type TestimonialsCardProps = {
 	name: string;
 	surname: string;
+	content: string;
 };
 
-export function TestimonialsCard({ name, surname }: TestimonialsCardProps) {
+export function TestimonialsCard({ name, surname, content }: TestimonialsCardProps) {
 	return (
-		<div className='flex flex-col min-w-full justify-between bg-bg-sectionLabel rounded-xl overflow-hidden p-10 h-115'>
+		<div className='flex flex-col justify-between bg-bg-sectionLabel rounded-xl overflow-hidden p-9 h-120 md:min-w-1/2 '>
 			<div className='flex flex-col gap-5'>
 				<div className='flex items-center gap-2'>
 					<div>
@@ -27,11 +28,7 @@ export function TestimonialsCard({ name, surname }: TestimonialsCardProps) {
 						<Image src={Star} width='13' height='13' alt='Ikona Google' />
 					</div>
 				</div>
-				<p className='font-medium text-lg '>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod quae dicta facere
-					at ipsa perspiciatis consectetur maiores, porro iure vitae possimus, cum
-					voluptatem et iusto voluptatibus est.
-				</p>
+				<p className='font-medium text-lg '>{content}</p>
 			</div>
 
 			<div className='flex gap-3 border-t border-black/20 pt-5 '>
