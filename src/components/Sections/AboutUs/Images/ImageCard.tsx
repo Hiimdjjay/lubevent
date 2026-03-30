@@ -15,7 +15,7 @@ export function ImageCard({ src, alt, quote }: ImageCardProps) {
 				<div className='flex items-center gap-3 text-sm font-medium '>
 					<div className='relative w-9 h-9 rounded-full overflow-hidden '>
 						<Image
-							src='/Dominik-Berwertz.jpg'
+							src='/Photos/Dominik-Berwertz.jpg'
 							width={50}
 							height={50}
 							alt='Dominik Berwertz - CEO'

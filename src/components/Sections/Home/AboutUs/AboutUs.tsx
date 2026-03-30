@@ -1,11 +1,12 @@
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import { Cards } from './Cards';
+import { Wrapper } from '@/components/UI/Wrapper';
 
-export function WhyChooseUs() {
+export function AboutsUs() {
 	return (
-		<section>
-			<div className='max-w-325 w-full m-auto p-4 py-20 md:p-5 md:py-25 lg:p-7.5 lg:py-30'>
+		<section className='py-20 md:py-25 lg:py-30'>
+			<Wrapper>
 				<div className='flex flex-col justify-between gap-5 lg:flex-row'>
 					<div className='flex flex-col items-start w-full gap-3 md:gap-5 lg:max-w-120'>
 						<SectionLabel bgColor='bg-bg-sectionLabel'>Dlaczego wybrać nas</SectionLabel>
@@ -18,7 +19,7 @@ export function WhyChooseUs() {
 						<Cards />
 					</div>
 				</div>
-			</div>
+			</Wrapper>
 		</section>
 	);
 }

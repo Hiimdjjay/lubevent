@@ -1,16 +1,16 @@
-
 import { PrimaryButton } from '@/components/UI/PrimaryButton';
 import { SecondaryButton } from '@/components/UI/SecondaryButton';
 import { HeroLabel } from './HeroLabel';
 import { MainTitle } from '../../../UI/MainTitle';
 import { ImagesCarousel } from './ImagesCarousel';
+import { Wrapper } from '@/components/UI/Wrapper';
 
 export function SubpageHero() {
 	return (
-		<section className='bg-bg-hero pb-20 lg:px-7.5 lg:pb-0 '>
-			<div className='max-w-325 w-full m-auto '>
-				<div className='grid grid-cols-1 items-center gap-8 md:gap-10 lg:gap-12 lg:grid-cols-2 '>
-					<div className='flex flex-col justify-start pt-30 px-4 gap-4 md:gap-3 md:px-5 md:pt-44 lg:pt-0 lg:px-0'>
+		<section className='bg-bg-hero pt-30 pb-20 md:pt-45 md:pb-25 lg:pt-0 lg:pb-0 lg:px-7.5'>
+			<Wrapper noPaddingX>
+				<div className='grid grid-cols-1 items-center gap-8 md:gap-10 lg:gap-12 lg:grid-cols-2'>
+					<div className='flex flex-col justify-start gap-3 md:gap-4 px-4 md:px-5 lg:px-0'>
 						<HeroLabel>Dostępne terminy w tym roku!</HeroLabel>
 						<MainTitle>
 							Twoje wydarzenie. <br /> Nasza realizacja.
@@ -26,7 +26,7 @@ export function SubpageHero() {
 					</div>
 					<ImagesCarousel />
 				</div>
-			</div>
+			</Wrapper>
 		</section>
 	);
 }

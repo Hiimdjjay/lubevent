@@ -1,21 +1,21 @@
 import { SingleImage } from '../../../UI/SingleImage';
 
 const images1 = [
-	{ id: 1, src: '/LandingPage/Corporate-event-2-ChatGPT.png', alt: 'Description' },
-	{ id: 2, src: '/LandingPage/Concert-unsplash.png', alt: 'Description' },
-	{ id: 3, src: '/LandingPage/conference-2-unsplash.png', alt: 'Description' },
-	{ id: 4, src: '/LandingPage/Group-of-people-ChatGPT.png', alt: 'Description' },
-	{ id: 5, src: '/LandingPage/outdoor-party.png', alt: 'Description' },
-	{ id: 6, src: '/LandingPage/Premiere.png', alt: 'Description' }
+	{ id: 1, src: '/Photos/Corporate-event-2-ChatGPT.png', alt: 'Description' },
+	{ id: 2, src: '/Photos/Concert-unsplash.png', alt: 'Description' },
+	{ id: 3, src: '/Photos/conference-2-unsplash.png', alt: 'Description' },
+	{ id: 4, src: '/Photos/Group-of-people-ChatGPT.png', alt: 'Description' },
+	{ id: 5, src: '/Photos/outdoor-party.png', alt: 'Description' },
+	{ id: 6, src: '/Photos/Premiere.png', alt: 'Description' }
 ];
 
 const images2 = [
-	{ id: 1, src: '/LandingPage/wedding-party.webp', alt: 'Description' },
-	{ id: 2, src: '/LandingPage/newlyweds-unsplash.png', alt: 'Description' },
-	{ id: 3, src: '/LandingPage/Corporate-event-ChatGPT.png', alt: 'Description' },
-	{ id: 4, src: '/LandingPage/Singer-unsplash.jpg', alt: 'Description' },
-	{ id: 5, src: '/LandingPage/conference-grok.png', alt: 'Description' },
-	{ id: 6, src: '/LandingPage/Group-of-people-Chat-GPT.png', alt: 'Description' }
+	{ id: 1, src: '/Photos/wedding-party.webp', alt: 'Description' },
+	{ id: 2, src: '/Photos/newlyweds-unsplash.png', alt: 'Description' },
+	{ id: 3, src: '/Photos/Corporate-event-ChatGPT.png', alt: 'Description' },
+	{ id: 4, src: '/Photos/Singer-unsplash.jpg', alt: 'Description' },
+	{ id: 5, src: '/Photos/conference-grok.png', alt: 'Description' },
+	{ id: 6, src: '/Photos/Group-of-people-Chat-GPT.png', alt: 'Description' }
 ];
 
 const repeatCarousel1 = [...images1, ...images1];

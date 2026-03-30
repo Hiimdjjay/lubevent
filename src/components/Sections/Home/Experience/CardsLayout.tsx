@@ -31,7 +31,7 @@ const cardsData: CardData[] = [
 		target: 300,
 		content:
 			'Od eventów firmowych po duże realizacje sceniczne. Scena, dźwięk, światło i koordynacja w jednym miejscu.',
-		src: '/Conference-guy.png',
+		src: '/Photos/Conference-guy.png',
 		imageAlt: 'Zdjęcie konfenansjera przemawiąjącego do publiczności',
 		className:
 			' text-white bg-linear-to-r from-bg-btn-blue to-bg-btn-purple h-110 md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2',
@@ -40,7 +40,7 @@ const cardsData: CardData[] = [
 	{
 		id: 2,
 		variant: 'image',
-		src: '/LandingPage/wedding-toast.png',
+		src: '/Photos/wedding-toast.png',
 		imageAlt: 'Rozbawieni zadowoleni goście',
 		className: 'md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3'
 	},
@@ -59,7 +59,7 @@ const cardsData: CardData[] = [
 	{
 		id: 4,
 		variant: 'image',
-		src: '/Business-meeting2.jpg',
+		src: '/Photos/Business-meeting2.jpg',
 		imageAlt: 'Prezentacja produktu na sali wypełnionej ludźmi i dobrą atmosferą',
 		className: 'md:h-full md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-4'
 	},

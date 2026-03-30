@@ -17,7 +17,7 @@ const teamData = [
 		id: 2,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		src: '/Dominik-Berwertz.jpg',
+		src: '/Team/Dominik-Berwertz.png',
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -28,7 +28,7 @@ const teamData = [
 		id: 3,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		src: '/Dominik-Berwertz.jpg',
+		src: '/Team/Dominik-Berwertz.png',
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -39,7 +39,7 @@ const teamData = [
 		id: 4,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		src: '/Dominik-Berwertz.jpg',
+		src: '/Team/Dominik-Berwertz.png',
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',

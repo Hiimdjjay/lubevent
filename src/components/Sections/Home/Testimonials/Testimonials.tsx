@@ -1,12 +1,13 @@
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { TestimonialsCarousel } from './TestimonialsCarousel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
+import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Testimonials() {
 	return (
-		<section>
-			<div className='flex flex-col gap-5 py-20 md:py-25 lg:py-30"'>
-				<div className='max-w-325 w-full m-auto px-4 md:px-5 lg:px-7.5  '>
+		<section className='py-20 md:py-25 lg:py-30'>
+			<div className='flex flex-col gap-5 '>
+				<Wrapper>
 					<div className='flex flex-col gap-5'>
 						<div className='flex flex-col gap-3'>
 							<SectionLabel bgColor='bg-bg-sectionLabel'>Zaufali nam</SectionLabel>
@@ -18,7 +19,7 @@ export function Testimonials() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</Wrapper>
 				<TestimonialsCarousel />
 			</div>
 		</section>

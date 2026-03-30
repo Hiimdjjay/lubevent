@@ -1,9 +1,11 @@
 'use client';
 
+import { Wrapper } from '@/components/UI/Wrapper';
+
 export function Video() {
 	return (
-		<section className=''>
-			<div className='px-4 pt-20 md:px-5 md:pt-25 lg:px-7.5 lg:py-30'>
+		<section className='pt-20 md:pt-25 lg:pt-30'>
+			<Wrapper noMargin>
 				<div className='relative rounded-2xl overflow-hidden px-12 py-18 md:h-110 lg:px-25 lg:h-180'>
 					<video
 						autoPlay
@@ -11,7 +13,7 @@ export function Video() {
 						loop
 						playsInline
 						className='absolute inset-0 w-full h-full object-cover'>
-						<source src='/Aftermovie.mp4' type='video/mp4' />
+						<source src='/Video/Aftermovie.mp4' type='video/mp4' />
 					</video>
 					<div className='absolute inset-0 bg-black/35'></div>
 					<div className='max-w-325 m-auto w-full lg:px-7.5'>
@@ -21,7 +23,7 @@ export function Video() {
 						</h2>
 					</div>
 				</div>
-			</div>
+			</Wrapper>
 		</section>
 	);
 }
