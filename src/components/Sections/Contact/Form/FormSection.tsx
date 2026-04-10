@@ -5,7 +5,7 @@ import { FormComponent } from './FormComponent';
 
 export function FormSection() {
 	return (
-		<section className='py-20 md:py-25 lg:30'>
+		<section className='py-20 md:py-25 lg:py-30'>
 			<Wrapper>
 				<div className='flex flex-col items-center justify-center gap-5'>
 					<div className='flex flex-col justify-center items-center gap-3'>

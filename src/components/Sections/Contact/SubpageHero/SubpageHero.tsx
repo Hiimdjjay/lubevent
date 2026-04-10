@@ -15,7 +15,7 @@ export function SubpageHero() {
 							<MainTitle>
 								Skontaktuj się <br />z nami
 							</MainTitle>
-							<Subtitle>
+							<Subtitle textSize="lg:text-lg">
 								Jesteśmy tutaj, aby pomóc Ci stworzyć dopracowane wydarzenie. Skontaktuj
 								się z nami telefonicznie, mailowo lub przez formularz — odpowiemy szybko i
 								zajmiemy się wszystkim od koncepcji po realizację.

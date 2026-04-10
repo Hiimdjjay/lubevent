@@ -10,7 +10,7 @@ const contactData = [
 	},
 	{
 		id: 2,
-		name: 'Telefon',
+		name: 'Email',
 		details: 'biuro@lubevent.pl',
 		icon: '/Icons/mail.svg',
 		alt: 'Mail-icon'
