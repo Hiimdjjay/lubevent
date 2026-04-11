@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import Spinner from './Spinner';
 
 type Message = {
 	name: string;
@@ -14,11 +15,25 @@ export function FormComponent() {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isSubmitSuccessful }
+		setError,
+		formState: { errors, isSubmitSuccessful, isSubmitting }
 	} = useForm<Message>({ mode: 'onBlur' });
 
-	function onSubmit(data: Message) {
+	async function onSubmit(data: Message) {
 		const { privacyPolicy, ...dataNoCheckbox } = data;
+
+		try {
+			const response = await fetch('/api/send/', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(dataNoCheckbox)
+			});
+
+			if (!response.ok) throw new Error();
+		} catch {
+			setError('root', { message: 'Wystąpił błąd, spróbuj ponownie' });
+		}
+
 		console.log(dataNoCheckbox);
 	}
 
@@ -123,8 +138,17 @@ export function FormComponent() {
 				className='overflow-hidden relative w-fit py-3 px-4 text-white/90 font-semibold capitalize bg-linear-to-r from-bg-btn-blue to-bg-btn-purple rounded-lg  lg:text-base lg:px-6 lg:py-4 lg:font-medium transition duration-800 hover:text-white hover:from-bg-btn-purple hover:to-bg-btn-blue'
 				type='submit'
 				disabled={isSubmitSuccessful}>
-				{isSubmitSuccessful ? 'Formularz został wysłany! Dziękujemy!' : 'Wyślij'}
+				{isSubmitSuccessful ? (
+					'Formularz został wysłany!'
+				) : isSubmitting ? (
+					<Spinner />
+				) : (
+					'Wyslij'
+				)}
 			</button>
+			{errors.root && (
+				<span className='text-sm text-red-500'>{errors.root.message as string}</span>
+			)}
 		</form>
 	);
 }
