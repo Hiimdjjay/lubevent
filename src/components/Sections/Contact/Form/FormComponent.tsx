@@ -1,6 +1,32 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+
+type Message = {
+	name: string;
+	email: string;
+	tel: string;
+	privacyPolicy: boolean;
+	message: string;
+};
+
 export function FormComponent() {
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitSuccessful }
+	} = useForm<Message>({ mode: 'onBlur' });
+
+	function onSubmit(data: Message) {
+		const { privacyPolicy, ...dataNoCheckbox } = data;
+		console.log(dataNoCheckbox);
+	}
+
 	return (
-		<form className='flex flex-col gap-5 w-full bg-bg-sectionLabel p-5 rounded-2xl text-[17px] md:p-10 md:gap-7 lg:gap-10'>
+		<form
+			noValidate
+			className='flex flex-col gap-5 w-full bg-bg-sectionLabel p-5 rounded-2xl text-[17px] md:p-10 md:gap-7 lg:gap-10'
+			onSubmit={handleSubmit(data => onSubmit(data))}>
 			<div className='flex flex-col gap-2'>
 				<label className='font-semibold text-black/70 md:text-lg' htmlFor='name'>
 					Imię i nazwisko:
@@ -9,7 +35,14 @@ export function FormComponent() {
 					className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
 					id='name'
 					type='text'
-					placeholder='Jan Kowalski'></input>
+					placeholder='Jan Kowalski'
+					{...register('name', {
+						required: 'Podaj swoje imię i nazwisko',
+						validate: name => name.includes(' ') || 'Podaj imię oraz nazwisko'
+					})}></input>
+				{errors.name && (
+					<span className='text-sm text-red-500'>{errors.name.message as string}</span>
+				)}
 			</div>
 			<div className='flex flex-col gap-5 md:flex-row md:gap-7 lg:gap-10'>
 				<div className='flex flex-col gap-2 md:w-1/2'>
@@ -20,17 +53,37 @@ export function FormComponent() {
 						className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
 						id='email'
 						type='email'
-						placeholder='jankowalski@domena.pl'></input>
+						placeholder='jankowalski@domena.pl'
+						{...register('email', {
+							required: 'Podaj swój adres e-mail',
+							pattern: {
+								value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+								message: 'Podaj poprawny adres e-mail'
+							}
+						})}></input>
+					{errors.email && (
+						<span className='text-sm text-red-500'>{errors.email.message as string}</span>
+					)}
 				</div>
 				<div className='flex flex-col gap-2 md:w-1/2'>
-					<label className='font-semibold text-black/70 md:text-lg' htmlFor='phone'>
+					<label className='font-semibold text-black/70 md:text-lg' htmlFor='tel'>
 						Numer telefonu:
 					</label>
 					<input
 						className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
-						id='phone'
-						type='text'
-						placeholder='+48 555 201 201'></input>
+						id='tel'
+						type='tel'
+						placeholder='+48555201201'
+						{...register('tel', {
+							required: 'Podaj numer telefonu',
+							pattern: {
+								value: /^[+][0-9]{9,15}$/,
+								message: 'Podaj prawidłowy numer telefonu'
+							}
+						})}></input>
+					{errors.tel && (
+						<span className='text-sm text-red-500'>{errors.tel.message as string}</span>
+					)}
 				</div>
 			</div>
 			<div className='flex flex-col gap-2'>
@@ -40,12 +93,37 @@ export function FormComponent() {
 				<textarea
 					className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 min-h-30 max-h-100 placeholder-black/50'
 					id='message'
-					placeholder='Tu wpisz treść swojej wiadomości'></textarea>
+					placeholder='Tu wpisz treść swojej wiadomości'
+					{...register('message', { required: 'Podaj treść wiadomości' })}></textarea>
+				{errors.message && (
+					<span className='text-sm text-red-500'>{errors.message.message as string}</span>
+				)}
+			</div>
+			<div className='flex flex-col gap-2'>
+				<label
+					className='font-semibold text-black/70  md:text-lg'
+					htmlFor='privacyPolicy'>
+					<input
+						className='mr-2'
+						id='privacyPolicy'
+						type='checkbox'
+						{...register('privacyPolicy', {
+							required: 'Akceptuj politykę prywatności'
+						})}
+					/>
+					Akceptuję <a href='politykę prywatności'>polityką prywatności</a>
+				</label>
+				{errors.privacyPolicy && (
+					<span className='text-sm text-red-500'>
+						{errors.privacyPolicy.message as string}
+					</span>
+				)}
 			</div>
 			<button
-				className='overflow-hidden relative w-fit py-3 px-4 text-white/90 font-semibold capitalize bg-linear-to-r from-bg-btn-blue to-bg-btn-purple rounded-lg  lg:text-base lg:px-6 lg:py-4 lg:font-medium transition-colors duration-800 hover:text-white hover:from-bg-btn-purple hover:to-bg-btn-blue'
-				type='submit'>
-				Wyślij
+				className='overflow-hidden relative w-fit py-3 px-4 text-white/90 font-semibold capitalize bg-linear-to-r from-bg-btn-blue to-bg-btn-purple rounded-lg  lg:text-base lg:px-6 lg:py-4 lg:font-medium transition duration-800 hover:text-white hover:from-bg-btn-purple hover:to-bg-btn-blue'
+				type='submit'
+				disabled={isSubmitSuccessful}>
+				{isSubmitSuccessful ? 'Formularz został wysłany! Dziękujemy!' : 'Wyślij'}
 			</button>
 		</form>
 	);
