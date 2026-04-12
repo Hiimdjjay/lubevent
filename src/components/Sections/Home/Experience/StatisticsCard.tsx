@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { Counter } from './Counter';
 
 type StatisticsCardProps = {
 	title: string;
-	src?: StaticImageData;
+	src?: string;
 	target: number;
 	content: string;
 	imageAlt?: string;
@@ -33,6 +33,8 @@ export function StatisticsCard({
 				</div>
 				{src && (
 					<Image
+						width={300}
+						height={300}
 						src={src}
 						className='absolute w-75 -right-5 -bottom-40 self-end md:-right-10'
 						alt={imageAlt ?? ''}

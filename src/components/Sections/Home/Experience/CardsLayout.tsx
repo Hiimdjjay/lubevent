@@ -1,9 +1,5 @@
 import { ImgCard } from './ImgCard';
-import Conferencier from '../../../../../public/Conference-guy.png';
-import HappyGuests from '../../../../../public/LandingPage/Group-of-people-Chat-GPT .png';
-import BusinessMeeting from '../../../../../public/Business-meeting2.jpg';
 import { StatisticsCard } from './StatisticsCard';
-import { StaticImageData } from 'next/image';
 
 type StatisticsCardData = {
 	id: number;
@@ -12,7 +8,7 @@ type StatisticsCardData = {
 	target: number;
 	content: string;
 	className?: string;
-	src?: StaticImageData;
+	src?: string;
 	imageAlt?: string;
 	classNameText?: string;
 };
@@ -20,7 +16,7 @@ type StatisticsCardData = {
 type ImageCardData = {
 	id: number;
 	variant: 'image';
-	src: StaticImageData;
+	src: string;
 	imageAlt: string;
 	className?: string;
 };
@@ -35,7 +31,7 @@ const cardsData: CardData[] = [
 		target: 300,
 		content:
 			'Od eventów firmowych po duże realizacje sceniczne. Scena, dźwięk, światło i koordynacja w jednym miejscu.',
-		src: Conferencier,
+		src: '/Photos/Conference-guy.png',
 		imageAlt: 'Zdjęcie konfenansjera przemawiąjącego do publiczności',
 		className:
 			' text-white bg-linear-to-r from-bg-btn-blue to-bg-btn-purple h-110 md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2',
@@ -44,7 +40,7 @@ const cardsData: CardData[] = [
 	{
 		id: 2,
 		variant: 'image',
-		src: HappyGuests,
+		src: '/Photos/wedding-toast.png',
 		imageAlt: 'Rozbawieni zadowoleni goście',
 		className: 'md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3'
 	},
@@ -63,7 +59,7 @@ const cardsData: CardData[] = [
 	{
 		id: 4,
 		variant: 'image',
-		src: BusinessMeeting,
+		src: '/Photos/Business-meeting2.jpg',
 		imageAlt: 'Prezentacja produktu na sali wypełnionej ludźmi i dobrą atmosferą',
 		className: 'md:h-full md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-4'
 	},
@@ -72,7 +68,8 @@ const cardsData: CardData[] = [
 		variant: 'statistics',
 		title: 'Rozpoznawalne marki',
 		target: 20,
-		content: 'Współpracujemy z firmami i markami, które stawiają na jakości.',
+		content:
+			'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, modi. Corrupti, modi.',
 		src: undefined,
 		imageAlt: undefined,
 		className:

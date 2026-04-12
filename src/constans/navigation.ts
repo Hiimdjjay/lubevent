@@ -18,7 +18,6 @@ export const NavItems: NavItem[] = [
 	{ name: 'Home', path: '/' },
 	{ name: 'O nas', path: '/o-nas' },
 	{ name: 'Oferta', path: '/oferta' },
-	{ name: 'Realizacje', path: '/realizacje' },
 	{ name: 'Kontakt', path: '/kontakt' }
 ];
 
@@ -26,7 +25,6 @@ export const footerNav: FooterNav[] = [
 	{ name: 'Home', path: '/' },
 	{ name: 'O nas', path: '/o-nas' },
 	{ name: 'Oferta', path: '/oferta' },
-	{ name: 'Realizacje', path: '/realizacje' },
 	{ name: 'Kontakt', path: '/kontakt' },
 	{ name: 'Polityka prywatności', path: '/polityka-prywatności' },
 	{ name: 'Regulamin', path: '/regulamin' },

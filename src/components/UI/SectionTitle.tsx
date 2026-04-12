@@ -13,7 +13,7 @@ export function SectionTitle({
 }: SectionTitleProps) {
 	return (
 		<h2
-			className={`font-medium ${textCenter ? 'text-center' : ''} ${textColor ? 'text-white' : 'text-black'} ${smallFont ? 'text-[20px] md:text-[30px]' : 'text-[32px] md:text-[36px]'}  lg:text-[40px]`}>
+			className={`font-semibold ${textCenter ? 'text-center' : ''} ${textColor ? 'text-white' : 'text-black'} ${smallFont ? 'text-[20px] md:text-[30px]' : 'text-[32px] md:text-[36px]'}  lg:text-[40px]`}>
 			{children}
 		</h2>
 	);
