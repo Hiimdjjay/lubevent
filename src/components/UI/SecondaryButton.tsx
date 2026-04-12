@@ -13,7 +13,7 @@ export function SecondaryButton({
 	textWhite = false
 }: SecondaryButtonProps) {
 	return (
-		<a
+		<Link
 			href={href}
 			className={`flex items-center gap-1 font-semibold py-3 px-4 w-fit ${textWhite ? 'text-white' : 'text-black'} `}>
 			<p className='relative'>
@@ -22,6 +22,6 @@ export function SecondaryButton({
 					className={`absolute ${textWhite ? 'bg-white' : 'bg-black'}  w-full h-0.5 left-0 -bottom-px rounded-full cursor-pointer`}></span>
 			</p>
 			<ArrowRight size={20} />
-		</a>
+		</Link>
 	);
 }

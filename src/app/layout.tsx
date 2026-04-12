@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import '../styles/globals.css';
-import '../styles/animation.css';
-import { Header } from '../components/Layout/Header/Header';
+import '@/styles/globals.css';
+import '@/styles/animation.css';
 import { Manrope } from 'next/font/google';
-import { Footer } from '@/components/Layout/Footer/Footer';
 
 export const metadata: Metadata = {
 	title: 'LubEvent',
@@ -13,16 +11,10 @@ export const metadata: Metadata = {
 
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
-export default function RootLayout({
-	children
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang='pl' suppressHydrationWarning>
-			<body className={manrope.className}>
-				<Header />
-				{children}
-				<Footer />
-			</body>
+			<body className={manrope.className}>{children}</body>
 		</html>
 	);
 }
