@@ -1,12 +1,23 @@
 'use client';
 
-
-import { InfoPage } from './InfoPage';
+import { useState } from 'react';
+import { InitialInfo } from './FormSteps/InitialInfo';
+import { PersonalDetails } from './FormSteps/PersonalDetails';
+import { QuoteContext } from '@/context/QuoteContext';
+import { EventDetails } from './FormSteps/EventDetails';
 
 export function Form() {
+	const [showStep, setShowStep] = useState<number>(0);
 	return (
-		<form className='flex flex-col gap-5 w-full bg-bg-sectionLabel p-5 rounded-2xl text-[17px] md:p-10 md:gap-7 lg:gap-10'>
-			<InfoPage />
-		</form>
+		<QuoteContext.Provider value={[showStep, setShowStep]}>
+			<div className='flex flex-col gap-5 bg-bg-sectionLabel p-5 rounded-2xl md:p-10'>
+				<div>{showStep}</div>
+				<form className='flex flex-col gap-5 w-full text-[17px] md:gap-7 lg:gap-10'>
+					{showStep === 0 && <InitialInfo />}
+					{showStep === 1 && <PersonalDetails />}
+					{showStep === 2 && <EventDetails />}
+				</form>
+			</div>
+		</QuoteContext.Provider>
 	);
 }

@@ -1,5 +1,7 @@
 import { Button } from '@/components/UI/Button';
 import { SecondaryButton } from '@/components/UI/SecondaryButton';
+import { useContext } from 'react';
+import { QuoteContext } from '@/context/QuoteContext';
 
 const quoteInfo = [
 	{ id: 1, mainTitle: '6', subTitle: 'kroków' },
@@ -7,7 +9,9 @@ const quoteInfo = [
 	{ id: 3, mainTitle: '100%', subTitle: 'bezpłatnie' }
 ];
 
-export function InfoPage() {
+export function InitialInfo() {
+	const [, setShowStep] = useContext(QuoteContext);
+
 	return (
 		<div className='flex flex-col justify-center items-center gap-8'>
 			<div className='flex flex-col items-center gap-5'>
@@ -38,7 +42,9 @@ export function InfoPage() {
 				wyceny. Bądź szczery i dokładny.
 			</p>
 			<div className='flex flex-col justidy-center items-center gap-2 '>
-				<Button variant='primary'>Rozpocznij wycenę</Button>
+				<Button variant='primary' onClick={() => setShowStep(prev => prev + 1)}>
+					Rozpocznij wycenę
+				</Button>
 				<SecondaryButton href='/'>Wróć na stronę główną</SecondaryButton>
 			</div>
 		</div>

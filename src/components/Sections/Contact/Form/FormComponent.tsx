@@ -44,7 +44,7 @@ export function FormComponent() {
 			onSubmit={handleSubmit(data => onSubmit(data))}>
 			<div className='flex flex-col gap-2'>
 				<label className='font-semibold text-black/70 md:text-lg' htmlFor='name'>
-					Imię i nazwisko:
+					Imię i nazwisko
 				</label>
 				<input
 					className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
@@ -62,7 +62,7 @@ export function FormComponent() {
 			<div className='flex flex-col gap-5 md:flex-row md:gap-7 lg:gap-10'>
 				<div className='flex flex-col gap-2 md:w-1/2'>
 					<label className='font-semibold text-black/70 md:text-lg' htmlFor='email'>
-						Adres e-mail:
+						Adres e-mail
 					</label>
 					<input
 						className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
@@ -82,7 +82,7 @@ export function FormComponent() {
 				</div>
 				<div className='flex flex-col gap-2 md:w-1/2'>
 					<label className='font-semibold text-black/70 md:text-lg' htmlFor='tel'>
-						Numer telefonu:
+						Numer telefonu
 					</label>
 					<input
 						className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
@@ -103,7 +103,7 @@ export function FormComponent() {
 			</div>
 			<div className='flex flex-col gap-2'>
 				<label className='font-semibold text-black/70 md:text-lg' htmlFor='message'>
-					Wiadomość:
+					Wiadomość
 				</label>
 				<textarea
 					className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 min-h-30 max-h-100 placeholder-black/50'
