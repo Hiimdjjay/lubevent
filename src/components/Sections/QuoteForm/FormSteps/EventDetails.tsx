@@ -7,6 +7,14 @@ import { QuoteContext } from '@/context/QuoteContext';
 import { Select } from '../Inputs/Select';
 import { Input } from '../Inputs/Input';
 import { useState } from 'react';
+import { ButtonsSelect } from '../Inputs/ButtonsSelect';
+
+const budgetData = [
+	'do 5 000 zł',
+	'5 000-15 000 zł',
+	'15 000-30 000 zł',
+	'powyżej 30 000 zł'
+];
 
 export function EventDetails() {
 	const [eventType, setEventType] = useState(0);
@@ -28,7 +36,7 @@ export function EventDetails() {
 				{eventType === 9 && (
 					<Input
 						id='guestsQuantity'
-						type='number'
+						type='text'
 						placeholder='Jeśli wybrałeś inne to wpisz typ wydarzenia'>
 						Wpisz typ wydarzenia
 					</Input>
@@ -36,6 +44,9 @@ export function EventDetails() {
 				<Input id='guestsQuantity' type='number' placeholder='np. 150'>
 					Liczba gości
 				</Input>
+				<ButtonsSelect id='budget' data={budgetData}>
+					Szacunkowy budżet (Opcjonalnie)
+				</ButtonsSelect>
 			</div>
 			<div className='flex justify-between'>
 				<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>

@@ -2,7 +2,7 @@ type InputProps = {
 	children: React.ReactNode;
 	id: string;
 	placeholder?: string;
-	setEventType: React.Dispatch<React.SetStateAction<string>>;
+	setEventType: React.Dispatch<React.SetStateAction<number>>;
 };
 
 type EventOption = {
