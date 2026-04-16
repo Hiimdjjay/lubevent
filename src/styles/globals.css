@@ -71,6 +71,14 @@ button {
 	background-image: linear-gradient(90deg, #5b78f9, #764ba2);
 }
 
+select:invalid {
+	color: hsla(0, 0%, 0%, 0.5);
+}
+
+select:valid {
+	color: hsla(0, 0%, 0%, 0.6);
+}
+
 @media (min-width: 1800px) {
 	.largeScreen {
 		width: 25%;

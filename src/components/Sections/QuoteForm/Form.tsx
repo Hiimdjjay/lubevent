@@ -5,6 +5,8 @@ import { InitialInfo } from './FormSteps/InitialInfo';
 import { PersonalDetails } from './FormSteps/PersonalDetails';
 import { QuoteContext } from '@/context/QuoteContext';
 import { EventDetails } from './FormSteps/EventDetails';
+import { PlaceAndDate } from './FormSteps/PlaceAndData';
+import { Services } from './FormSteps/Services';
 
 export function Form() {
 	const [showStep, setShowStep] = useState<number>(0);
@@ -16,6 +18,8 @@ export function Form() {
 					{showStep === 0 && <InitialInfo />}
 					{showStep === 1 && <PersonalDetails />}
 					{showStep === 2 && <EventDetails />}
+					{showStep === 3 && <PlaceAndDate />}
+					{showStep === 4 && <Services />}
 				</form>
 			</div>
 		</QuoteContext.Provider>
