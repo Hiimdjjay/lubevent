@@ -79,6 +79,10 @@ select:valid {
 	color: hsla(0, 0%, 0%, 0.6);
 }
 
+input[type='checkbox'] {
+	accent-color: var(--color-bg-btn-purple); /* kolor zaznaczenia */
+}
+
 @media (min-width: 1800px) {
 	.largeScreen {
 		width: 25%;

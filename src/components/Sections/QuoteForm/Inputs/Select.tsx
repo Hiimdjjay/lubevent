@@ -25,7 +25,7 @@ export function Select({ children, id, selectData, setter }: InputProps) {
 				{selectData.map(({ id, name }) => {
 					if (id === 0) {
 						return (
-							<option key={id} value='' disabled selected>
+							<option key={id} value='' disabled >
 								{name}
 							</option>
 						);

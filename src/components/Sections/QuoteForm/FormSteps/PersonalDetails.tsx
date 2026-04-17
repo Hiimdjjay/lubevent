@@ -1,23 +1,15 @@
-import { SectionLabel } from '@/components/UI/SectionLabel';
-import { SectionTitle } from '@/components/UI/SectionTitle';
-import { Subtitle } from '@/components/UI/Subtitle';
 import { Input } from '../Inputs/Input';
-import { Button } from '@/components/UI/Button';
-import { useContext } from 'react';
-import { QuoteContext } from '@/context/QuoteContext';
-
-
+import { ButtonsBox } from '../ButtonsBox';
+import { FormStepHeader } from '../FormStepHeader';
 
 export function PersonalDetails() {
-	const [, setShowStep] = useContext(QuoteContext);
-
 	return (
 		<div className='flex flex-col gap-5'>
-			<div className='flex flex-col items-start'>
-				<SectionLabel bgColor='bg-white'>Krok 1 z 6</SectionLabel>
-				<SectionTitle>Dane osobowe</SectionTitle>
-				<Subtitle>Podaj swoje dane kontaktowe</Subtitle>
-			</div>
+			<FormStepHeader
+				label='Krok 1 z 6'
+				title='Dane osobowe'
+				subtitle='Podaj swoje dane osobowe oraz kontaktowe'
+			/>
 			<div className='flex flex-col gap-5'>
 				<div className='flex flex-col justify-between gap-5 md:flex-row'>
 					<Input id='name' type='text' placeholder='Jan'>
@@ -37,14 +29,7 @@ export function PersonalDetails() {
 					Firma (opcjonalnie)
 				</Input>
 			</div>
-			<div className='flex justify-between'>
-				<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
-					Wstecz
-				</Button>
-				<Button variant='primary' onClick={() => setShowStep(prev => prev + 1)}>
-					Dalej
-				</Button>
-			</div>
+			<ButtonsBox />
 		</div>
 	);
 }

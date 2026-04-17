@@ -28,7 +28,7 @@ export function ButtonsSelect({
 						id={budget}
 						key={budget}
 						type='button'
-						className={`py-2 px-3 border rounded-full whitespace-nowrap transition-colors
+						className={`py-2 px-3 border bg-white rounded-full whitespace-nowrap transition-colors
     ${
 			selected === budget
 				? 'bg-linear-to-r from-bg-btn-blue to-bg-btn-purple text-white '
