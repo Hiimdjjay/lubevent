@@ -1,8 +1,13 @@
 import { Input } from '../Inputs/Input';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 
-export function PersonalDetails() {
+type PersonalDetailsProps = {
+	register: UseFormRegister<FieldValues>;
+};
+
+export function PersonalDetails({ register }: PersonalDetailsProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader
@@ -12,21 +17,30 @@ export function PersonalDetails() {
 			/>
 			<div className='flex flex-col gap-5'>
 				<div className='flex flex-col justify-between gap-5 md:flex-row'>
-					<Input id='name' type='text' placeholder='Jan'>
+					<Input id='personalDetails.name' type='text' placeholder='Jan' register={register}>
 						Imię
 					</Input>
-					<Input id='surname' type='text' placeholder='Kowalski'>
+					<Input id='personalDetails.surname' type='text' placeholder='Kowalski' register={register}>
 						Nazwisko
 					</Input>
 				</div>
-				<Input id='email' type='email' placeholder='jankowalski@domena.pl'>
+				<Input
+					id='personalDetails.email'
+					type='email'
+					placeholder='jankowalski@domena.pl'
+					register={register}>
 					Adres e-mail
 				</Input>
-				<Input id='telephone' type='tel' placeholder='+48 500 200 100'>
+				<Input id='personalDetails.telephone' type='tel' placeholder='+48 500 200 100' register={register}>
 					Telefon
 				</Input>
-				<Input id='surname' type='text' placeholder='Nazwa Firmy'>
-					Firma (opcjonalnie)
+				<Input
+					id='personalDetails.companyName'
+					type='text'
+					placeholder='Nazwa Firmy'
+					autoComplete='off'
+					register={register}>
+					Firma (Opcjonalnie)
 				</Input>
 			</div>
 			<ButtonsBox />

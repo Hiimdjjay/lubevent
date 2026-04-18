@@ -2,8 +2,14 @@ import { Button } from '@/components/UI/Button';
 import { useContext } from 'react';
 import { QuoteContext } from '@/context/QuoteContext';
 import { SecondaryButton } from '@/components/UI/SecondaryButton';
+import { FieldValues, UseFormGetValues } from 'react-hook-form';
 
-export function ButtonsBox() {
+type ButtonBoxProps = {
+	getValues?: UseFormGetValues<FieldValues>;
+	setFormDetails?: React.Dispatch<React.SetStateAction<FieldValues>>;
+};
+
+export function ButtonsBox({ getValues, setFormDetails }: ButtonBoxProps) {
 	const [stepShow, setShowStep] = useContext(QuoteContext);
 	if (stepShow === 0) {
 		return (
@@ -16,13 +22,32 @@ export function ButtonsBox() {
 		);
 	}
 
+	if (stepShow === 5) {
+		return (
+			<div className='flex justify-between'>
+				<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
+					Wstecz
+				</Button>
+				<Button
+					variant='primary'
+					type='button'
+					onClick={() => {
+						setShowStep(prev => prev + 1);
+						setFormDetails?.(getValues?.() ?? {});
+					}}>
+					Podsumowanie
+				</Button>
+			</div>
+		);
+	}
+
 	if (stepShow === 6) {
 		return (
 			<div className='flex justify-between'>
 				<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
 					Wstecz
 				</Button>
-				<Button variant='primary' type='submit' onClick={() => setShowStep(prev => prev + 1)}>
+				<Button variant='primary' type='submit'>
 					Wyślij formularz
 				</Button>
 			</div>
@@ -34,6 +59,9 @@ export function ButtonsBox() {
 			<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
 				Wstecz
 			</Button>
+			<button type='submit' className='py-2 px-4 border rounded'>
+				wyslij form
+			</button>
 			<Button variant='primary' onClick={() => setShowStep(prev => prev + 1)}>
 				Dalej
 			</Button>

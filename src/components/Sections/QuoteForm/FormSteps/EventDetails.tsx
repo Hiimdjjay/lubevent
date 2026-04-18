@@ -4,10 +4,17 @@ import { useState } from 'react';
 import { ButtonsSelect } from '../Inputs/ButtonsSelect';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
+import { UseFormRegister, FieldValues, Control, Controller, UseFormSetValue } from 'react-hook-form';
 
 type EventOption = {
 	id: number;
 	name: string;
+};
+
+type EventDetailsProps = {
+	register: UseFormRegister<FieldValues>;
+	control: Control<FieldValues>;
+	setValue: UseFormSetValue<FieldValues>;
 };
 
 const eventTypeData: EventOption[] = [
@@ -23,31 +30,51 @@ const eventTypeData: EventOption[] = [
 	{ id: 9, name: 'Inne' }
 ];
 
-const budgetData = ['do 5 000 zł', '5 000-15 000 zł', '15 000-30 000 zł', 'powyżej 30 000 zł'];
+const budgetData: string[] = ['do 5 000 zł', '5 000-15 000 zł', '15 000-30 000 zł', 'powyżej 30 000 zł'];
 
-export function EventDetails() {
-	const [eventType, setEventType] = useState(0);
+export function EventDetails({ register, control, setValue }: EventDetailsProps) {
+	const [eventType, setEventType] = useState('');
 
-	console.log(eventType);
+	 function handleEventTypeChange(value: string) {
+          setEventType(value);
+          if (value !== 'Inne') {
+              setValue('eventType.describeEventType', '');
+          }
+
 
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 2 z 6' title='Rodzaj wydarzenia' subtitle='Opisz nam swoje wydarzenie' />
 			<div className='flex flex-col gap-5'>
-				<Select id='eventType' selectData={eventTypeData} setter={setEventType}>
+				<Select id='eventType.eventType' selectData={eventTypeData} setter={handleEventTypeChange} register={register}>
 					Typ wydarzenia
 				</Select>
-				{eventType === 9 && (
-					<Input id='eventType' type='text' placeholder='Jeśli wybrałeś inne to wpisz typ wydarzenia'>
+				{eventType === 'Inne' && (
+					<Input
+						id='eventType.describeEventType'
+						type='text'
+						placeholder='Jeśli wybrałeś inne to wpisz typ wydarzenia'
+						register={register} >
+						
 						Wpisz typ wydarzenia
 					</Input>
 				)}
-				<Input id='guestsQuantity' type='number' placeholder='np. 150'>
+				<Input id='guestsQuantity' type='number' placeholder='np. 150' autoComplete='off' register={register}>
 					Liczba gości
 				</Input>
-				<ButtonsSelect id='budgetSelected' budgetData={budgetData}>
-					Szacunkowy budżet (Opcjonalnie)
-				</ButtonsSelect>
+				<Controller
+					name='eventType.budgetSelected'
+					control={control}
+					render={({ field }) => (
+						<ButtonsSelect
+							id='eventType.budgetSelected'
+							budgetData={budgetData}
+							onChange={field.onChange}
+							value={field.value}>
+							Szacunkowy budżet (Opcjonalnie)
+						</ButtonsSelect>
+					)}
+				/>
 			</div>
 			<ButtonsBox />
 		</div>

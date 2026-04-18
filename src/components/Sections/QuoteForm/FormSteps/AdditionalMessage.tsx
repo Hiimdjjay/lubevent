@@ -3,6 +3,14 @@ import { Select } from '../Inputs/Select';
 import { useState } from 'react';
 import { FormStepHeader } from '../FormStepHeader';
 import { Input } from '../Inputs/Input';
+import { Textarea } from '../Inputs/Textarea';
+import { FieldValues, UseFormGetValues, UseFormRegister } from 'react-hook-form';
+
+type AdditionalMessageProps = {
+	register: UseFormRegister<FieldValues>;
+	getValues: UseFormGetValues<FieldValues>;
+	setFormDetails: React.Dispatch<React.SetStateAction<FieldValues>>;
+};
 
 const referralData = [
 	{ id: 0, name: 'Wybierz' },
@@ -12,34 +20,29 @@ const referralData = [
 	{ id: 4, name: 'Inne' }
 ];
 
-export function AdditionalMessage() {
-	const [referralOption, setReferralOption] = useState(0);
+export function AdditionalMessage({ register, getValues, setFormDetails }: AdditionalMessageProps) {
+	const [referralOption, setReferralOption] = useState('');
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 5 z 6' title='Dodatkowe informacje' subtitle='Dodaj swoje pytania' />
 			<div className='flex flex-col gap-5'>
-				<div className='flex flex-col gap-2 w-full'>
-					<label className='font-semibold text-black/70 md:text-lg'>
-						Opis, pytania lub szczegółowe wymagania
-					</label>
-					<textarea
-						placeholder='Opisz dokładniej swoje oczekiwania, specjalne życzenia lub pytania dotyczące organizacji wydarzenia
-                        '
-						className='px-5 py-2.5 w-full min-h-50 bg-white text-black/60 font-medium  rounded-xl border border-black/15 placeholder-black/50'></textarea>
-				</div>
-				<Select id='referralSource' selectData={referralData} setter={setReferralOption}>
+				<Textarea id='message' autoComplete='off' register={register}>
+					Opis, pytania lub szczegółowe wymagania
+				</Textarea>
+				<Select id='referralSource' selectData={referralData} setter={setReferralOption} register={register}>
 					Skąd dowiedzieli się Państwo o nas? (opcjonalnie)
 				</Select>
-				{referralOption === 4 && (
+				{referralOption === 'Inne' && (
 					<Input
 						id='additionalReferralSource'
 						type='text'
-						placeholder='np. Bawiłem się na weselu organizowanych przez państwo'>
-						Jeśli nie ma odpowiedniej opcji powyzej to napisz skąd się o nas dowiedziałeś
+						placeholder='np. Bawiłem się na weselu organizowanych przez państwa agencje'
+						register={register}>
+						Nie ma Twojej opcji? Napisz skąd nas znasz
 					</Input>
 				)}
 			</div>
-			<ButtonsBox />
+			<ButtonsBox getValues={getValues} setFormDetails={setFormDetails} />
 		</div>
 	);
 }
