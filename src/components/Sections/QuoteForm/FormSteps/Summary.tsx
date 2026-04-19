@@ -1,60 +1,47 @@
-import { FieldValues, UseFormGetValues, UseFormRegister } from 'react-hook-form';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
 import { Checkbox } from '../Inputs/Checkbox';
 
 type SummaryProps = {
-	formDetails: any;
+	summaryData: any;
 	register: UseFormRegister<FieldValues>;
 };
 
-export function Summary({ formDetails, register }: SummaryProps) {
-	const summaryData = [
-		{
-			id: 1,
-			label: 'Imię i nazwisko:',
-			data: `${formDetails.personalDetails?.name ?? ''} ${formDetails.personalDetails?.surname ?? ''}`
-		},
-		{
-			id: 2,
-			label: 'Email:',
-			data: `${formDetails.personalDetails?.email ?? ''}`
-		},
-		{
-			id: 3,
-			label: 'Numer telefonu:',
-			data: `${formDetails.personalDetails?.telephone ?? ''}`
-		},
-		{
-			id: 4,
-			label: 'Nazwa firmy:',
-			data: `${formDetails.personalDetails?.companyName ?? ''}`
-		},
-		{
-			id: 5,
-			label: 'Rodzaj wydarzenia:',
-			data: `${formDetails.eventType?.eventType ?? ''}`
-		},
-		{
-			id: 6,
-			label: 'Rodzaj wydarzenia:',
-			data: `${formDetails.eventType?.describeEventType ?? ''}`
-		}
-	];
-	console.log(formDetails.message);
+export function Summary({ summaryData, register }: SummaryProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 6 z 6' title='Podsumowanie' subtitle='Sprawdź swoje dane' />
-			<ul className='bg-white py-2 px-4 rounded-xl'>
-				{summaryData.map(({ id, label, data }) => {
+			<div className='flex flex-col gap-5 bg-white p-4 rounded-xl'>
+				{summaryData.map(({ id, title, data }) => {
 					return (
-						<li key={id} className='flex justify-between py-3 text-base font-medium border-b border-black/60'>
-							<span className='font-medium  text-black/60'>{label}</span>
-							<span className='font-semibold text-black/70'>{data}</span>
-						</li>
+						<div key={id} className=''>
+							<p className=' font-semibold text-black/80 text-[18px] border-b border-black/80'>{title}</p>
+
+							<ul className=''>
+								
+								{data.every(item => item.data === '') ? (
+									<li className='py-2 text-sm text-black/40'>Brak danych, krok został pominięty</li>
+								) : (
+									data.map(({ id, label, data }) => {
+										if (data === '') {
+											return null;
+										}
+										return (
+											<li
+												key={id}
+												className='flex justify-between items-center gap-2 py-2 text-base font-medium border-b border-black/40'>
+												<span className='text-sm font-medium text-black/60 whitespace-nowrap'>{label}</span>
+												<span className='font-semibold text-black/70 break-all '>{data}</span>
+											</li>
+										);
+									})
+								)}
+							</ul>
+						</div>
 					);
 				})}
-			</ul>
+			</div>
 			<Checkbox id='privacyPolicy' questionMark={false} register={register}>
 				Akceptuję{' '}
 				<a
@@ -63,7 +50,7 @@ export function Summary({ formDetails, register }: SummaryProps) {
 					className=' underline underline-offset-5 decoration-2 decoration-bg-btn-purple'>
 					politykę prywatności
 				</a>
-				.
+				. Zgadzam się na przetwarzanie moich danych w celu wykonania wyceny.
 			</Checkbox>
 			<ButtonsBox />
 		</div>

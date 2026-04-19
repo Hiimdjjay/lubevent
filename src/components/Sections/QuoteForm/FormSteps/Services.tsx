@@ -19,7 +19,7 @@ const serviceType = [
 	'Animatorzy'
 ];
 
-export function Services({ register }: ServicesProps) {
+export function Services({ register, trigger }: ServicesProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 3 z 6' title='Usługi' subtitle='Wybierz usługi, które Cie interesują' />
@@ -38,7 +38,7 @@ export function Services({ register }: ServicesProps) {
 				register={register}>
 				Nie znalazłeś swojej usługi na liście? Opisz ją poniżej (Opcjonalnie)
 			</Input>
-			<ButtonsBox />
+			<ButtonsBox trigger={trigger} />
 		</div>
 	);
 }

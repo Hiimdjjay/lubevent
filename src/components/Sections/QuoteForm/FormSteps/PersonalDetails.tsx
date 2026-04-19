@@ -1,13 +1,15 @@
 import { Input } from '../Inputs/Input';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { UseFormRegister, FieldValues } from 'react-hook-form';
+import { UseFormRegister, FieldValues, UseFormTrigger, UseFormSetError } from 'react-hook-form';
 
 type PersonalDetailsProps = {
 	register: UseFormRegister<FieldValues>;
+	errors: UseFormSetError<FieldValues>;
+	trigger: UseFormTrigger<FieldValues>;
 };
 
-export function PersonalDetails({ register }: PersonalDetailsProps) {
+export function PersonalDetails({ register, errors, trigger }: PersonalDetailsProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader
@@ -17,10 +19,22 @@ export function PersonalDetails({ register }: PersonalDetailsProps) {
 			/>
 			<div className='flex flex-col gap-5'>
 				<div className='flex flex-col justify-between gap-5 md:flex-row'>
-					<Input id='personalDetails.name' type='text' placeholder='Jan' register={register}>
+					<Input
+						id='personalDetails.name'
+						type='text'
+						placeholder='Jan'
+						register={register}
+						registerOptions={{ required: 'Wpisz swoje imię' }}
+						isError={errors.personalDetails?.name}>
 						Imię
 					</Input>
-					<Input id='personalDetails.surname' type='text' placeholder='Kowalski' register={register}>
+					<Input
+						id='personalDetails.surname'
+						type='text'
+						placeholder='Kowalski'
+						register={register}
+						registerOptions={{ required: 'Wpisz swoje nazwisko' }}
+						isError={errors.personalDetails?.surname}>
 						Nazwisko
 					</Input>
 				</div>
@@ -28,10 +42,24 @@ export function PersonalDetails({ register }: PersonalDetailsProps) {
 					id='personalDetails.email'
 					type='email'
 					placeholder='jankowalski@domena.pl'
-					register={register}>
+					register={register}
+					registerOptions={{
+						required: 'Wpisz swój adres e-mail',
+						pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Niepoprawny adres e-mail' }
+					}}
+					isError={errors.personalDetails?.email}>
 					Adres e-mail
 				</Input>
-				<Input id='personalDetails.telephone' type='tel' placeholder='+48 500 200 100' register={register}>
+				<Input
+					id='personalDetails.telephone'
+					type='tel'
+					placeholder='+48 500 200 100'
+					register={register}
+					registerOptions={{
+						required: 'Wpisz swój numer telefonu',
+						minLength: { value: 9, message: 'Podaj prawidłowy numer telefonu' }
+					}}
+					isError={errors.personalDetails?.telephone}>
 					Telefon
 				</Input>
 				<Input
@@ -43,7 +71,7 @@ export function PersonalDetails({ register }: PersonalDetailsProps) {
 					Firma (Opcjonalnie)
 				</Input>
 			</div>
-			<ButtonsBox />
+			<ButtonsBox trigger={trigger} />
 		</div>
 	);
 }

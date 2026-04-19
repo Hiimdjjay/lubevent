@@ -20,7 +20,7 @@ export function InitialInfo() {
 			<div className='flex justify-center items-center gap-3 w-full '>
 				{quoteInfo.map(({ id, mainTitle, subTitle }) => {
 					return (
-						<div key={id} className='flex flex-col justify-center items-center p-5 w-1/3 bg-white rounded-xl'>
+						<div key={id} className='flex flex-col justify-center items-center py-5 w-1/3 bg-white rounded-xl'>
 							<span className='text-3xl font-semibold text-bg-btn-purple'>{mainTitle}</span>
 							<span className='text-sm'>{subTitle}</span>
 						</div>

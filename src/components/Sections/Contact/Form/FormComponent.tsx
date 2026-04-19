@@ -55,9 +55,7 @@ export function FormComponent() {
 						required: 'Podaj swoje imię i nazwisko',
 						validate: name => name.includes(' ') || 'Podaj imię oraz nazwisko'
 					})}></input>
-				{errors.name && (
-					<span className='text-sm text-red-500'>{errors.name.message as string}</span>
-				)}
+				{errors.name && <span className='text-sm text-red-500'>{errors.name.message as string}</span>}
 			</div>
 			<div className='flex flex-col gap-5 md:flex-row md:gap-7 lg:gap-10'>
 				<div className='flex flex-col gap-2 md:w-1/2'>
@@ -76,9 +74,7 @@ export function FormComponent() {
 								message: 'Podaj poprawny adres e-mail'
 							}
 						})}></input>
-					{errors.email && (
-						<span className='text-sm text-red-500'>{errors.email.message as string}</span>
-					)}
+					{errors.email && <span className='text-sm text-red-500'>{errors.email.message as string}</span>}
 				</div>
 				<div className='flex flex-col gap-2 md:w-1/2'>
 					<label className='font-semibold text-black/70 md:text-lg' htmlFor='tel'>
@@ -91,14 +87,9 @@ export function FormComponent() {
 						placeholder='+48555201201'
 						{...register('tel', {
 							required: 'Podaj numer telefonu',
-							pattern: {
-								value: /^[+][0-9]{9,15}$/,
-								message: 'Podaj prawidłowy numer telefonu'
-							}
+							minLength: { value: 9, message: 'Podaj prawidłowy numer telefonu' }
 						})}></input>
-					{errors.tel && (
-						<span className='text-sm text-red-500'>{errors.tel.message as string}</span>
-					)}
+					{errors.tel && <span className='text-sm text-red-500'>{errors.tel.message as string}</span>}
 				</div>
 			</div>
 			<div className='flex flex-col gap-2'>
@@ -110,14 +101,10 @@ export function FormComponent() {
 					id='message'
 					placeholder='Tu wpisz treść swojej wiadomości'
 					{...register('message', { required: 'Podaj treść wiadomości' })}></textarea>
-				{errors.message && (
-					<span className='text-sm text-red-500'>{errors.message.message as string}</span>
-				)}
+				{errors.message && <span className='text-sm text-red-500'>{errors.message.message as string}</span>}
 			</div>
 			<div className='flex flex-col gap-2'>
-				<label
-					className='font-semibold text-black/70  md:text-lg'
-					htmlFor='privacyPolicy'>
+				<label className='font-semibold text-black/70  md:text-lg' htmlFor='privacyPolicy'>
 					<input
 						className='mr-2'
 						id='privacyPolicy'
@@ -129,26 +116,16 @@ export function FormComponent() {
 					Akceptuję <a href='politykę prywatności'>polityką prywatności</a>
 				</label>
 				{errors.privacyPolicy && (
-					<span className='text-sm text-red-500'>
-						{errors.privacyPolicy.message as string}
-					</span>
+					<span className='text-sm text-red-500'>{errors.privacyPolicy.message as string}</span>
 				)}
 			</div>
 			<button
 				className='overflow-hidden relative w-fit py-3 px-4 text-white/90 font-semibold capitalize bg-linear-to-r from-bg-btn-blue to-bg-btn-purple rounded-lg  lg:text-base lg:px-6 lg:py-4 lg:font-medium transition duration-800 hover:text-white hover:from-bg-btn-purple hover:to-bg-btn-blue'
 				type='submit'
 				disabled={isSubmitSuccessful}>
-				{isSubmitSuccessful ? (
-					'Formularz został wysłany!'
-				) : isSubmitting ? (
-					<Spinner />
-				) : (
-					'Wyslij'
-				)}
+				{isSubmitSuccessful ? 'Formularz został wysłany!' : isSubmitting ? <Spinner /> : 'Wyslij'}
 			</button>
-			{errors.root && (
-				<span className='text-sm text-red-500'>{errors.root.message as string}</span>
-			)}
+			{errors.root && <span className='text-sm text-red-500'>{errors.root.message as string}</span>}
 		</form>
 	);
 }

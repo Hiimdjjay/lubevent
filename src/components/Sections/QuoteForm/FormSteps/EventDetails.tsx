@@ -32,21 +32,25 @@ const eventTypeData: EventOption[] = [
 
 const budgetData: string[] = ['do 5 000 zł', '5 000-15 000 zł', '15 000-30 000 zł', 'powyżej 30 000 zł'];
 
-export function EventDetails({ register, control, setValue }: EventDetailsProps) {
+export function EventDetails({ register, control, setValue, trigger }: EventDetailsProps) {
 	const [eventType, setEventType] = useState('');
 
-	 function handleEventTypeChange(value: string) {
-          setEventType(value);
-          if (value !== 'Inne') {
-              setValue('eventType.describeEventType', '');
-          }
-
+	function handleEventTypeChange(value: string) {
+		setEventType(value);
+		if (value !== 'Inne') {
+			setValue('eventType.describeEventType', '');
+		}
+	}
 
 	return (
 		<div className='flex flex-col gap-5'>
-			<FormStepHeader label='Krok 2 z 6' title='Rodzaj wydarzenia' subtitle='Opisz nam swoje wydarzenie' />
+			<FormStepHeader label='Krok 3 z 6' title='Rodzaj wydarzenia' subtitle='Opisz nam swoje wydarzenie' />
 			<div className='flex flex-col gap-5'>
-				<Select id='eventType.eventType' selectData={eventTypeData} setter={handleEventTypeChange} register={register}>
+				<Select
+					id='eventType.eventType'
+					selectData={eventTypeData}
+					setter={handleEventTypeChange}
+					register={register}>
 					Typ wydarzenia
 				</Select>
 				{eventType === 'Inne' && (
@@ -54,8 +58,7 @@ export function EventDetails({ register, control, setValue }: EventDetailsProps)
 						id='eventType.describeEventType'
 						type='text'
 						placeholder='Jeśli wybrałeś inne to wpisz typ wydarzenia'
-						register={register} >
-						
+						register={register}>
 						Wpisz typ wydarzenia
 					</Input>
 				)}
@@ -76,7 +79,7 @@ export function EventDetails({ register, control, setValue }: EventDetailsProps)
 					)}
 				/>
 			</div>
-			<ButtonsBox />
+			<ButtonsBox trigger={trigger} />
 		</div>
 	);
 }

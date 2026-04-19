@@ -4,12 +4,10 @@ import { useState } from 'react';
 import { FormStepHeader } from '../FormStepHeader';
 import { Input } from '../Inputs/Input';
 import { Textarea } from '../Inputs/Textarea';
-import { FieldValues, UseFormGetValues, UseFormRegister } from 'react-hook-form';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 type AdditionalMessageProps = {
 	register: UseFormRegister<FieldValues>;
-	getValues: UseFormGetValues<FieldValues>;
-	setFormDetails: React.Dispatch<React.SetStateAction<FieldValues>>;
 };
 
 const referralData = [
@@ -20,7 +18,7 @@ const referralData = [
 	{ id: 4, name: 'Inne' }
 ];
 
-export function AdditionalMessage({ register, getValues, setFormDetails }: AdditionalMessageProps) {
+export function AdditionalMessage({ register }: AdditionalMessageProps) {
 	const [referralOption, setReferralOption] = useState('');
 	return (
 		<div className='flex flex-col gap-5'>
@@ -30,7 +28,7 @@ export function AdditionalMessage({ register, getValues, setFormDetails }: Addit
 					Opis, pytania lub szczegółowe wymagania
 				</Textarea>
 				<Select id='referralSource' selectData={referralData} setter={setReferralOption} register={register}>
-					Skąd dowiedzieli się Państwo o nas? (opcjonalnie)
+					Skąd dowiedzieli się Państwo o nas? (Opcjonalnie)
 				</Select>
 				{referralOption === 'Inne' && (
 					<Input
@@ -42,7 +40,7 @@ export function AdditionalMessage({ register, getValues, setFormDetails }: Addit
 					</Input>
 				)}
 			</div>
-			<ButtonsBox getValues={getValues} setFormDetails={setFormDetails} />
+			<ButtonsBox />
 		</div>
 	);
 }

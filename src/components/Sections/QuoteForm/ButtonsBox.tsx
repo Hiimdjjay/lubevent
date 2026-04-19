@@ -2,15 +2,32 @@ import { Button } from '@/components/UI/Button';
 import { useContext } from 'react';
 import { QuoteContext } from '@/context/QuoteContext';
 import { SecondaryButton } from '@/components/UI/SecondaryButton';
-import { FieldValues, UseFormGetValues } from 'react-hook-form';
+import { FieldValues, UseFormTrigger } from 'react-hook-form';
 
-type ButtonBoxProps = {
-	getValues?: UseFormGetValues<FieldValues>;
-	setFormDetails?: React.Dispatch<React.SetStateAction<FieldValues>>;
+type ButtonsBoxProps = {
+	trigger?: UseFormTrigger<FieldValues>;
 };
 
-export function ButtonsBox({ getValues, setFormDetails }: ButtonBoxProps) {
+const stepFields: Record<number, string[]> = {
+	1: [
+		'personalDetails.name',
+		'personalDetails.surname',
+		'personalDetails.email',
+		'personalDetails.telephone'
+	],
+	2: ['date', 'place.isPlaceChoosed'],
+	3: ['eventType.eventType', 'guestsQuantity']
+};
+
+export function ButtonsBox({ trigger }: ButtonsBoxProps) {
 	const [stepShow, setShowStep] = useContext(QuoteContext);
+
+	async function handleNext() {
+		const fields = stepFields[stepShow] ?? [];
+		const isValid = !trigger || fields.length === 0 || (await trigger(fields));
+		if (isValid) setShowStep(prev => prev + 1);
+	}
+
 	if (stepShow === 0) {
 		return (
 			<div className='flex flex-col justidy-center items-center gap-2 '>
@@ -18,25 +35,6 @@ export function ButtonsBox({ getValues, setFormDetails }: ButtonBoxProps) {
 					Rozpocznij wycenę
 				</Button>
 				<SecondaryButton href='/'>Wróć na stronę główną</SecondaryButton>
-			</div>
-		);
-	}
-
-	if (stepShow === 5) {
-		return (
-			<div className='flex justify-between'>
-				<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
-					Wstecz
-				</Button>
-				<Button
-					variant='primary'
-					type='button'
-					onClick={() => {
-						setShowStep(prev => prev + 1);
-						setFormDetails?.(getValues?.() ?? {});
-					}}>
-					Podsumowanie
-				</Button>
 			</div>
 		);
 	}
@@ -59,10 +57,7 @@ export function ButtonsBox({ getValues, setFormDetails }: ButtonBoxProps) {
 			<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
 				Wstecz
 			</Button>
-			<button type='submit' className='py-2 px-4 border rounded'>
-				wyslij form
-			</button>
-			<Button variant='primary' onClick={() => setShowStep(prev => prev + 1)}>
+			<Button variant='primary' onClick={handleNext}>
 				Dalej
 			</Button>
 		</div>
