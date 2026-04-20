@@ -22,7 +22,7 @@ export function Form() {
 		watch,
 		formState: { errors },
 		trigger
-	} = useForm<FieldValues>({ mode: 'onTouched' });
+	} = useForm<FieldValues>({ mode: 'onChange' });
 
 	const watchedData = watch();
 
@@ -87,8 +87,18 @@ export function Form() {
 		}
 	];
 
-	function onSubmit(data: FieldValues) {
-		console.log(data);
+	async function onSubmit(data: FieldValues) {
+		const res = await fetch('/api/send-quote', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(data)
+		});
+
+		if (res.ok) {
+			setShowStep(prev => prev + 1);
+		} else {
+			console.error('Błąd wysyłania formularza');
+		}
 	}
 
 	return (
@@ -101,7 +111,13 @@ export function Form() {
 					{showStep === 0 && <InitialInfo />}
 					{showStep === 1 && <PersonalDetails register={register} errors={errors} trigger={trigger} />}
 					{showStep === 2 && (
-						<PlaceAndDate register={register} setValue={setValue} errors={errors} trigger={trigger} />
+						<PlaceAndDate
+							register={register}
+							setValue={setValue}
+							errors={errors}
+							trigger={trigger}
+							place={watchedData.place?.isPlaceChoosed}
+						/>
 					)}
 					{showStep === 3 && (
 						<EventDetails
@@ -110,6 +126,7 @@ export function Form() {
 							setValue={setValue}
 							errors={errors}
 							trigger={trigger}
+							eventType={watchedData.eventType?.eventType}
 						/>
 					)}
 					{showStep === 4 && <Services register={register} trigger={trigger} />}

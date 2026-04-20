@@ -30,14 +30,17 @@ const eventTypeData: EventOption[] = [
 	{ id: 9, name: 'Inne' }
 ];
 
-const budgetData: string[] = ['do 5 000 zł', '5 000-15 000 zł', '15 000-30 000 zł', 'powyżej 30 000 zł'];
+const budgetData: string[] = [
+	'do 5 000 zł',
+	'5 000-15 000 zł',
+	'15 000-30 000 zł',
+	'powyżej 30 000 zł',
+	'Nie chce podawać'
+];
 
-export function EventDetails({ register, control, setValue, trigger }: EventDetailsProps) {
-	const [eventType, setEventType] = useState('');
-
-	function handleEventTypeChange(value: string) {
-		setEventType(value);
-		if (value !== 'Inne') {
+export function EventDetails({ register, control, setValue, trigger, errors, eventType }: EventDetailsProps) {
+	function handleEventTypeChange() {
+		if (eventType !== 'Inne') {
 			setValue('eventType.describeEventType', '');
 		}
 	}
@@ -50,7 +53,9 @@ export function EventDetails({ register, control, setValue, trigger }: EventDeta
 					id='eventType.eventType'
 					selectData={eventTypeData}
 					setter={handleEventTypeChange}
-					register={register}>
+					register={register}
+					registerOptions={{ required: 'Wybierz typ wydarzenia' }}
+					isError={errors.eventType?.eventType}>
 					Typ wydarzenia
 				</Select>
 				{eventType === 'Inne' && (
@@ -62,19 +67,28 @@ export function EventDetails({ register, control, setValue, trigger }: EventDeta
 						Wpisz typ wydarzenia
 					</Input>
 				)}
-				<Input id='guestsQuantity' type='number' placeholder='np. 150' autoComplete='off' register={register}>
-					Liczba gości
+				<Input
+					id='guestsQuantity'
+					type='text'
+					placeholder='np. 150'
+					autoComplete='off'
+					register={register}
+					registerOptions={{ required: 'Wpisz liczbę członków/gości' }}
+					isError={errors.guestsQuantity}>
+					Liczba członków/gości
 				</Input>
 				<Controller
 					name='eventType.budgetSelected'
 					control={control}
-					render={({ field }) => (
+					rules={{ required: 'Wybierz szacunkowy budżet' }}
+					render={({ field, fieldState }) => (
 						<ButtonsSelect
 							id='eventType.budgetSelected'
 							budgetData={budgetData}
 							onChange={field.onChange}
-							value={field.value}>
-							Szacunkowy budżet (Opcjonalnie)
+							value={field.value}
+							isError={fieldState.error}>
+							Szacunkowy budżet
 						</ButtonsSelect>
 					)}
 				/>

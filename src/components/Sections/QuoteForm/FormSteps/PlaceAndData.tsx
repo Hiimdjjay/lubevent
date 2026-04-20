@@ -18,12 +18,9 @@ const placeData = [
 	{ id: 2, name: 'Nie, miejsce nie jest jeszcze wybrane' },
 	{ id: 3, name: 'Nie chce podawać miejsca' }
 ];
-export function PlaceAndDate({ register, setValue, errors, trigger }: PlaceAndDateProps) {
-	const [placeName, setPlaceName] = useState<string>('');
-
-	function handlePlaceName(value: string) {
-		setPlaceName(value);
-		if (value !== 'Tak, miejsce jest wybrane') {
+export function PlaceAndDate({ register, setValue, errors, trigger, place }: PlaceAndDateProps) {
+	function handlePlaceName() {
+		if (place !== 'Tak, miejsce jest wybrane') {
 			setValue('place.place', '');
 			setValue('place.venuePlace', '');
 		}
@@ -50,7 +47,7 @@ export function PlaceAndDate({ register, setValue, errors, trigger }: PlaceAndDa
 					isError={errors.place?.isPlaceChoosed}>
 					Czy mają państwo wybrane miejsce?
 				</Select>
-				{placeName === 'Tak, miejsce jest wybrane' && (
+				{place === 'Tak, miejsce jest wybrane' && (
 					<>
 						<Input id='place.place' type='text' placeholder='np. Lublin' register={register}>
 							Miejscowość

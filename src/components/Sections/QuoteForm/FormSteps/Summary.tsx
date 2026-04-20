@@ -16,10 +16,9 @@ export function Summary({ summaryData, register }: SummaryProps) {
 				{summaryData.map(({ id, title, data }) => {
 					return (
 						<div key={id} className=''>
-							<p className=' font-semibold text-black/80 text-[18px] border-b border-black/80'>{title}</p>
+							<p className=' font-semibold text-black/80 text-[18px] border-b border-black/80 '>{title}</p>
 
 							<ul className=''>
-								
 								{data.every(item => item.data === '') ? (
 									<li className='py-2 text-sm text-black/40'>Brak danych, krok został pominięty</li>
 								) : (
@@ -30,9 +29,9 @@ export function Summary({ summaryData, register }: SummaryProps) {
 										return (
 											<li
 												key={id}
-												className='flex justify-between items-center gap-2 py-2 text-base font-medium border-b border-black/40'>
+												className='flex justify-between items-center gap-3 py-2 text-base font-medium border-b border-black/40'>
 												<span className='text-sm font-medium text-black/60 whitespace-nowrap'>{label}</span>
-												<span className='font-semibold text-black/70 break-all '>{data}</span>
+												<span className=' font-semibold text-black/70 break-all'>{data}</span>
 											</li>
 										);
 									})

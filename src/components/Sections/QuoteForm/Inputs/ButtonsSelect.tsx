@@ -4,9 +4,10 @@ type ButtonsSelectedProps = {
 	id: string;
 	onChange?: (value: string) => void;
 	value?: string;
+	isError: any;
 };
 
-export function ButtonsSelect({ children, budgetData, id, onChange, value }: ButtonsSelectedProps) {
+export function ButtonsSelect({ children, budgetData, id, onChange, value, isError }: ButtonsSelectedProps) {
 	return (
 		<div className='flex flex-col gap-2 w-full'>
 			<label htmlFor={id} className='font-semibold text-black/70 md:text-lg'>
@@ -28,6 +29,7 @@ export function ButtonsSelect({ children, budgetData, id, onChange, value }: But
 					</button>
 				))}
 			</div>
+			{isError && <span className='text-sm text-red-500 '>{isError.message}</span>}
 		</div>
 	);
 }

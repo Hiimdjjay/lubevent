@@ -16,7 +16,7 @@ const stepFields: Record<number, string[]> = {
 		'personalDetails.telephone'
 	],
 	2: ['date', 'place.isPlaceChoosed'],
-	3: ['eventType.eventType', 'guestsQuantity']
+	3: ['eventType.eventType', 'guestsQuantity', 'eventType.budgetSelected']
 };
 
 export function ButtonsBox({ trigger }: ButtonsBoxProps) {
