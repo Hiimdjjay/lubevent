@@ -6,6 +6,7 @@ import { FieldValues, UseFormTrigger } from 'react-hook-form';
 
 type ButtonsBoxProps = {
 	trigger?: UseFormTrigger<FieldValues>;
+	extraFields?: string[];
 };
 
 const stepFields: Record<number, string[]> = {
@@ -19,11 +20,11 @@ const stepFields: Record<number, string[]> = {
 	3: ['eventType.eventType', 'guestsQuantity', 'eventType.budgetSelected']
 };
 
-export function ButtonsBox({ trigger }: ButtonsBoxProps) {
+export function ButtonsBox({ trigger, extraFields = [] }: ButtonsBoxProps) {
 	const [stepShow, setShowStep] = useContext(QuoteContext);
 
 	async function handleNext() {
-		const fields = stepFields[stepShow] ?? [];
+		const fields = [...(stepFields[stepShow] ?? []), ...extraFields];
 		const isValid = !trigger || fields.length === 0 || (await trigger(fields));
 		if (isValid) setShowStep(prev => prev + 1);
 	}
@@ -46,7 +47,7 @@ export function ButtonsBox({ trigger }: ButtonsBoxProps) {
 					Wstecz
 				</Button>
 				<Button variant='primary' type='submit'>
-					Wyślij formularz
+					Wyślij
 				</Button>
 			</div>
 		);

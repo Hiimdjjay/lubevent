@@ -6,9 +6,10 @@ import { Checkbox } from '../Inputs/Checkbox';
 type SummaryProps = {
 	summaryData: any;
 	register: UseFormRegister<FieldValues>;
+	errors: any;
 };
 
-export function Summary({ summaryData, register }: SummaryProps) {
+export function Summary({ summaryData, register, errors }: SummaryProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 6 z 6' title='Podsumowanie' subtitle='Sprawdź swoje dane' />
@@ -41,7 +42,14 @@ export function Summary({ summaryData, register }: SummaryProps) {
 					);
 				})}
 			</div>
-			<Checkbox id='privacyPolicy' questionMark={false} register={register}>
+			<Checkbox
+				id='privacyPolicy'
+				questionMark={false}
+				register={register}
+				registerOptions={{
+					required: 'Musisz zapoznać się z warunkami polityki prywatność przed wysłaniem formularza.'
+				}}
+				isError={errors.privacyPolicy ?? ""}>
 				Akceptuję{' '}
 				<a
 					href='/polityka-prywatnosci'

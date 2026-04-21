@@ -10,7 +10,7 @@ type FormStepHeaderProps = {
 
 export function FormStepHeader({ label, title, subtitle }: FormStepHeaderProps) {
 	return (
-		<div className='flex flex-col items-start'>
+		<div className={`flex flex-colitems-start`}>
 			<SectionLabel bgColor='bg-white'>{label}</SectionLabel>
 			<SectionTitle>{title}</SectionTitle>
 			<Subtitle>{subtitle}</Subtitle>

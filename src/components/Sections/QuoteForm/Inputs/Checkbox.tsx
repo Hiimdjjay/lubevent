@@ -8,7 +8,14 @@ type checkboxProps = {
 	register: UseFormRegister<FieldValues>;
 };
 
-export function Checkbox({ children, id, questionMark = true, register }: checkboxProps) {
+export function Checkbox({
+	children,
+	id,
+	questionMark = true,
+	register,
+	registerOptions,
+	isError
+}: checkboxProps) {
 	if (questionMark) {
 		return (
 			<div className='flex justify-between items-center bg-white rounded-xl'>
@@ -28,11 +35,14 @@ export function Checkbox({ children, id, questionMark = true, register }: checkb
 	}
 
 	return (
-		<div className='flex justify-between px-4 py-2 gap-3 items-center bg-white rounded-xl'>
-			<input id={id} type='checkbox' {...register(id)} />
-			<label htmlFor={id} className='gap-3 w-full font-semibold text-black/70 md:text-lg'>
-				{children}
-			</label>
+		<div className='flex flex-col gap-3'>
+			<div className='flex justify-between px-4 py-2 gap-3 items-center bg-white rounded-xl'>
+				<input id={id} type='checkbox' {...register(id, registerOptions)} />
+				<label htmlFor={id} className='gap-3 w-full font-semibold text-black/70 md:text-lg'>
+					{children}
+				</label>
+			</div>
+			{isError && <span className='text-sm text-red-500 '>{isError.message}</span>}
 		</div>
 	);
 }

@@ -33,8 +33,6 @@ export function FormComponent() {
 		} catch {
 			setError('root', { message: 'Wystąpił błąd, spróbuj ponownie' });
 		}
-
-		console.log(dataNoCheckbox);
 	}
 
 	return (

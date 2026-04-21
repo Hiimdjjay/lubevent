@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ButtonsSelect } from '../Inputs/ButtonsSelect';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { UseFormRegister, FieldValues, Control, Controller, UseFormSetValue } from 'react-hook-form';
+import { UseFormRegister, FieldValues, Control, Controller, UseFormSetValue, UseFormUnregister, UseFormTrigger } from 'react-hook-form';
 
 type EventOption = {
 	id: number;
@@ -15,6 +15,10 @@ type EventDetailsProps = {
 	register: UseFormRegister<FieldValues>;
 	control: Control<FieldValues>;
 	setValue: UseFormSetValue<FieldValues>;
+	unregister: UseFormUnregister<FieldValues>;
+	trigger: UseFormTrigger<FieldValues>;
+	errors: any;
+	eventType: string;
 };
 
 const eventTypeData: EventOption[] = [
@@ -38,10 +42,10 @@ const budgetData: string[] = [
 	'Nie chce podawać'
 ];
 
-export function EventDetails({ register, control, setValue, trigger, errors, eventType }: EventDetailsProps) {
-	function handleEventTypeChange() {
-		if (eventType !== 'Inne') {
-			setValue('eventType.describeEventType', '');
+export function EventDetails({ register, control, setValue, unregister, trigger, errors, eventType }: EventDetailsProps) {
+	function handleEventTypeChange(value: string) {
+		if (value !== 'Inne') {
+			unregister('eventType.describeEventType');
 		}
 	}
 
@@ -63,7 +67,9 @@ export function EventDetails({ register, control, setValue, trigger, errors, eve
 						id='eventType.describeEventType'
 						type='text'
 						placeholder='Jeśli wybrałeś inne to wpisz typ wydarzenia'
-						register={register}>
+						register={register}
+						registerOptions={{ required: 'Wpisz typ wydarzenia' }}
+						isError={errors.eventType?.describeEventType}>
 						Wpisz typ wydarzenia
 					</Input>
 				)}
@@ -93,7 +99,10 @@ export function EventDetails({ register, control, setValue, trigger, errors, eve
 					)}
 				/>
 			</div>
-			<ButtonsBox trigger={trigger} />
+			<ButtonsBox
+				trigger={trigger}
+				extraFields={eventType === 'Inne' ? ['eventType.describeEventType'] : []}
+			/>
 		</div>
 	);
 }
