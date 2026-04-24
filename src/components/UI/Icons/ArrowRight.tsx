@@ -4,7 +4,7 @@ export function ArrowRight({ color = '#1C274C', size = 20 }) {
 			<path
 				d='M4 12H20M20 12L14 6M20 12L14 18'
 				stroke={color}
-				strokeWidth='2'
+				strokeWidth='2.5'
 				strokeLinecap='round'
 				strokeLinejoin='round'
 			/>

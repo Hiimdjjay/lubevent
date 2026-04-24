@@ -21,7 +21,7 @@ export function SubpageHero() {
 						</h2>
 						<div className='flex justify-start align-center flex-wrap  gap-2 mt-2 lg:gap-4'>
 							<PrimaryButton link='/formularz'>Darmowa wycena</PrimaryButton>
-							<SecondaryButton href='/oferta' arrowRight>
+							<SecondaryButton href='/oferta' arrowRight arrowLeft>
 								Sprawdź ofertę
 							</SecondaryButton>
 						</div>
