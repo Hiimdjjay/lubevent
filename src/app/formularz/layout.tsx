@@ -1,11 +1,9 @@
-import { QuoteNav } from '@/components/Sections/QuoteForm/QuoteNav';
+import { MultiStepFormNav } from '@/components/Sections/MultiStepForm/MultiStepFormNav';
 
-export default function QuoteLayout({
-	children
-}: Readonly<{ children: React.ReactNode }>) {
+export default function QuoteLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<div>
-			<QuoteNav />
+			<MultiStepFormNav />
 			{children}
 		</div>
 	);

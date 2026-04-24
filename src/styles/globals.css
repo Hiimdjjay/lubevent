@@ -2,6 +2,7 @@
 
 @theme {
 	--color-bg-white-blur: rgba(255, 255, 255, 0.6);
+	--color-whiteSection: rgba(255, 255, 255, 1);
 	--color-bg-hero: #f3f1ef;
 	--color-bg-btn-blue: #5b78f9;
 	--color-bg-btn-purple: #764ba2;
@@ -16,7 +17,7 @@
 }
 
 body {
-	background: var(--background);
+	background: var(--color-bg-sectionLabel);
 	color: var(--foreground);
 }
 

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import { OfferAccordion } from './OfferAccordion';
-import { PrimaryButton } from '@/components/UI/PrimaryButton';
+import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Offer() {

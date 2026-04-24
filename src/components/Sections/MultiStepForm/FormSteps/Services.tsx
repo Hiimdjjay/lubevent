@@ -23,7 +23,7 @@ export function Services({ register, trigger }: ServicesProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 3 z 6' title='Usługi' subtitle='Wybierz usługi, które Cie interesują' />
-			<div className='grid grid-cols-1 gap-x-5 gap-y-5  md:grid-cols-2 '>
+			<div className='grid grid-cols-1 gap-x-5 gap-y-5 '>
 				{serviceType.map(service => (
 					<Checkbox key={service} id={service} register={register}>
 						{service}

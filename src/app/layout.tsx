@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
-export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang='pl' suppressHydrationWarning>
-			<body className={manrope.className}>{children}</body>
+			<body className={` ${manrope.className} `}>{children}</body>
 		</html>
 	);
 }

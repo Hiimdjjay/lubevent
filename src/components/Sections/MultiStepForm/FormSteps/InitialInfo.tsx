@@ -1,3 +1,4 @@
+import { SectionTitle } from '@/components/UI/SectionTitle';
 import { ButtonsBox } from '../ButtonsBox';
 
 const quoteInfo = [
@@ -8,11 +9,10 @@ const quoteInfo = [
 
 export function InitialInfo() {
 	return (
-		<div className='flex flex-col justify-center items-center gap-7'>
+		<div className='flex flex-col justify-center items-center gap-6'>
 			<div className='flex flex-col items-center gap-5'>
-				<h2 className={`font-semibold  text-black text-[22px] md:text-[28px] text-center `}>
-					Darmowa wycena wydarzenia
-				</h2>
+				<SectionTitle>Darmowa wycena</SectionTitle>
+
 				<p className='text-base font-medium text-center'>
 					Wypełnij krótki formularz, a my przygotujemy dla Ciebie spersonalizowaną wycenę, którą odeślemy do
 					Ciebie.
@@ -31,7 +31,8 @@ export function InitialInfo() {
 				})}
 			</div>
 			<p className='text-sm font-medium text-center'>
-				Zanim zaczniesz — pamiętaj, że każda pominięta informacja może utrudnić przygotowanie trafnej wyceny.
+				Zanim zaczniesz wypełniać — pamiętaj, że każda pominięta informacja może utrudnić przygotowanie
+				trafnej wyceny.
 			</p>
 			<ButtonsBox />
 		</div>

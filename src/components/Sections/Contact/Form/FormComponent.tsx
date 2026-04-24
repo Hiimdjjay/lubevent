@@ -1,7 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import Spinner from './Spinner';
+import Spinner from '../../../UI/Spinner';
 
 type Message = {
 	name: string;

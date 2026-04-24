@@ -5,7 +5,7 @@ import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Testimonials() {
 	return (
-		<section className='py-20 md:py-25 lg:py-30'>
+		<section className='py-20 md:py-25 lg:py-30 bg-whiteSection'>
 			<div className='flex flex-col gap-5 '>
 				<Wrapper>
 					<div className='flex flex-col gap-5'>

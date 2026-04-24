@@ -1,8 +1,9 @@
-import { Button } from '@/components/UI/Button';
+import { Button } from '@/components/UI/Buttons/Button';
 import { useContext } from 'react';
 import { QuoteContext } from '@/context/QuoteContext';
-import { SecondaryButton } from '@/components/UI/SecondaryButton';
+import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { FieldValues, UseFormTrigger } from 'react-hook-form';
+import Spinner from '@/components/UI/Spinner';
 
 type ButtonsBoxProps = {
 	trigger?: UseFormTrigger<FieldValues>;
@@ -20,7 +21,7 @@ const stepFields: Record<number, string[]> = {
 	3: ['eventType.eventType', 'guestsQuantity', 'eventType.budgetSelected']
 };
 
-export function ButtonsBox({ trigger, extraFields = [] }: ButtonsBoxProps) {
+export function ButtonsBox({ trigger, extraFields = [], isSubmitting }: ButtonsBoxProps) {
 	const [stepShow, setShowStep] = useContext(QuoteContext);
 
 	async function handleNext() {
@@ -47,7 +48,7 @@ export function ButtonsBox({ trigger, extraFields = [] }: ButtonsBoxProps) {
 					Wstecz
 				</Button>
 				<Button variant='primary' type='submit'>
-					Wyślij
+					{isSubmitting ? <Spinner /> : 'Wyślij'}
 				</Button>
 			</div>
 		);

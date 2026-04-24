@@ -1,5 +1,5 @@
-import { PrimaryButton } from '@/components/UI/PrimaryButton';
-import { SecondaryButton } from '@/components/UI/SecondaryButton';
+import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
+import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { HeroLabel } from './HeroLabel';
 import { MainTitle } from '../../../UI/MainTitle';
 import { ImagesCarousel } from './ImagesCarousel';
@@ -16,10 +16,10 @@ export function SubpageHero() {
 							Twoje wydarzenie. <br /> Nasza realizacja.
 						</MainTitle>
 						<h2 className='text-subtitle md:text-lg font-medium'>
-							Z pasją budujemy niepowtarzalny klimat, <br className='hidden md:block' />{' '}
-							który na długo pozostaje w pamięci naszych gości.
+							Z pasją budujemy niepowtarzalny klimat, <br className='hidden md:block' /> który na długo
+							pozostaje w pamięci naszych gości.
 						</h2>
-						<div className='flex justify-start align-center mt-2 lg:gap-4'>
+						<div className='flex justify-start align-center flex-wrap  gap-2 mt-2 lg:gap-4'>
 							<PrimaryButton link='/formularz'>Darmowa wycena</PrimaryButton>
 							<SecondaryButton href='/oferta' arrowRight>
 								Sprawdź ofertę

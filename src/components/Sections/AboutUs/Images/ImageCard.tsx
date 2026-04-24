@@ -9,8 +9,8 @@ type ImageCardProps = {
 export function ImageCard({ src, alt, quote }: ImageCardProps) {
 	return (
 		<div className='flex flex-col justify-end relative w-full h-85 p-5 rounded-2xl overflow-hidden lg:h-108'>
-			<Image src={src} fill alt={alt} className='object-cover -z-1' />
-			<div className=' flex flex-col gap-4 bg-white p-5 rounded-2xl '>
+			<Image src={src} fill alt={alt} className='object-cover' />
+			<div className=' flex flex-col gap-4 bg-white p-5 rounded-2xl z-1'>
 				<p className='font-medium lg:text-lg'>{quote}</p>
 				<div className='flex items-center gap-3 text-sm font-medium '>
 					<div className='relative w-9 h-9 rounded-full overflow-hidden '>

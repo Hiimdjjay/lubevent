@@ -26,8 +26,8 @@ export function Select({ children, id, selectData, setter, register, registerOpt
 	const { onChange, ...rest } = register(id, registerOptions);
 
 	return (
-		<div className='flex flex-col gap-2 w-full'>
-			<label htmlFor={id} className='font-semibold text-black/70 md:text-lg'>
+		<div className='flex flex-col  w-full'>
+			<label htmlFor={id} className='font-semibold text-black/70 mb-2 md:text-lg'>
 				{children}
 			</label>
 			<select
@@ -39,7 +39,7 @@ export function Select({ children, id, selectData, setter, register, registerOpt
 					onChange(e);
 					setter(e.target.value);
 				}}
-				className='bg-white font-medium px-5 py-2.5 rounded-xl border border-black/15'>
+				className='bg-white font-medium px-5 py-2.5 mb-1 rounded-xl border border-black/15 focus:outline-bg-btn-purple'>
 				{selectData.map(({ id, name }) => {
 					if (id === 0) {
 						return (
@@ -55,7 +55,7 @@ export function Select({ children, id, selectData, setter, register, registerOpt
 					);
 				})}
 			</select>
-			{isError && <span className='text-sm text-red-500'>{isError.message}</span>}
+			{isError && <span className='text-sm text-red-500 font-medium ml-1'>{isError.message}</span>}
 		</div>
 	);
 }

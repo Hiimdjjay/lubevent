@@ -1,10 +1,10 @@
 'use client';
 
 import { Logo } from '@/components/UI/Logo';
-import { SecondaryButton } from '@/components/UI/SecondaryButton';
+import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { Wrapper } from '@/components/UI/Wrapper';
 
-export function QuoteNav() {
+export function MultiStepFormNav() {
 	return (
 		<div className='fixed top-0 left-0 w-full z-50 p-4 md:py-5 lg:py-7.5'>
 			<Wrapper noPaddingX>

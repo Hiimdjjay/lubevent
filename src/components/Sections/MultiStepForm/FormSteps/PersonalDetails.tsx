@@ -17,8 +17,8 @@ export function PersonalDetails({ register, errors, trigger }: PersonalDetailsPr
 				title='Dane osobowe'
 				subtitle='Podaj swoje dane osobowe oraz kontaktowe'
 			/>
-			<div className='flex flex-col gap-5'>
-				<div className='flex flex-col justify-between gap-5 md:flex-row'>
+			<div className='flex flex-col gap-2'>
+				<div className='flex flex-col justify-between gap-2 md:flex-row'>
 					<Input
 						id='personalDetails.name'
 						type='text'

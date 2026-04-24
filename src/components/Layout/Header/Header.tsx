@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { BurgerButton } from './BurgerButton';
 import { usePathname } from 'next/navigation';
-import { PrimaryButton } from '@/components/UI/PrimaryButton';
+import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { Logo } from '../../UI/Logo';
 import { DesktopNav } from './DesktopNav';
 import { SocialMedias } from './SocialMedias';
@@ -18,7 +18,7 @@ export function Header() {
 			<div className='flex items-center justify-between mx-auto max-w-325 p-3 rounded-lg bg-bg-white-blur backdrop-blur-md border border-white/40 shadow-lg md:p-3.5 lg:grid lg:grid-cols-[1fr_auto_1fr]'>
 				<Logo setOpen={setOpen} size='h-8.5 md:h-10.5 ' />
 				<DesktopNav activePath={activePath} />
-				<div className='hidden lg:block lg:justify-self-end'>
+				<div className='hidden lg:flex lg:justify-self-end'>
 					<PrimaryButton link='/formularz'>Darmowa Wycena</PrimaryButton>
 				</div>
 				<div className='flex justify-center items-center lg:hidden'>
@@ -26,7 +26,7 @@ export function Header() {
 				</div>
 			</div>
 			<div
-				className={`mt-3 rounded-lg origin-top overflow-hidden transition-all duration-300 ease-out lg:hidden ${open ? 'max-h-150 opacity-100  translate-y-0' : 'max-h-0 opacity-0 -translate-y-3 pointer-events-none'}`}>
+				className={`overflow-hidden mt-3 rounded-lg origin-top  transition-all duration-300 ease-out lg:hidden ${open ? 'max-h-150 opacity-100  translate-y-0' : 'max-h-0 opacity-0 -translate-y-3 pointer-events-none'}`}>
 				<div className='bg-bg-white-blur backdrop-blur-md border border-white/40 shadow-lg rounded-lg'>
 					<div
 						className={`flex flex-col items-center gap-4 p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 delay-250' : 'opacity-0 -translate-y-2'}`}>

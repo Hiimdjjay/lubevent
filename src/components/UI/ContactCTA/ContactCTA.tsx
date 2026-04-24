@@ -1,5 +1,5 @@
-import { PrimaryButton } from '@/components/UI/PrimaryButton';
-import { SecondaryButton } from '@/components/UI/SecondaryButton';
+import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
+import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ export function ContactCTA() {
 			<Wrapper>
 				<div className='flex flex-col gap-3 items-center'>
 					<SectionLabel bgColor='bg-white'>Zacznijmy współpracę</SectionLabel>
-					<div className="max-w-90 md:max-w-100 lg:max-w-160">
+					<div className='max-w-90 md:max-w-100 lg:max-w-160'>
 						<SectionTitle textCenter textColor>
 							Zorganizujemy Twoje wydarzenie bez chaosu i niedomówień.
 						</SectionTitle>

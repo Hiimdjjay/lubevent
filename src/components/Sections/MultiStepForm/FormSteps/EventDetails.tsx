@@ -4,7 +4,15 @@ import { useState } from 'react';
 import { ButtonsSelect } from '../Inputs/ButtonsSelect';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { UseFormRegister, FieldValues, Control, Controller, UseFormSetValue, UseFormUnregister, UseFormTrigger } from 'react-hook-form';
+import {
+	UseFormRegister,
+	FieldValues,
+	Control,
+	Controller,
+	UseFormSetValue,
+	UseFormUnregister,
+	UseFormTrigger
+} from 'react-hook-form';
 
 type EventOption = {
 	id: number;
@@ -42,7 +50,15 @@ const budgetData: string[] = [
 	'Nie chce podawać'
 ];
 
-export function EventDetails({ register, control, setValue, unregister, trigger, errors, eventType }: EventDetailsProps) {
+export function EventDetails({
+	register,
+	control,
+	setValue,
+	unregister,
+	trigger,
+	errors,
+	eventType
+}: EventDetailsProps) {
 	function handleEventTypeChange(value: string) {
 		if (value !== 'Inne') {
 			unregister('eventType.describeEventType');
@@ -50,9 +66,9 @@ export function EventDetails({ register, control, setValue, unregister, trigger,
 	}
 
 	return (
-		<div className='flex flex-col gap-5'>
+		<div className='flex flex-col gap-5 '>
 			<FormStepHeader label='Krok 3 z 6' title='Rodzaj wydarzenia' subtitle='Opisz nam swoje wydarzenie' />
-			<div className='flex flex-col gap-5'>
+			<div className='flex flex-col gap-5 '>
 				<Select
 					id='eventType.eventType'
 					selectData={eventTypeData}

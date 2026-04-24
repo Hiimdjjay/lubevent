@@ -2,7 +2,13 @@ import { Input } from '../Inputs/Input';
 import { Select } from '../Inputs/Select';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { FieldValues, UseFormRegister, UseFormSetValue, UseFormTrigger, UseFormUnregister } from 'react-hook-form';
+import {
+	FieldValues,
+	UseFormRegister,
+	UseFormSetValue,
+	UseFormTrigger,
+	UseFormUnregister
+} from 'react-hook-form';
 
 type PlaceAndDateProps = {
 	register: UseFormRegister<FieldValues>;
@@ -18,7 +24,7 @@ const placeData = [
 	{ id: 2, name: 'Nie, miejsce nie jest jeszcze wybrane' },
 	{ id: 3, name: 'Nie chce podawać miejsca' }
 ];
-export function PlaceAndDate({ register, setValue, unregister, errors, trigger, place }: PlaceAndDateProps) {
+export function PlaceAndDate({ register, unregister, errors, trigger, place }: PlaceAndDateProps) {
 	function handlePlaceName(value: string) {
 		if (value !== 'Tak, miejsce jest wybrane') {
 			unregister('place.place');
@@ -29,7 +35,7 @@ export function PlaceAndDate({ register, setValue, unregister, errors, trigger, 
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 2 z 6' title='Miejsce i data' subtitle='Opisz nam swoje wydarzenie' />
-			<div className='flex flex-col gap-5'>
+			<div className='flex flex-col gap-2'>
 				<Input
 					id='date'
 					type='date'

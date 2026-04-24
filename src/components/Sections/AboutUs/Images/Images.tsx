@@ -3,9 +3,9 @@ import { ImageCard } from './ImageCard';
 
 export function Images() {
 	return (
-		<section className='pb-20 md:pb-25 lg:pb-30'>
+		<section className='pb-20 md:pb-25 lg:pb-30 bg-whiteSection'>
 			<Wrapper>
-				<div className='flex flex-col gap-5 md:flex-row'>
+				<div className='flex flex-col gap-5 md:flex-row '>
 					<ImageCard
 						src='/Photos/Team.png'
 						alt='Grupa ludzi obmawiających plan imprezy.'

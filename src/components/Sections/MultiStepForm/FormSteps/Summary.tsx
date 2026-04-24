@@ -9,7 +9,7 @@ type SummaryProps = {
 	errors: any;
 };
 
-export function Summary({ summaryData, register, errors }: SummaryProps) {
+export function Summary({ summaryData, register, errors, isSubmitting }: SummaryProps) {
 	return (
 		<div className='flex flex-col gap-5'>
 			<FormStepHeader label='Krok 6 z 6' title='Podsumowanie' subtitle='Sprawdź swoje dane' />
@@ -47,9 +47,10 @@ export function Summary({ summaryData, register, errors }: SummaryProps) {
 				questionMark={false}
 				register={register}
 				registerOptions={{
-					required: 'Musisz zapoznać się z warunkami polityki prywatność przed wysłaniem formularza.'
+					required:
+						'Musisz zapoznać się i zaakceptować warunkami polityki prywatność przed wysłaniem formularza.'
 				}}
-				isError={errors.privacyPolicy ?? ""}>
+				isError={errors.privacyPolicy ?? ''}>
 				Akceptuję{' '}
 				<a
 					href='/polityka-prywatnosci'
@@ -59,7 +60,7 @@ export function Summary({ summaryData, register, errors }: SummaryProps) {
 				</a>
 				. Zgadzam się na przetwarzanie moich danych w celu wykonania wyceny.
 			</Checkbox>
-			<ButtonsBox />
+			<ButtonsBox isSubmitting={isSubmitting} />
 		</div>
 	);
 }

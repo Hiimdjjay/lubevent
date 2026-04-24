@@ -22,8 +22,8 @@ export function Input({
 	isError
 }: InputProps) {
 	return (
-		<div className='flex flex-col gap-2 w-full'>
-			<label htmlFor={id} className='font-semibold text-black/70 md:text-lg'>
+		<div className='flex flex-col w-full'>
+			<label htmlFor={id} className='font-semibold text-black/70 md:text-lg mb-2'>
 				{children}
 			</label>
 			<input
@@ -31,10 +31,10 @@ export function Input({
 				type={type}
 				autoComplete={autoComplete}
 				placeholder={placeholder}
-				className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
+				className='box-border font-medium px-4 py-2.5  mb-1 w-full max-w-full rounded-xl border bg-white text-black/60  border-black/15 placeholder-black/50 focus:outline-bg-btn-purple'
 				{...register(id, registerOptions)}
 			/>
-			{isError && <span className='text-sm text-red-500 '>{isError.message}</span>}
+			{isError && <span className='text-sm text-red-500 font-medium ml-1'>{isError.message}</span>}
 		</div>
 	);
 }

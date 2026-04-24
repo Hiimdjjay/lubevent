@@ -25,29 +25,7 @@ export function Form() {
 		formState: { errors, isSubmitting, isSubmitSuccessful },
 		trigger
 	} = useForm<FieldValues>({
-		mode: 'onChange',
-		defaultValues: {
-			personalDetails: {
-				name: 'Jan',
-				surname: 'Kowalski',
-				email: 'jan@kowalski.pl',
-				telephone: '500200100',
-				companyName: ''
-			},
-			date: '2026-08-15',
-			place: {
-				isPlaceChoosed: 'Tak, miejsce jest wybrane',
-				place: 'Lublin',
-				venuePlace: 'Rezydencja w szczerym polu'
-			},
-			eventType: {
-				eventType: 'Wesele',
-				budgetSelected: '15 000-30 000 zł'
-			},
-			guestsQuantity: '150',
-			message: 'Testowa wiadomość',
-			privacyPolicy: true
-		}
+		mode: 'onChange'
 	});
 
 	const watchedData = watch();
@@ -135,7 +113,7 @@ export function Form() {
 
 	return (
 		<QuoteContext.Provider value={[showStep, setShowStep]}>
-			<div className='flex flex-col gap-5 bg-white l p-5 rounded-2xl md:p-10'>
+			<div className='flex flex-col gap-5 bg-white p-5 rounded-2xl md:p-10'>
 				<form
 					onSubmit={handleSubmit(data => onSubmit(data))}
 					noValidate
@@ -165,7 +143,14 @@ export function Form() {
 					)}
 					{showStep === 4 && <Services register={register} trigger={trigger} />}
 					{showStep === 5 && <AdditionalMessage register={register} trigger={trigger} />}
-					{showStep === 6 && <Summary summaryData={summaryData} register={register} errors={errors} />}
+					{showStep === 6 && (
+						<Summary
+							summaryData={summaryData}
+							register={register}
+							errors={errors}
+							isSubmitting={isSubmitting}
+						/>
+					)}
 				</form>
 			</div>
 		</QuoteContext.Provider>
