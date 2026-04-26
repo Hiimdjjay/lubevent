@@ -41,7 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # email
-.env.local
+# .env.local
 
 # other
 BRIEF.md
