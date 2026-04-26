@@ -3,9 +3,9 @@ import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import Image from 'next/image';
-import { Wrapper } from '../Wrapper';
+import { Wrapper } from '@/components/UI/Wrapper';
 
-export function ContactCTA() {
+export function CtaSection() {
 	return (
 		<section className='relative py-20 md:py-30 lg:py-40'>
 			<Image
@@ -24,8 +24,8 @@ export function ContactCTA() {
 						</SectionTitle>
 					</div>
 					<div className='flex flex-col justify-center items-center gap-y-3 mt-3 md:flex-row md:gap-x-5 md:mt-6'>
-						<PrimaryButton link='/formularz'>Darmowa Wycena</PrimaryButton>
-						<SecondaryButton textWhite href='/kontakt'>
+						<PrimaryButton path='/formularz'>Darmowa Wycena</PrimaryButton>
+						<SecondaryButton textWhite path='/kontakt'>
 							Skontaktuj się
 						</SecondaryButton>
 					</div>

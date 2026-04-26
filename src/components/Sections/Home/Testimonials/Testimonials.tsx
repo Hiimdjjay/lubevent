@@ -13,8 +13,8 @@ export function Testimonials() {
 							<SectionLabel bgColor='bg-bg-sectionLabel'>Zaufali nam</SectionLabel>
 							<div className='w-[80%]'>
 								<SectionTitle>
-									Kiedy światła gasną, zostają opinie. <br className='hidden lg:inline' />
-									Sprawdź je.
+									Kiedy światła gasną,
+									<br className='hidden lg:inline' /> zostają opinie. Sprawdź je.
 								</SectionTitle>
 							</div>
 						</div>

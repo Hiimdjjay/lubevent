@@ -42,3 +42,6 @@ next-env.d.ts
 
 # email
 .env.local
+
+# other
+BRIEF.md

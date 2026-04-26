@@ -12,7 +12,7 @@ export function Submitted() {
 			<SectionTitle>Wysłane!</SectionTitle>
 			<Subtitle>Twój formularz został wysłany poprawnie.</Subtitle>
 			<div className='mt-5'>
-				<PrimaryButton link={'/'}>Wróć na stronę główną</PrimaryButton>
+				<PrimaryButton path={'/'}>Wróć na stronę główną</PrimaryButton>
 			</div>
 		</div>
 	);

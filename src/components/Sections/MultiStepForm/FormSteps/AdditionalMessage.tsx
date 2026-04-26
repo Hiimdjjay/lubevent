@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { FormStepHeader } from '../FormStepHeader';
 import { Input } from '../Inputs/Input';
 import { Textarea } from '../Inputs/Textarea';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import { FieldValues, UseFormRegister, UseFormTrigger } from 'react-hook-form';
 
 type AdditionalMessageProps = {
 	register: UseFormRegister<FieldValues>;
+	trigger: UseFormTrigger<FieldValues>;
 };
 
 const referralData = [
@@ -18,7 +19,7 @@ const referralData = [
 	{ id: 4, name: 'Inne' }
 ];
 
-export function AdditionalMessage({ register }: AdditionalMessageProps) {
+export function AdditionalMessage({ register, trigger }: AdditionalMessageProps) {
 	const [referralOption, setReferralOption] = useState('');
 	return (
 		<div className='flex flex-col gap-5'>
@@ -40,7 +41,7 @@ export function AdditionalMessage({ register }: AdditionalMessageProps) {
 					</Input>
 				)}
 			</div>
-			<ButtonsBox />
+			<ButtonsBox trigger={trigger} />
 		</div>
 	);
 }

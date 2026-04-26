@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-type ButtonsProps = {
+type TestimonialsButtonsProps = {
 	value: number;
 	setValue: React.Dispatch<React.SetStateAction<number>>;
 	totalLength: number;
 };
 
-export function Buttons({ setValue, totalLength }: ButtonsProps) {
+export function TestimonialsButtons({ setValue, totalLength }: TestimonialsButtonsProps) {
 	return (
 		<div className='flex justify-center gap-5 mt-10'>
 			<button

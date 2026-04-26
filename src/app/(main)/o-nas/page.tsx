@@ -3,7 +3,7 @@ import { Description } from '@/components/Sections/AboutUs/Description/Descripti
 import { Images } from '@/components/Sections/AboutUs/Images/Images';
 import { Team } from '@/components/Sections/AboutUs/Team/Team';
 import { SubpageHero } from '@/components/Sections/AboutUs/SubpageHero/SubpageHero';
-import { ContactCTA } from '@/components/UI/ContactCTA/ContactCTA';
+import { CtaSection } from '@/components/UI/CtaSection/CtaSection';
 
 export default function AboutUs() {
 	return (
@@ -13,7 +13,7 @@ export default function AboutUs() {
 			<Images />
 			<Achivements />
 			<Team />
-			<ContactCTA />
+			<CtaSection />
 		</main>
 	);
 }

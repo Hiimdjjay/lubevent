@@ -8,6 +8,7 @@ import Spinner from '@/components/UI/Spinner';
 type ButtonsBoxProps = {
 	trigger?: UseFormTrigger<FieldValues>;
 	extraFields?: string[];
+	isSubmitting?: boolean;
 };
 
 const stepFields: Record<number, string[]> = {
@@ -36,7 +37,7 @@ export function ButtonsBox({ trigger, extraFields = [], isSubmitting }: ButtonsB
 				<Button variant='primary' onClick={() => setShowStep(prev => prev + 1)}>
 					Rozpocznij wycenę
 				</Button>
-				<SecondaryButton href='/'>Wróć na stronę główną</SecondaryButton>
+				<SecondaryButton path='/'>Wróć na stronę główną</SecondaryButton>
 			</div>
 		);
 	}

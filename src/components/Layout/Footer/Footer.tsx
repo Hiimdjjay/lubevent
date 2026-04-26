@@ -2,7 +2,7 @@
 import { Logo } from '../../UI/Logo';
 import { usePathname } from 'next/navigation';
 import { SocialForFooter } from './SocialForFooter';
-import { NavForFooter } from './NavForFooter';
+import { FooterNav } from './FooterNav';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
 					<div className='mb-8 '>
 						<Logo size='h-12 md:h-16 lg:h-18' />
 					</div>
-					<NavForFooter activePath={activePath} />
+					<FooterNav activePath={activePath} />
 				</div>
 				<div>
 					<hr className='mt-10 mb-5 text-black/20 md:mt-15 lg:mt-25' />

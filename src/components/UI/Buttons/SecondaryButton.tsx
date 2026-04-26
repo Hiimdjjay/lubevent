@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { ArrowRight } from '@/components/UI/Icons/ArrowRight';
-import { MoveLeft } from 'lucide-react';
+import { ArrowLeft } from '@/components/UI/Icons/ArrowLeft';
 
 type SecondaryButtonProps = {
 	children: React.ReactNode;
-	href: string;
+	path: string;
 	textWhite?: boolean;
 	arrowRight?: boolean;
 	arrowLeft?: boolean;
@@ -12,18 +12,18 @@ type SecondaryButtonProps = {
 
 export function SecondaryButton({
 	children,
-	href,
+	path,
 	textWhite = false,
 	arrowRight = false,
 	arrowLeft = false
 }: SecondaryButtonProps) {
 	return (
 		<Link
-			href={href}
+			href={path}
 			className={`group relative flex items-center gap-1 font-bold py-3 px-4 w-fit ${textWhite ? 'text-white' : 'text-black'} `}>
 			{arrowLeft && (
 				<span className='flex justify-center items-center'>
-					<MoveLeft size={22} strokeWidth={1.5} />{' '}
+					<ArrowLeft />
 				</span>
 			)}
 

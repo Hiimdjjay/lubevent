@@ -9,24 +9,12 @@ export type SocialItem = {
 	icon: 'instagram' | 'facebook';
 };
 
-export type FooterNav = {
-	name: string;
-	path: string;
-};
-
-export const NavItems: NavItem[] = [
+export const navigation: NavItem[] = [
 	{ name: 'Home', path: '/' },
 	{ name: 'O nas', path: '/o-nas' },
-	{ name: 'Oferta', path: '/oferta' },
-	{ name: 'Kontakt', path: '/kontakt' }
-];
-
-export const footerNav: FooterNav[] = [
-	{ name: 'Home', path: '/' },
-	{ name: 'O nas', path: '/o-nas' },
-	{ name: 'Oferta', path: '/oferta' },
+	{ name: 'Usługi', path: '/uslugi' },
 	{ name: 'Kontakt', path: '/kontakt' },
-	{ name: 'Polityka prywatności', path: '/polityka-prywatności' },
+	{ name: 'Polityka prywatności', path: '/polityka-prywatnosci' },
 	{ name: 'Regulamin', path: '/regulamin' },
 	{ name: '404', path: '/404' }
 ];

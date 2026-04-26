@@ -1,4 +1,4 @@
-import { FieldValues, RegisterOptions, UseFormRegister, UseFormSetError } from 'react-hook-form';
+import { FieldError, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 
 type InputProps = {
 	children: React.ReactNode;
@@ -8,7 +8,7 @@ type InputProps = {
 	autoComplete?: string;
 	registerOptions?: RegisterOptions;
 	register: UseFormRegister<FieldValues>;
-	isError?: UseFormSetError<FieldValues>;
+	isError?: FieldError;
 };
 
 export function Input({

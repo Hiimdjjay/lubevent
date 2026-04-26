@@ -1,11 +1,11 @@
 import { Input } from '../Inputs/Input';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { UseFormRegister, FieldValues, UseFormTrigger, UseFormSetError } from 'react-hook-form';
+import { UseFormRegister, FieldValues, UseFormTrigger } from 'react-hook-form';
 
 type PersonalDetailsProps = {
 	register: UseFormRegister<FieldValues>;
-	errors: UseFormSetError<FieldValues>;
+	errors: any;
 	trigger: UseFormTrigger<FieldValues>;
 };
 

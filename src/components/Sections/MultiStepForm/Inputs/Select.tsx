@@ -1,10 +1,4 @@
-import {
-	FieldValues,
-	RegisterOptions,
-	UseFormRegister,
-	UseFormSetError,
-	UseFormTrigger
-} from 'react-hook-form';
+import { FieldError, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 
 type Event = {
 	id: number;
@@ -16,10 +10,10 @@ type InputProps = {
 	id: string;
 	selectData: Event[];
 	placeholder?: string;
-	setter: React.Dispatch<React.SetStateAction<any>>;
+	setter: (value: string) => void;
 	register: UseFormRegister<FieldValues>;
 	registerOptions?: RegisterOptions;
-	isError?: UseFormSetError<FieldValues>;
+	isError?: FieldError;
 };
 
 export function Select({ children, id, selectData, setter, register, registerOptions, isError }: InputProps) {

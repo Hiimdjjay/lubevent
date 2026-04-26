@@ -1,4 +1,4 @@
-import { NavItems } from '../../../constans/navigation';
+import { navigation } from '../../../constans/navigation';
 import Link from 'next/link';
 
 type ActivePathProps = {
@@ -9,7 +9,7 @@ type ActivePathProps = {
 export function MobileNav({ activePath, setOpen }: ActivePathProps) {
 	return (
 		<nav className='flex flex-col items-center gap-4'>
-			{NavItems.map(({ name, path }) => {
+			{navigation.slice(0,4).map(({ name, path }) => {
 				return (
 					<Link
 						key={name}

@@ -19,7 +19,7 @@ export function Header() {
 				<Logo setOpen={setOpen} size='h-8.5 md:h-10.5 ' />
 				<DesktopNav activePath={activePath} />
 				<div className='hidden lg:flex lg:justify-self-end'>
-					<PrimaryButton link='/formularz'>Darmowa Wycena</PrimaryButton>
+					<PrimaryButton path='/formularz'>Darmowa Wycena</PrimaryButton>
 				</div>
 				<div className='flex justify-center items-center lg:hidden'>
 					<BurgerButton open={open} setOpen={setOpen} />
@@ -31,7 +31,7 @@ export function Header() {
 					<div
 						className={`flex flex-col items-center gap-4 p-3 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 delay-250' : 'opacity-0 -translate-y-2'}`}>
 						<MobileNav activePath={activePath} setOpen={setOpen} />
-						<PrimaryButton onClick={() => setOpen(false)} link='/formularz'>
+						<PrimaryButton onClick={() => setOpen(false)} path='/formularz'>
 							Darmowa Wycena
 						</PrimaryButton>
 						<SocialMedias />

@@ -30,6 +30,6 @@
 		".next/types/**/*.ts",
 		".next/dev/types/**/*.ts",
 		"**/*.mts"
-	],
+, "src/constans/Icons/ArrowRight.tsx", "src/constans/Icons/ArrowLeft.ts"	],
 	"exclude": ["node_modules"]
 }

@@ -4,15 +4,8 @@ type SubtitleProps = {
 	textSize?: string;
 };
 
-export function Subtitle({
-	children,
-	textCenter = false,
-	textSize = 'text-base'
-}: SubtitleProps) {
+export function Subtitle({ children, textCenter = false, textSize = 'text-base' }: SubtitleProps) {
 	return (
-		<p
-			className={`font-semibold text-black/70 ${textCenter && 'text-center'} ${textSize} `}>
-			{children}
-		</p>
+		<p className={`font-semibold text-black/70 ${textCenter && 'text-center'} ${textSize} `}>{children}</p>
 	);
 }

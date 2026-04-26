@@ -16,6 +16,7 @@ export function Form() {
 	const [showStep, setShowStep] = useState<number>(0);
 
 	const {
+		
 		register,
 		handleSubmit,
 		control,
@@ -123,7 +124,6 @@ export function Form() {
 					{showStep === 2 && (
 						<PlaceAndDate
 							register={register}
-							setValue={setValue}
 							unregister={unregister}
 							errors={errors}
 							trigger={trigger}

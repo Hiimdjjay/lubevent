@@ -11,7 +11,7 @@ export function MultiStepFormNav() {
 				<div className='flex items-center justify-between rounded-lg p-3 bg-bg-white-blur backdrop-blur-md border border-white/40 shadow-lg md:p-3.5 '>
 					<Logo size='h-8.5 md:h-10.5 ' />
 					<div className='flex justify-center items-center '>
-						<SecondaryButton href='/' arrowLeft>
+						<SecondaryButton path='/' arrowLeft>
 							Wyjście
 						</SecondaryButton>
 					</div>

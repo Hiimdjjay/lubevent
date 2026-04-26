@@ -7,6 +7,7 @@ type SummaryProps = {
 	summaryData: any;
 	register: UseFormRegister<FieldValues>;
 	errors: any;
+	isSubmitting: boolean;
 };
 
 export function Summary({ summaryData, register, errors, isSubmitting }: SummaryProps) {

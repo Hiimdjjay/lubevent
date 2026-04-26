@@ -1,5 +1,3 @@
-'use client';
-
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Video() {
@@ -12,7 +10,7 @@ export function Video() {
 					</video>
 					<div className='absolute inset-0 bg-black/35'></div>
 					<div className='max-w-325 m-auto w-full lg:px-7.5'>
-						<h2 className='relative z-10 text-white text-xl font-semibold md:text-[32px] md:max-w-112 lg:max-w-155 lg:text-[44px]'>
+						<h2 className='relative z-10 text-white text-xl font-semibold md:text-[32px] md:max-w-md lg:max-w-155 lg:text-[44px]'>
 							Każde wydarzenie zasługuje na coś wyjątkowego
 							<span className='absolute -left-4 bottom-0 w-1 h-full bg-linear-to-b from-bg-btn-blue to-bg-btn-purple '></span>
 						</h2>

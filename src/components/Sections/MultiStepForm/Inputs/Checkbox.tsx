@@ -1,13 +1,13 @@
 import { CircleQuestionMark } from 'lucide-react';
-import { FieldValues, UseFormRegister, UseFormSetError } from 'react-hook-form';
+import { FieldError, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
 
 type checkboxProps = {
 	children: React.ReactNode;
 	id: string;
 	questionMark?: boolean;
 	register: UseFormRegister<FieldValues>;
-	registerOptions: UseFormRegister<FieldValues>;
-	isError: UseFormSetError<FieldValues>;
+	registerOptions?: RegisterOptions<FieldValues>;
+	isError?: FieldError;
 };
 
 export function Checkbox({

@@ -2,20 +2,14 @@ import { Input } from '../Inputs/Input';
 import { Select } from '../Inputs/Select';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import {
-	FieldValues,
-	UseFormRegister,
-	UseFormSetValue,
-	UseFormTrigger,
-	UseFormUnregister
-} from 'react-hook-form';
+import { FieldValues, UseFormRegister, UseFormTrigger, UseFormUnregister } from 'react-hook-form';
 
 type PlaceAndDateProps = {
 	register: UseFormRegister<FieldValues>;
-	setValue: UseFormSetValue<FieldValues>;
 	unregister: UseFormUnregister<FieldValues>;
 	errors: any;
 	trigger: UseFormTrigger<FieldValues>;
+	place: string;
 };
 
 const placeData = [

@@ -1,6 +1,6 @@
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
-import { Cards } from './Cards';
+import { AboutUsCards } from './AboutUsCards';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function AboutsUs() {
@@ -15,7 +15,7 @@ export function AboutsUs() {
 						</SectionTitle>
 					</div>
 					<div className='lg:w-1/2'>
-						<Cards />
+						<AboutUsCards />
 					</div>
 				</div>
 			</Wrapper>
