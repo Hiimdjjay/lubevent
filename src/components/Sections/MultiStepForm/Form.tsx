@@ -16,7 +16,6 @@ export function Form() {
 	const [showStep, setShowStep] = useState<number>(0);
 
 	const {
-		
 		register,
 		handleSubmit,
 		control,
@@ -33,62 +32,55 @@ export function Form() {
 
 	const summaryData = [
 		{
-			id: 1,
 			title: 'Dane osobowe oraz kontaktowe',
 			data: [
 				{
-					id: 1,
 					label: 'Imię i nazwisko:',
 					data: `${watchedData.personalDetails?.name ?? ''} ${watchedData.personalDetails?.surname ?? ''}`
 				},
-				{ id: 2, label: 'Email:', data: `${watchedData.personalDetails?.email ?? ''}` },
-				{ id: 3, label: 'Numer telefonu:', data: `${watchedData.personalDetails?.telephone ?? ''}` },
-				{ id: 4, label: 'Nazwa firmy:', data: `${watchedData.personalDetails?.companyName ?? ''}` }
+				{ label: 'Email:', data: `${watchedData.personalDetails?.email ?? ''}` },
+				{ label: 'Numer telefonu:', data: `${watchedData.personalDetails?.telephone ?? ''}` },
+				{ label: 'Nazwa firmy:', data: `${watchedData.personalDetails?.companyName ?? ''}` }
 			]
 		},
 		{
-			id: 2,
 			title: 'Miejsce i data',
 			data: [
-				{ id: 1, label: 'Data:', data: `${watchedData.date ?? ''}` },
-				{ id: 2, label: 'Miejsce:', data: `${watchedData.place?.isPlaceChoosed ?? ''}` },
-				{ id: 3, label: 'Miejscowość:', data: `${watchedData.place?.place ?? ''}` },
-				{ id: 4, label: 'Adres / nazwa:', data: `${watchedData.place?.venuePlace ?? ''}` }
+				{ label: 'Data:', data: `${watchedData.date ?? ''}` },
+				{ label: 'Miejsce:', data: `${watchedData.place?.isPlaceChoosed ?? ''}` },
+				{ label: 'Miejscowość:', data: `${watchedData.place?.place ?? ''}` },
+				{ label: 'Adres / nazwa:', data: `${watchedData.place?.venuePlace ?? ''}` }
 			]
 		},
 		{
-			id: 3,
 			title: 'Rodzaj wydarzenia',
 			data: [
-				{ id: 1, label: 'Rodzaj wydarzenia:', data: `${watchedData.eventType?.eventType ?? ''}` },
-				{ id: 2, label: 'Jeśli inne to:', data: `${watchedData.eventType?.describeEventType ?? ''}` },
-				{ id: 3, label: 'Budżet:', data: `${watchedData.eventType?.budgetSelected ?? ''}` },
-				{ id: 4, label: 'Liczba gości:', data: `${watchedData.guestsQuantity ?? ''}` }
+				{ label: 'Rodzaj wydarzenia:', data: `${watchedData.eventType?.eventType ?? ''}` },
+				{ label: 'Jeśli inne to:', data: `${watchedData.eventType?.describeEventType ?? ''}` },
+				{ label: 'Budżet:', data: `${watchedData.eventType?.budgetSelected ?? ''}` },
+				{ label: 'Liczba gości:', data: `${watchedData.guestsQuantity ?? ''}` }
 			]
 		},
 
 		{
-			id: 4,
 			title: 'Usługi',
 			data: [
 				{
-					id: 13,
 					label: 'Usługi:',
 					data: Object.entries(watchedData.services ?? {})
 						.filter(([key, value]) => key !== 'additionalService' && value === true)
 						.map(([key]) => key)
 						.join(', ')
 				},
-				{ id: 14, label: 'Dodatkowe usługi:', data: `${watchedData.services?.additionalService ?? ''}` }
+				{ label: 'Dodatkowe usługi:', data: `${watchedData.services?.additionalService ?? ''}` }
 			]
 		},
 		{
-			id: 5,
 			title: 'Informacje dodatkowe',
 			data: [
-				{ id: 1, label: 'Wiadomość:', data: `${watchedData.message ?? ''}` },
-				{ id: 2, label: 'Skąd o nas usłyszałeś:', data: `${watchedData.referralSource ?? ''}` },
-				{ id: 3, label: 'Jeśli inne to skąd:', data: `${watchedData.additionalReferralSource ?? ''}` }
+				{ label: 'Wiadomość:', data: `${watchedData.message ?? ''}` },
+				{ label: 'Skąd o nas usłyszałeś:', data: `${watchedData.referralSource ?? ''}` },
+				{ label: 'Jeśli inne to skąd:', data: `${watchedData.additionalReferralSource ?? ''}` }
 			]
 		}
 	];

@@ -4,9 +4,9 @@ export function ArrowLeft({ color = '#000', size = 20 }) {
 			<path
 				d='M20 12H4M4 12L10 6M4 12L10 18'
 				stroke={color}
-				stroke-width='2.5'
-				stroke-linecap='round'
-				stroke-linejoin='round'
+				strokeWidth='2.5'
+				strokeLinecap='round'
+				strokeLinejoin='round'
 			/>
 		</svg>
 	);
