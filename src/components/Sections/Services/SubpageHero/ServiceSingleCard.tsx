@@ -26,7 +26,7 @@ export function ServiceSingleCard({ card: { title, subtitle, category, image, al
 			<div className='flex flex-col gap-4 p-2'>
 				<div className='flex flex-col gap-1'>
 					<h3 className='text-xl font-semibold'>{title}</h3>
-					<p className='font-medium text-black/60'>{subtitle}</p>
+					<p className='font-medium text-black/70'>{subtitle}</p>
 				</div>
 				<div className='self-center'>
 					<SecondaryButton path={path} arrowRight>
