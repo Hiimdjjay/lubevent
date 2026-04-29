@@ -79,3 +79,9 @@ export const experienceCardsData: CardData[] = [
 		className: 'text-white bg-black md:col-start-3 md:col-end-4 md:row-start-3 md:row-end-4'
 	}
 ];
+
+export const startingStepsData = [
+	'Złóż wniosek o darmową wycenę',
+	'Poczekaj do 24h na odpowiedź',
+	'Podjęcie decyzji na współprace'
+];

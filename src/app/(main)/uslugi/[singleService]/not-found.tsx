@@ -1,6 +1,5 @@
 import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
-import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import { Subtitle } from '@/components/UI/Subtitle';
 import { SearchAlert } from 'lucide-react';
@@ -20,7 +19,7 @@ export default function NotFound() {
 					</Subtitle>
 				</div>
 				<div className='flex flex-col items-center gap-2 mt-5 md:flex-row'>
-					<PrimaryButton path='/services'>Dostępne usługi</PrimaryButton>
+					<PrimaryButton path='/uslugi'>Dostępne usługi</PrimaryButton>
 					<SecondaryButton path='/' arrowLeft>
 						Strona główna
 					</SecondaryButton>

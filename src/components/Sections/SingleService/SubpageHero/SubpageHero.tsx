@@ -3,17 +3,17 @@ import { Subtitle } from '@/components/UI/Subtitle';
 import { Wrapper } from '@/components/UI/Wrapper';
 import Image from 'next/image';
 
-export function SubpageHero() {
+export function SubpageHero({ subpageData: { title, subtitle, image, alt } }) {
 	return (
-		<section className='pt-30 pb-20 md:pt-45 md:pb-25 lg:pt-60 lg:pb-30'>
+		<section className='pt-30 pb-10 md:pt-45 md:pb-12 lg:pt-60 lg:pb-15'>
 			<Wrapper>
-				<div>
+				<div className='flex flex-col gap-5 md:gap-8 lg:gap-10'>
 					<div className='flex flex-col gap-5'>
-						<MainTitle textCenter>Tytuł</MainTitle>
-						<Subtitle textCenter>Podtytuł</Subtitle>
+						<MainTitle textCenter>{title}</MainTitle>
+						<Subtitle textCenter>{subtitle}</Subtitle>
 					</div>
-					<div className=' w-full aspect-4/3'>
-						{/* <Image src={src} alt={alt} fill className='object-cover' /> */}
+					<div className='relative w-full aspect-6/3 rounded-3xl overflow-hidden'>
+						<Image src={image} alt={alt} fill className='object-cover' />
 					</div>
 				</div>
 			</Wrapper>

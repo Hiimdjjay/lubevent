@@ -1,3 +1,4 @@
+import { Description } from '@/components/Sections/SingleService/Description/Description';
 import { SubpageHero } from '@/components/Sections/SingleService/SubpageHero/SubpageHero';
 import { servicesData } from '@/constans/servicesData';
 import { notFound } from 'next/navigation';
@@ -11,10 +12,8 @@ export default async function Service({ params }: { params: Promise<{ singleServ
 
 	return (
 		<main>
-			<SubpageHero></SubpageHero>
-			<section className='py-50'>
-				<h2>{serviceToRender.title}</h2>
-			</section>
+			<SubpageHero subpageData={serviceToRender} />
+			<Description subpageData={serviceToRender} />
 		</main>
 	);
 }
