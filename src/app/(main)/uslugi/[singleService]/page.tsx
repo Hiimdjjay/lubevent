@@ -1,5 +1,6 @@
 import { Description } from '@/components/Sections/SingleService/Description/Description';
 import { SubpageHero } from '@/components/Sections/SingleService/SubpageHero/SubpageHero';
+import { CtaSection } from '@/components/UI/CtaSection/CtaSection';
 import { servicesData } from '@/constans/servicesData';
 import { notFound } from 'next/navigation';
 
@@ -14,6 +15,7 @@ export default async function Service({ params }: { params: Promise<{ singleServ
 		<main>
 			<SubpageHero subpageData={serviceToRender} />
 			<Description subpageData={serviceToRender} />
+			<CtaSection />
 		</main>
 	);
 }

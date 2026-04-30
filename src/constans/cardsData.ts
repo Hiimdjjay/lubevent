@@ -80,8 +80,11 @@ export const experienceCardsData: CardData[] = [
 	}
 ];
 
-export const startingStepsData = [
-	'Złóż wniosek o darmową wycenę',
-	'Poczekaj do 24h na odpowiedź',
-	'Podjęcie decyzji na współprace'
+export const startingStepsData = ['Złóż wniosek ', 'Otrzymaj  wycenę', 'Podejmij decyzję'];
+
+export const whatWeProvideData = [
+	'Profesjonalne planowanie i koordynację wydarzenia',
+	'Kompleksową obsługę od pomysłu do realizacji',
+	'Stały kontakt i aktualizacje na każdym etapie',
+	'Indywidualne dopasowanie do Twoich potrzeb i budżetu'
 ];

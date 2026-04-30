@@ -3,7 +3,7 @@ import { HowToStart } from './HowToStart';
 
 export function Description({ subpageData: { generalDescription, sideDescription, eventTerms } }) {
 	return (
-		<section>
+		<section className='pb-20 md:pb-25 lg:pb-30'>
 			<Wrapper marginForText>
 				<div className='flex flex-col gap-8'>
 					<div className='flex flex-col gap-3'>

@@ -7,7 +7,7 @@ import { Wrapper } from '@/components/UI/Wrapper';
 
 export function CtaSection() {
 	return (
-		<section className='relative py-20 md:py-30 lg:py-40'>
+		<section className='relative py-20 md:py-25 lg:py-30'>
 			<Image
 				src='/Photos/Concert-unsplash.png'
 				fill
