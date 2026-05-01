@@ -9,8 +9,8 @@ export function AboutsUsCard({ children, icon: Icon }: CardProps) {
 	return (
 		<div className='h-50 w-full p-5 bg-bg-sectionLabel rounded-xl lg:p-10 lg:h-62'>
 			<div className='flex flex-col justify-between max-gap-20 w-full h-full '>
-				<Icon size={46} strokeWidth={1} />
-				<h3 className='text-xl font-medium'>{children}</h3>
+				<Icon size={46} strokeWidth={1.2} />
+				<h3 className='text-xl font-semibold lg:text-[22px]'>{children}</h3>
 			</div>
 		</div>
 	);

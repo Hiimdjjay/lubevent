@@ -1,4 +1,5 @@
 import { Description } from '@/components/Sections/SingleService/Description/Description';
+import { OtherServices } from '@/components/Sections/SingleService/OtherServices/OtherServices';
 import { SubpageHero } from '@/components/Sections/SingleService/SubpageHero/SubpageHero';
 import { CtaSection } from '@/components/UI/CtaSection/CtaSection';
 import { servicesData } from '@/constans/servicesData';
@@ -11,11 +12,19 @@ export default async function Service({ params }: { params: Promise<{ singleServ
 
 	if (!serviceToRender) notFound();
 
+	const randomIndex = Math.floor(Math.random() * (servicesData.length - 2));
+
 	return (
 		<main>
 			<SubpageHero subpageData={serviceToRender} />
 			<Description subpageData={serviceToRender} />
-			<CtaSection />
+			<OtherServices startIndex={randomIndex} />
+			<CtaSection
+				primaryText='Darmowa wycena'
+				primaryPath='/formularz'
+				secondaryText='Poznaj nas'
+				secondaryPath='/o-nas'
+			/>
 		</main>
 	);
 }

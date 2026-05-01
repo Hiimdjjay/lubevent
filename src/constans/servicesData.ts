@@ -13,16 +13,16 @@ export type ServiceData = {
 export const servicesData: ServiceData[] = [
 	// ── UROCZYSTOŚCI ─────────────────────────────────────────────────────────
 	{
-		title: 'Wesele',
-		subtitle: 'Kompleksowa oprawa muzyczna i techniczna Waszego wielkiego dnia.',
+		title: 'Wesela & Studniówki',
+		subtitle: 'Kompleksowa oprawa muzyczna i techniczna Waszego wyjątkowego wieczoru.',
 		category: 'Uroczystości',
 		image: '/Photos/sala-weselna.png',
-		alt: 'Wesele',
+		alt: 'Wesele i Studniówka',
 		path: '/uslugi/wesele',
 		generalDescription:
-			'Wesele to jedno z najważniejszych wydarzeń w życiu — dzień, który zapamiętają wszyscy uczestnicy na długie lata. Wiemy o tym doskonale, dlatego podchodzimy do każdej realizacji z pełnym zaangażowaniem i dbałością o każdy detal, od pierwszego spotkania aż do ostatniego tańca.\n\nPrzez lata współpracy z parami młodymi nauczyliśmy się, że każde wesele jest inne — inne oczekiwania, inny styl, inna muzyka. Dlatego zawsze zaczynamy od rozmowy, podczas której dokładnie poznajemy Wasze preferencje i wizję idealnego wieczoru, a na tej podstawie przygotowujemy spersonalizowaną oprawę, która będzie idealnie pasować do Waszego dnia.',
+			'Wesele to jedno z najważniejszych wydarzeń w życiu — dzień, który zapamiętają wszyscy uczestnicy na długie lata. Wiemy o tym doskonale, dlatego podchodzimy do każdej realizacji z pełnym zaangażowaniem i dbałością o każdy detal, od pierwszego spotkania aż do ostatniego tańca.\n\nStudniówka to z kolei jeden z tych wieczorów, który na zawsze pozostaje w pamięci — ostatnia wspólna impreza przed maturą, pełna emocji, muzyki i niezapomnianych wspomnień. Niezależnie od tego, czy organizujesz wesele czy studniówkę, zawsze zaczynamy od rozmowy, podczas której dokładnie poznajemy Wasze preferencje i wizję idealnego wieczoru.',
 		sideDescription:
-			'Kompleksowo zajmujemy się oprawą Waszego wesela — od rozstawienia sprzętu, przez prowadzenie wieczoru, aż do ostatniego tańca.',
+			'Kompleksowo zajmujemy się oprawą wesela lub studniówki — od rozstawienia sprzętu, przez prowadzenie wieczoru, aż do ostatniego tańca.',
 		eventTerms: [
 			'Przyjeżdżamy odpowiednio wcześniej i jesteśmy elastyczni przez cały wieczór.',
 			'Zapewniamy profesjonalne nagłośnienie i oświetlenie dostosowane do sali.',
@@ -30,24 +30,7 @@ export const servicesData: ServiceData[] = [
 		]
 	},
 	{
-		title: 'Studniówka',
-		subtitle: 'Niezapomniana noc przed maturą pełna muzyki i zabawy.',
-		category: 'Uroczystości',
-		image: '/Photos/outdoor-party.png',
-		alt: 'Studniówka',
-		path: '/uslugi/studniowka',
-		generalDescription:
-			'Studniówka to jeden z tych wieczorów, który na zawsze pozostaje w pamięci — ostatnia wspólna impreza przed maturą, pełna emocji, muzyki i niezapomnianych wspomnień. Wiemy, jak ważne jest to wydarzenie zarówno dla uczniów, jak i dla rodziców.\n\nNasze doświadczenie w realizacji studniówek pozwala nam doskonale rozumieć specyfikę tego wydarzenia — odpowiednią muzykę, energię prowadzącego i atmosferę, która sprawia, że każdy czuje się wyjątkowo. Współpracujemy bezpośrednio z organizatorami i radami rodziców, żeby cały proces przygotowań przebiegał sprawnie i bez stresu.',
-		sideDescription:
-			'Przygotowujemy kompleksową oprawę studniówki — od nagłośnienia i oświetlenia, przez DJ-a i wodzireja, aż po dodatkowe atrakcje.',
-		eventTerms: [
-			'Dobieramy muzykę pod gust młodego pokolenia — od hitów po klasykę.',
-			'Wodzirej prowadzi zabawy i animacje angażujące całą salę.',
-			'Obsługujemy zarówno małe jak i duże studniówki w każdej sali.'
-		]
-	},
-	{
-		title: '18-nastka',
+		title: '18-nastki',
 		subtitle: 'Wyjątkowe urodziny, które zapamiętasz na całe życie.',
 		category: 'Uroczystości',
 		image: '/Photos/Happy-woman.png',
@@ -64,7 +47,7 @@ export const servicesData: ServiceData[] = [
 		]
 	},
 	{
-		title: 'Impreza tematyczna',
+		title: 'Imprezy tematyczne',
 		subtitle: 'Twój pomysł, nasza realizacja — bez ograniczeń.',
 		category: 'Uroczystości',
 		image: '/Photos/Full-chat-GPT.png',
@@ -82,7 +65,7 @@ export const servicesData: ServiceData[] = [
 	},
 	// ── GALE I JUBILEUSZE ────────────────────────────────────────────────────
 	{
-		title: 'Gala / Bankiet',
+		title: 'Gale & Bankiety',
 		subtitle: 'Elegancka oprawa dla prestiżowych wydarzeń firmowych.',
 		category: 'Gale i Jubileusze',
 		image: '/Photos/Corporate-event-ChatGPT.png',
@@ -99,7 +82,7 @@ export const servicesData: ServiceData[] = [
 		]
 	},
 	{
-		title: 'Jubileusz',
+		title: 'Jubileusze',
 		subtitle: 'Świętuj ważne rocznice w wielkim stylu.',
 		category: 'Gale i Jubileusze',
 		image: '/Photos/wedding-toast.png',
@@ -116,7 +99,7 @@ export const servicesData: ServiceData[] = [
 		]
 	},
 	{
-		title: 'Konferencja',
+		title: 'Konferencje',
 		subtitle: 'Profesjonalna obsługa techniczna Twoich eventów biznesowych.',
 		category: 'Gale i Jubileusze',
 		image: '/Photos/Lublin-conference.jpg',
@@ -133,7 +116,7 @@ export const servicesData: ServiceData[] = [
 		]
 	},
 	{
-		title: 'Event marketingowy',
+		title: 'Eventy marketingowe',
 		subtitle: 'Eventy, które budują markę i angażują uczestników.',
 		category: 'Gale i Jubileusze',
 		image: '/Photos/Corporate-event-2-ChatGPT.png',
@@ -151,7 +134,7 @@ export const servicesData: ServiceData[] = [
 	},
 	// ── DJ & WODZIREJ ────────────────────────────────────────────────────────
 	{
-		title: 'DJ i Wodzirej',
+		title: 'DJ & Wodzirej',
 		subtitle: 'Muzyka i prowadzenie, które rozkręcą każdą imprezę.',
 		category: 'DJ & Wodzirej',
 		image: '/Photos/Concert-unsplash.png',

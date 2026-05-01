@@ -6,7 +6,7 @@ type CounterProps = {
 	title: string;
 };
 
-export function Counter({ target, title }: CounterProps) {
+export function ExperienceCardCounter({ target, title }: CounterProps) {
 	const [value, setValue] = useState(0);
 	const [visible, setVisible] = useState(false);
 	const ref = useRef(null);
@@ -58,7 +58,7 @@ export function Counter({ target, title }: CounterProps) {
 
 	return (
 		<div ref={ref}>
-			<span className='text-[34px]'>
+			<span className='text-[34px] font-semibold'>
 				{value}+ {title === 'Doświadczenie zawodowe' ? <span>lat</span> : ''}
 			</span>
 		</div>

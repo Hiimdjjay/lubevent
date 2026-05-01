@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Counter } from './Counter';
+import { ExperienceCardCounter } from './ExperienceCardCounter';
 
 type StatisticsCardProps = {
 	title: string;
@@ -11,7 +11,7 @@ type StatisticsCardProps = {
 	classNameText?: string;
 };
 
-export function StatisticsCard({
+export function ExperienceStatisticsCard({
 	title,
 	src,
 	target,
@@ -21,13 +21,12 @@ export function StatisticsCard({
 	classNameText
 }: StatisticsCardProps) {
 	return (
-		<div
-			className={`relative w-full p-5 rounded-2xl overflow-hidden md:h-full ${className} }`}>
+		<div className={`relative w-full p-5 rounded-2xl overflow-hidden md:h-full ${className} }`}>
 			<div className='flex flex-col h-full'>
 				<div className='flex flex-col gap-5 h-full md:justify-between'>
 					<p className='text-sm font-semibold'>{title}</p>
 					<div className='flex flex-col gap-2 '>
-						<Counter target={target} title={title} />
+						<ExperienceCardCounter target={target} title={title} />
 						<p className={`w-[85%] font-medium ${classNameText} `}>{content}</p>
 					</div>
 				</div>

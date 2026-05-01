@@ -19,6 +19,7 @@
 body {
 	background: var(--color-bg-sectionLabel);
 	color: var(--foreground);
+	font-size: 17px;
 }
 
 button {
@@ -104,6 +105,7 @@ input:-webkit-autofill:active {
 	background-image:
 		radial-gradient(ellipse at 75% 50%, rgba(91, 120, 249, 0.07) 0%, transparent 60%),
 		radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
-	background-size: auto, 24px 24px;
+	background-size:
+		auto,
+		24px 24px;
 }
-

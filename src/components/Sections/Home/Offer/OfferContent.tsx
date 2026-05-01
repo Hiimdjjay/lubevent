@@ -14,7 +14,7 @@ export function OfferContent() {
 			</div>
 			<OfferList />
 			<div className='self-start'>
-				<PrimaryButton path='/oferta'>Sprawdź ofertę</PrimaryButton>
+				<PrimaryButton path='/uslugi'>Sprawdź ofertę</PrimaryButton>
 			</div>
 		</div>
 	);

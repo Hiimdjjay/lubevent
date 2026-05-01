@@ -7,7 +7,12 @@ export default function Contact() {
 		<main>
 			<SubpageHero />
 			<FormSection />
-			<CtaSection />
+			<CtaSection
+				primaryText='Darmowa wycena'
+				primaryPath='/formularz'
+				secondaryText='Sprawdź ofertę'
+				secondaryPath='/uslugi'
+			/>
 		</main>
 	);
 }

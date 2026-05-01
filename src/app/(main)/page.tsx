@@ -15,7 +15,12 @@ export default function Home() {
 			<Experience />
 			<Video />
 			<Testimonials />
-			<CtaSection />
+			<CtaSection
+				primaryText='Darmowa wycena'
+				primaryPath='/formularz'
+				secondaryText='Skontaktuj się'
+				secondaryPath='/kontakt'
+			/>
 		</main>
 	);
 }

@@ -23,14 +23,16 @@ export function SecondaryButton({
 			className={`group relative flex items-center gap-1 font-bold py-3 px-4 w-fit ${textWhite ? 'text-white' : 'text-black'} `}>
 			{arrowLeft && (
 				<span className='flex justify-center items-center'>
-					<ArrowLeft />
+					<ArrowLeft color={`${textWhite ? '#fff' : '#000'} `} />
 				</span>
 			)}
 
 			<div className='flex flex-row items-center gap-3 relative'>
 				<div className='relative overflow-hidden h-full'>
-					<div className='transition-transform duration-300 group-hover:-translate-y-full'>{children}</div>
-					<div className='absolute transition-trasnform duration-300 group-hover:-translate-y-full'>
+					<div className='text-[16px] transition-transform duration-300 group-hover:-translate-y-full'>
+						{children}
+					</div>
+					<div className='absolute text-[16px] transition-trasnform duration-300 group-hover:-translate-y-full'>
 						{children}
 					</div>
 				</div>
@@ -39,7 +41,7 @@ export function SecondaryButton({
 			</div>
 			{arrowRight && (
 				<span className='flex justify-center items-center'>
-					<ArrowRight />
+					<ArrowRight color={`${textWhite ? '#fff' : '#000'} `} />
 				</span>
 			)}
 		</Link>

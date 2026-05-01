@@ -1,6 +1,6 @@
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
-import { ExperienceCards } from './ExperienceCards';
+import { ExperienceCardList } from './ExperienceCardList';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Experience() {
@@ -18,7 +18,7 @@ export function Experience() {
 							</SectionTitle>
 						</div>
 					</div>
-					<ExperienceCards />
+					<ExperienceCardList />
 				</div>
 			</Wrapper>
 		</section>

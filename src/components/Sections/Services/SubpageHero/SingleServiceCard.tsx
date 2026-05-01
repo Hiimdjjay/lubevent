@@ -14,7 +14,7 @@ type Card = {
 	card: CardProps;
 };
 
-export function ServiceSingleCard({ card: { title, subtitle, category, image, alt, path } }: Card) {
+export function SingleServiceCard({ card: { title, subtitle, category, image, alt, path } }: Card) {
 	return (
 		<div className='flex flex-col justify-between gap-2 p-4 h-full rounded-2xl bg-white'>
 			<div className='overflow-hidden relative flex flex-col items-end w-full p-3 aspect-4.5/3 rounded-xl md:'>

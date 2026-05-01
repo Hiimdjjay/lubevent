@@ -1,13 +1,13 @@
 type SubtitleProps = {
 	children: React.ReactNode;
 	textCenter?: boolean;
-	textSize?: string;
+	largerText?: boolean;
 };
 
-export function Subtitle({ children, textCenter = false, textSize = 'text-base' }: SubtitleProps) {
+export function Subtitle({ children, textCenter = false, largerText = false }: SubtitleProps) {
 	return (
 		<p
-			className={`font-semibold text-black/70 md:text-lg lg:text-xl ${textCenter && 'text-center'} ${textSize} `}>
+			className={`font-semibold text-black/70 md:text-[19px] lg:text-xl ${textCenter && 'text-center'} ${largerText} `}>
 			{children}
 		</p>
 	);

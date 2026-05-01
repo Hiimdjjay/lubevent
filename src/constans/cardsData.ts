@@ -12,13 +12,6 @@ export const aboutUsCardsData: aboutUsCardsData[] = [
 	{ name: 'Indywidualne dopasowanie', icon: UserStar }
 ];
 
-export const offerData = [
-	{ name: 'Organizacja imprez', path: '/oferta' },
-	{ name: 'Oprawa muzyczna', path: '/oferta' },
-	{ name: 'Technika sceniczna', path: '/oferta' },
-	{ name: 'Atrakcje eventowe', path: '/oferta' }
-];
-
 type StatisticsCardData = {
 	variant: 'statistics';
 	title: string;
@@ -39,7 +32,7 @@ type ImageCardData = {
 
 type CardData = StatisticsCardData | ImageCardData;
 
-export const experienceCardsData: CardData[] = [
+export const experienceData: CardData[] = [
 	{
 		variant: 'statistics',
 		title: 'Zrealizowanych wydarzeń',
@@ -62,7 +55,8 @@ export const experienceCardsData: CardData[] = [
 		variant: 'statistics',
 		title: 'Doświadczenie zawodowe',
 		target: 10,
-		content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates omnis ab suscipit ab!',
+		content:
+			'Nasza pasja do kreowania eventów to lata praktyki, które przekładamy na sukces. Zaufaj profesjonalizmowi i sprawdź nas!',
 		className: 'text-black bg-white md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-4'
 	},
 	{
@@ -75,7 +69,7 @@ export const experienceCardsData: CardData[] = [
 		variant: 'statistics',
 		title: 'Rozpoznawalne marki',
 		target: 20,
-		content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, modi. Corrupti, modi.',
+		content: 'Współpracujemy z liderami rynku, tworząc projekty, które budują silny wizerunek. Twoja marka zasługuje na najlepsze!',
 		className: 'text-white bg-black md:col-start-3 md:col-end-4 md:row-start-3 md:row-end-4'
 	}
 ];

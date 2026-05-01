@@ -13,7 +13,12 @@ export default function AboutUs() {
 			<Images />
 			<Achivements />
 			<Team />
-			<CtaSection />
+			<CtaSection
+				primaryText='Darmowa wycena'
+				primaryPath='/formularz'
+				secondaryText='Sprawdź ofertę'
+				secondaryPath='/uslugi'
+			/>
 		</main>
 	);
 }

@@ -1,14 +1,21 @@
-'use client';
-
 import { OfferListElement } from './OfferListElement';
-import { offerData } from '@/constans/cardsData';
+import { servicesData } from '@/constans/servicesData';
 
 export function OfferList() {
+	const servicesToShow = servicesData.filter(
+		service =>
+			service.title === 'Wesela & Studniówki' ||
+			service.title === 'Gale & Bankiety' ||
+			service.title === 'Konferencje' ||
+			service.title === 'Eventy marketingowe' ||
+			service.title === 'Wynajem sprzętu'
+	);
+
 	return (
 		<div className='text-white'>
-			{offerData.map(({ name, path }) => (
-				<OfferListElement key={name} path={path}>
-					{name}
+			{servicesToShow.map(({ title, path }, index) => (
+				<OfferListElement key={index} path={path}>
+					{title}
 				</OfferListElement>
 			))}
 		</div>

@@ -9,9 +9,9 @@ type ListElementProps = {
 export function OfferListElement({ children, path }: ListElementProps) {
 	return (
 		<Link href={path} className='group'>
-			<div className='flex items-center justify-between py-5 border-b border-white/20 text-white/90 cursor-pointer transition-colors duration-200 hover:text-white hover:border-white/30'>
+			<div className='flex items-center justify-between py-5 border-b border-white/20 text-white/90 cursor-pointer transition-colors lg:text-white/80 duration-200 hover:text-white hover:border-white/30'>
 				<div className=' flex justify-between items-center '>
-					<span className='text-xl font-medium  md:text-2xl'>{children}</span>
+					<h3 className='text-[22px] font-medium md:text-2xl lg:text-[28px]'>{children}</h3>
 				</div>
 				<div className='p-1 rounded-full bg-linear-to-r from-bg-btn-blue to-bg-btn-purple  '>
 					<div className='relative overflow-hidden'>

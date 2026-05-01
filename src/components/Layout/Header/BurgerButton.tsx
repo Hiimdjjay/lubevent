@@ -12,9 +12,9 @@ export function BurgerButton({ open, setOpen }: BurgerButtonProps) {
 			aria-label={open ? 'Zamknij menu' : 'Otwórz menu'}
 			aria-expanded={open}>
 			<span
-				className={`absolute bg-white/90 w-5.5 md:w-6 h-0.5 rounded transition-all duration-200 ease-out ${open ? 'translate-y-0 -rotate-45' : '-translate-y-1.25 md:-translate-y-1.5 rotate-0'}`}></span>
+				className={`absolute bg-white/90 w-5 md:w-6 h-0.75 rounded transition-all duration-200 ease-out ${open ? 'translate-y-0 -rotate-45' : '-translate-y-1.25 md:-translate-y-1.5 rotate-0'}`}></span>
 			<span
-				className={`absolute bg-white/90 w-5.5 md:w-6 h-0.5 rounded transition-all duration-200 ease-out ${open ? 'translate-y-0 rotate-45' : 'translate-y-1.25 md:translate-y-1.5 rotate-0'}`}></span>
+				className={`absolute bg-white/90 w-5 md:w-6 h-0.75 rounded transition-all duration-200 ease-out ${open ? 'translate-y-0 rotate-45' : 'translate-y-1.25 md:translate-y-1.5 rotate-0'}`}></span>
 		</button>
 	);
 }

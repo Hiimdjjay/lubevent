@@ -1,15 +1,22 @@
-import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
+import { Wrapper } from '@/components/UI/Wrapper';
 import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
+import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import Image from 'next/image';
-import { Wrapper } from '@/components/UI/Wrapper';
 
-export function CtaSection() {
+type CtaSectionProps = {
+	primaryText: string;
+	primaryPath: string;
+	secondaryText: string;
+	secondaryPath: string;
+};
+
+export function CtaSection({ primaryText, primaryPath, secondaryText, secondaryPath }: CtaSectionProps) {
 	return (
 		<section className='relative py-20 md:py-25 lg:py-30'>
 			<Image
-				src='/Photos/Concert-unsplash.png'
+				src='/Photos/Conference-new.jpg'
 				fill
 				className='object-cover -z-2'
 				alt='Koncer - tło sekcji kontaktowej'
@@ -24,9 +31,9 @@ export function CtaSection() {
 						</SectionTitle>
 					</div>
 					<div className='flex flex-col justify-center items-center gap-y-3 mt-3 md:flex-row md:gap-x-5 md:mt-6'>
-						<PrimaryButton path='/formularz'>Darmowa Wycena</PrimaryButton>
-						<SecondaryButton textWhite path='/kontakt'>
-							Skontaktuj się
+						<PrimaryButton path={primaryPath}>{primaryText}</PrimaryButton>
+						<SecondaryButton textWhite arrowRight path={secondaryPath}>
+							{secondaryText}
 						</SecondaryButton>
 					</div>
 				</div>
