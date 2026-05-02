@@ -1,7 +1,7 @@
 'use client';
 import { Logo } from '../../UI/Logo';
 import { usePathname } from 'next/navigation';
-import { SocialForFooter } from './SocialForFooter';
+import { FooterSocialMedia } from './FooterSocialMedia';
 import { FooterNav } from './FooterNav';
 import { Wrapper } from '@/components/UI/Wrapper';
 
@@ -23,7 +23,7 @@ export function Footer() {
 					<p className='font-medium'>
 						Strona wykonana przez <span className='underlineText'>Jakub Rafalski </span>
 					</p>
-					<SocialForFooter />
+					<FooterSocialMedia />
 				</div>
 			</Wrapper>
 		</footer>

@@ -1,8 +1,8 @@
 import { OfferListElement } from './OfferListElement';
-import { servicesData } from '@/constans/servicesData';
+import { SERVICES_DATA } from '@/constants/servicesData';
 
 export function OfferList() {
-	const servicesToShow = servicesData.filter(
+	const servicesToShow = SERVICES_DATA.filter(
 		service =>
 			service.title === 'Wesela & Studniówki' ||
 			service.title === 'Gale & Bankiety' ||

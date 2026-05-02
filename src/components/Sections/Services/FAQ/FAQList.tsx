@@ -1,11 +1,11 @@
-import { FAQData } from '@/constans/FAQData';
+import { FAQ_DATA } from '@/constants/servicesData';
 import { FAQSingleItem } from './FAQSingleItem';
 
 export function FAQList() {
 	return (
 		<div className='flex flex-col gap-5 '>
-			{FAQData.map((item, index) => {
-				return <FAQSingleItem key={index} item={item}></FAQSingleItem>;
+			{FAQ_DATA.map(item => {
+				return <FAQSingleItem key={item.id} item={item}></FAQSingleItem>;
 			})}
 		</div>
 	);

@@ -1,6 +1,6 @@
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
-import { AchievementsCards } from './AchivementsCards';
+import { AchievementsCards } from './AchivementsCardList';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Achivements() {

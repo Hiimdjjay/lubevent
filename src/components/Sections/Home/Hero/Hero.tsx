@@ -1,7 +1,7 @@
 import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { MainTitle } from '../../../UI/MainTitle';
-import { ImagesCarousel } from './ImagesCarousel';
+import { HeroCarousel } from './HeroCarousel';
 import { Wrapper } from '@/components/UI/Wrapper';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { PulsingDot } from '@/components/UI/PulsingDot';
@@ -20,7 +20,7 @@ export function Hero() {
 						<MainTitle>
 							Twoje wydarzenie. <br /> Nasza realizacja.
 						</MainTitle>
-						<Subtitle >
+						<Subtitle>
 							Z pasją budujemy <span className='hidden md:inline'>niepowtarzalny</span> klimat,{' '}
 							<br className='hidden md:block' /> który na długo pozostaje w pamięci naszych gości.
 						</Subtitle>
@@ -31,7 +31,7 @@ export function Hero() {
 							</SecondaryButton>
 						</div>
 					</div>
-					<ImagesCarousel />
+					<HeroCarousel />
 				</div>
 			</Wrapper>
 		</section>

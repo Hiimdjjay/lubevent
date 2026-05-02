@@ -1,8 +1,8 @@
 import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import { Wrapper } from '@/components/UI/Wrapper';
-import { servicesData } from '@/constans/servicesData';
-import { SingleServiceCard } from '../../Services/SubpageHero/SingleServiceCard';
+import { SERVICES_DATA } from '@/constants/servicesData';
+import { SingleServiceCard } from '../../Services/SubpageHero/ServicesCard';
 
 export function OtherServices({ startIndex }: { startIndex: number }) {
 	const randomNumber = startIndex;
@@ -22,7 +22,7 @@ export function OtherServices({ startIndex }: { startIndex: number }) {
 						<PrimaryButton path='/uslugi'>Sprawdź nasze usługi</PrimaryButton>
 					</div>
 					<div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
-						{servicesData.slice(randomNumber, randomNumber + 2).map((card, index) => {
+						{SERVICES_DATA.slice(randomNumber, randomNumber + 2).map((card, index) => {
 							return <SingleServiceCard key={index} card={card} />;
 						})}
 					</div>

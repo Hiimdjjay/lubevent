@@ -1,88 +1,62 @@
 import { Wrapper } from '@/components/UI/Wrapper';
+import { SubpageHero } from '@/components/Sections/PrivacyPolicy&Terms/SubpageHero';
+import { PolicySection } from '@/components/Sections/PrivacyPolicy&Terms/PolicySection';
+import { PolicySectionWithList } from '@/components/Sections/PrivacyPolicy&Terms/PolicySectionWithList';
+import { TERMS_USER_OBLIGATIONS } from '@/constants/policyData';
 
 export default function TermsOfService() {
 	return (
-		<main className='py-20 md:py-30 lg:py-40'>
-			<Wrapper>
+		<main className='pt-30 pb-10 md:pt-45 lg:pt-60'>
+			<Wrapper marginForText>
 				<div className='flex flex-col gap-10 max-w-3xl'>
-					<div className='flex flex-col gap-3'>
-						<h1 className='text-4xl font-bold'>Regulamin korzystania z serwisu</h1>
-						<p className='text-black/50'>Ostatnia aktualizacja: 1 stycznia 2025</p>
-					</div>
-
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>1. Postanowienia ogólne</h2>
-						<p className='text-black/70 leading-relaxed'>
+					<SubpageHero title='Regulamin korzystania z serwisu' lastUpdated='02 maj 2026' />
+					<div className='flex flex-col gap-10 p-5 rounded-2xl bg-white  md:p-8 lg:p-10'>
+						<PolicySection title='1. Postanowienia ogólne'>
 							Niniejszy regulamin określa zasady korzystania z serwisu internetowego lubevent.pl, prowadzonego
 							przez Lubevent Dominik Berwertz z siedzibą w Lublinie. Korzystanie z serwisu oznacza akceptację
 							niniejszego regulaminu.
-						</p>
-					</section>
+						</PolicySection>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>2. Zakres usług</h2>
-						<p className='text-black/70 leading-relaxed'>
+						<PolicySection title='2. Zakres usług'>
 							Serwis lubevent.pl służy do prezentacji oferty usług eventowych oraz umożliwia kontakt z firmą w
 							celu uzyskania wyceny lub informacji. Serwis nie stanowi sklepu internetowego ani platformy
 							sprzedażowej.
-						</p>
-					</section>
+						</PolicySection>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>3. Obowiązki użytkownika</h2>
-						<p className='text-black/70 leading-relaxed'>Użytkownik zobowiązuje się do:</p>
-						<ul className='flex flex-col gap-2 list-disc list-inside text-black/70'>
-							<li>Korzystania z serwisu zgodnie z obowiązującym prawem</li>
-							<li>Podawania prawdziwych danych w formularzach kontaktowych</li>
-							<li>Nienaruszania praw własności intelektualnej właściciela serwisu</li>
-							<li>Niepodejmowania działań mogących zakłócić funkcjonowanie serwisu</li>
-						</ul>
-					</section>
+						<PolicySectionWithList title='3. Obowiązki użytkownika' items={TERMS_USER_OBLIGATIONS}>
+							Użytkownik zobowiązuje się do:
+						</PolicySectionWithList>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>4. Własność intelektualna</h2>
-						<p className='text-black/70 leading-relaxed'>
+						<PolicySection title='4. Własność intelektualna'>
 							Wszelkie treści zamieszczone w serwisie — teksty, zdjęcia, grafiki, logotypy — stanowią własność
 							Lubevent Dominik Berwertz lub są wykorzystywane za zgodą właścicieli praw autorskich.
 							Kopiowanie, reprodukowanie lub rozpowszechnianie tych treści bez zgody właściciela jest
 							zabronione.
-						</p>
-					</section>
+						</PolicySection>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>5. Odpowiedzialność</h2>
-						<p className='text-black/70 leading-relaxed'>
+						<PolicySection title='5. Odpowiedzialność'>
 							Właściciel serwisu dokłada wszelkich starań, aby informacje zamieszczone w serwisie były
 							aktualne i rzetelne. Nie ponosi jednak odpowiedzialności za ewentualne błędy, przerwy w
 							działaniu serwisu ani szkody wynikłe z korzystania z serwisu.
-						</p>
-					</section>
+						</PolicySection>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>6. Formularze kontaktowe</h2>
-						<p className='text-black/70 leading-relaxed'>
+						<PolicySection title='6. Formularze kontaktowe'>
 							Wypełnienie formularza kontaktowego lub wyceny nie stanowi zawarcia umowy. Jest jedynie wyrazem
 							zainteresowania ofertą i podstawą do nawiązania kontaktu przez przedstawiciela firmy.
-						</p>
-					</section>
+						</PolicySection>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>7. Zmiany regulaminu</h2>
-						<p className='text-black/70 leading-relaxed'>
+						<PolicySection title='7. Zmiany regulaminu'>
 							Właściciel serwisu zastrzega sobie prawo do zmiany niniejszego regulaminu. Zmiany wchodzą w
 							życie z chwilą ich opublikowania w serwisie. Dalsze korzystanie z serwisu po wprowadzeniu zmian
 							oznacza ich akceptację.
-						</p>
-					</section>
+						</PolicySection>
 
-					<section className='flex flex-col gap-4'>
-						<h2 className='text-2xl font-semibold'>8. Kontakt</h2>
-						<p className='text-black/70 leading-relaxed'>
+						<PolicySection title='8. Kontakt'>
 							W sprawach związanych z regulaminem prosimy o kontakt:
 							<br />
 							E-mail: kontakt@lubevent.pl
-						</p>
-					</section>
+						</PolicySection>
+					</div>
 				</div>
 			</Wrapper>
 		</main>

@@ -1,4 +1,4 @@
-import { startingStepsData, whatWeProvideData } from '@/constans/cardsData';
+import { STARTING_STEPS_DATA, WHAT_WE_PROVIDE_DATA } from '@/constants/cardsData';
 import { Headset, Map } from 'lucide-react';
 
 export function HowToStart() {
@@ -11,14 +11,14 @@ export function HowToStart() {
 					kompleksowość i indywidualne dopasowanie. Oto jak wygląda współpraca z nami:
 				</p>
 				<div className='flex flex-col gap-5 md:flex-row'>
-					{startingStepsData.map((card, index) => (
+					{STARTING_STEPS_DATA.map(({ id, name }) => (
 						<div
-							key={index}
+							key={id}
 							className='flex flex-col justify-between mt-2 min-h-35  p-5 rounded-2xl bg-white md:w-1/3'>
 							<div className='flex justify-center items-center  w-9 h-9 rounded-full bg-linear-to-r from-bg-btn-blue to-bg-btn-purple'>
-								<span className='font-medium text-sm text-white'>0{index + 1}</span>
+								<span className='font-medium text-sm text-white'>0{id}</span>
 							</div>
-							<h4 className='font-semibold text-xl'>{card}</h4>
+							<h4 className='font-semibold text-xl'>{name}</h4>
 						</div>
 					))}
 				</div>
@@ -30,9 +30,9 @@ export function HowToStart() {
 					pamięci na długo. Nasze usługi obejmują:
 				</p>
 				<ul className='flex flex-col gap-2 ml-5'>
-					{whatWeProvideData.map((term, index) => (
-						<li className='list-disc font-semibold text-black/60' key={index}>
-							{term}
+					{WHAT_WE_PROVIDE_DATA.map(({ id, text }) => (
+						<li className='list-disc font-semibold text-black/60' key={id}>
+							{text}
 						</li>
 					))}
 				</ul>

@@ -1,6 +1,6 @@
 import { MainTitle } from '@/components/UI/MainTitle';
 import { SectionLabel } from '@/components/UI/SectionLabel';
-import { AboutUsCarousel } from './AboutUsCarousel';
+import { SubpageHeroCarousel } from './SubpageHeroCarousel';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function SubpageHero() {
@@ -11,11 +11,11 @@ export function SubpageHero() {
 					<div className='flex flex-col justify-start px-4 gap-4 md:gap-3 md:px-5 lg:px-7.5 '>
 						<SectionLabel bgColor='bg-white'>O nas</SectionLabel>
 						<MainTitle>
-							Poznaj zespół, który tworzy <br className='hidden md:inline' /> wyjątkowe
-							wydarzenia
+							Poznaj zespół, który <br className='hidden md:inline' />
+							tworzy wydarzenia
 						</MainTitle>
 					</div>
-					<AboutUsCarousel></AboutUsCarousel>
+					<SubpageHeroCarousel />
 				</div>
 			</Wrapper>
 		</section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { testimonials } from '@/constans/testimonials';
+import { TESTIMONIALS } from '@/constants/homeData';
 import { TestimonialsButtons } from './TestimonialsButtons';
 import { TestimonialsCard } from './TestimonialsCard';
 import { useState, useEffect } from 'react';
@@ -28,15 +28,17 @@ export function TestimonialsCarousel() {
 	}, []);
 
 	return (
-		<div className=' '>
+		<div>
 			<div className='flex overflow-hidden'>
 				<div
 					style={{ transform: `translateX(-${value * (100 / visiableCards)}%) ` }}
 					className={`flex w-full transition-transform duration-300 `}>
-					{testimonials.map(({ name, surname, content }, index) => {
+					{TESTIMONIALS.map(testimonial => {
 						return (
-							<div key={index} className='w-full px-4 shrink-0 md:w-1/2 md:px-2 xl:w-1/3 largeScreen'>
-								<TestimonialsCard name={name} surname={surname} content={content} />
+							<div
+								key={testimonial.id}
+								className='w-full px-4 shrink-0 md:w-1/2 md:px-2 xl:w-1/3 largeScreen'>
+								<TestimonialsCard {...testimonial} />
 							</div>
 						);
 					})}
@@ -45,7 +47,7 @@ export function TestimonialsCarousel() {
 			<TestimonialsButtons
 				value={value}
 				setValue={setValue}
-				totalLength={testimonials.length - visiableCards + 1}
+				totalLength={TESTIMONIALS.length - visiableCards + 1}
 			/>
 		</div>
 	);

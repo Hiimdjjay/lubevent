@@ -1,0 +1,9 @@
+export function ArrowPrevious({ color = '#000', size = 20 }) {
+	return (
+		<svg width={size} height={size} fill={color} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+			<g id='_17' data-name='17'>
+				<path d='m15 19a1 1 0 0 1 -.71-.29l-6-6a1 1 0 0 1 0-1.41l6-6a1 1 0 0 1 1.41 1.41l-5.29 5.29 5.29 5.29a1 1 0 0 1 -.7 1.71z' />
+			</g>
+		</svg>
+	);
+}

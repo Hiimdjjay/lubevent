@@ -1,6 +1,6 @@
+import { Google } from '@/components/UI/Icons/Google';
+import { Star } from '@/components/UI/Icons/Star';
 import Image from 'next/image';
-
-import Opinion1 from '../../../../../public/Testimonials/1-man.jpg';
 
 type TestimonialsCardProps = {
 	name: string;
@@ -12,19 +12,11 @@ export function TestimonialsCard({ name, surname, content }: TestimonialsCardPro
 	return (
 		<div className='flex flex-col justify-between bg-bg-sectionLabel rounded-xl overflow-hidden p-9 h-120 md:min-w-1/2 '>
 			<div className='flex flex-col gap-5'>
-				<div className='flex items-center gap-2'>
-					<div>
-						<Image src='/Icons/google.svg' width='28' height='28' alt='Ikona Google' />
-					</div>
+				<div className='flex items-center gap-3'>
+					<Google size={28} />
 					<div className='flex gap-0.5'>
-						{Array.from({ length: 5 }).map((_, i) => (
-							<Image
-								key={i}
-								src='/Icons/star.svg'
-								width={13}
-								height={13}
-								alt='Ikona gwiazdki'
-							/>
+						{Array.from({ length: 5 }).map((_, index) => (
+							<Star key={index} size={16} />
 						))}
 					</div>
 				</div>
@@ -34,7 +26,7 @@ export function TestimonialsCard({ name, surname, content }: TestimonialsCardPro
 			<div className='flex gap-3 border-t border-black/20 pt-5 '>
 				<div className='relative w-18 h-18 rounded-xl overflow-hidden'>
 					<Image
-						src={Opinion1}
+						src='/Testimonials/1-man.jpg'
 						fill
 						sizes='80px'
 						className='object-cover object-top'
@@ -42,7 +34,7 @@ export function TestimonialsCard({ name, surname, content }: TestimonialsCardPro
 					/>
 				</div>
 				<div className='flex flex-col'>
-					<p className='text-sm'>Osoba prywatna</p>
+					<span className='text-sm'>Osoba prywatna</span>
 					<p className='font-medium'>{`${name} ${surname}`}</p>
 				</div>
 			</div>

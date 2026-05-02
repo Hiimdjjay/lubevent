@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { ArrowNext } from '@/components/UI/Icons/ArrowNext';
+import { ArrowPrevious } from '@/components/UI/Icons/ArrowPrevious';
 
 type TestimonialsButtonsProps = {
 	value: number;
@@ -12,12 +13,12 @@ export function TestimonialsButtons({ setValue, totalLength }: TestimonialsButto
 			<button
 				className='bg-bg-sectionLabel p-2 rounded-xl md:p-3'
 				onClick={() => setValue(prev => (prev === 0 ? totalLength - 1 : prev - 1))}>
-				<Image src='/Icons/left.svg' width='25' height='25' alt='Ikona Google' />
+				<ArrowPrevious size={28} />
 			</button>
 			<button
 				className='bg-bg-sectionLabel p-2 rounded-xl md:p-3'
 				onClick={() => setValue(prev => (prev === totalLength - 1 ? 0 : prev + 1))}>
-				<Image src='/Icons/right.svg' width='25' height='25' alt='Ikona Google' />
+				<ArrowNext size={28} />
 			</button>
 		</div>
 	);

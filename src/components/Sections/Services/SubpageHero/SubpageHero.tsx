@@ -1,7 +1,7 @@
 import { MainTitle } from '@/components/UI/MainTitle';
 import { Subtitle } from '@/components/UI/Subtitle';
 import { Wrapper } from '@/components/UI/Wrapper';
-import { ServicesCards } from './ServicesCards';
+import { ServicesList } from './ServicesList';
 
 export function SubpageHero() {
 	return (
@@ -17,7 +17,7 @@ export function SubpageHero() {
 							</Subtitle>
 						</div>
 					</div>
-					<ServicesCards />
+					<ServicesList />
 				</div>
 			</Wrapper>
 		</section>

@@ -2,17 +2,17 @@ import { Description } from '@/components/Sections/SingleService/Description/Des
 import { OtherServices } from '@/components/Sections/SingleService/OtherServices/OtherServices';
 import { SubpageHero } from '@/components/Sections/SingleService/SubpageHero/SubpageHero';
 import { CtaSection } from '@/components/UI/CtaSection/CtaSection';
-import { servicesData } from '@/constans/servicesData';
+import { SERVICES_DATA } from '@/constants/servicesData';
 import { notFound } from 'next/navigation';
 
 export default async function Service({ params }: { params: Promise<{ singleService: string }> }) {
 	const { singleService } = await params;
 
-	const serviceToRender = servicesData.find(service => service.path === `/uslugi/${singleService}`);
+	const serviceToRender = SERVICES_DATA.find(service => service.path === `/uslugi/${singleService}`);
 
 	if (!serviceToRender) notFound();
 
-	const randomIndex = Math.floor(Math.random() * (servicesData.length - 2));
+	const randomIndex = Math.floor(Math.random() * (SERVICES_DATA.length - 2));
 
 	return (
 		<main>

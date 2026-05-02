@@ -1,6 +1,6 @@
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
-import { TeamCards } from './TeamCards';
+import { TeamCards } from './TeamCardList';
 import { Wrapper } from '@/components/UI/Wrapper';
 
 export function Team() {
