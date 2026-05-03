@@ -1,18 +1,32 @@
+import type { StaticImageData } from 'next/image';
+
+import conference2Img from '@/assets/photos/hero/conference-2-shutterstock.jpg';
+import festivalCrowdImg from '@/assets/photos/hero/festival-crowd-shutterstuck.jpg';
+import concertUnsplashImg from '@/assets/photos/hero/concert-unsplash.jpg';
+import corporateEventCheckImg from '@/assets/photos/hero/corporate-event-check.jpg';
+import singerUnsplashImg from '@/assets/photos/hero/singer-unsplash.jpg';
+import gardenEventTentImg from '@/assets/photos/hero/garden-event-tent.jpg';
+import corporateNetworkingImg from '@/assets/photos/home/corporate-networking.jpg';
+import weddingPartyImg from '@/assets/photos/hero/wedding-party.jpg';
+import dominikBerwertzImg from '@/assets/photos/team/domonik-berwertz.jpg';
+import teamPlanningImg from '@/assets/photos/team/team-planning.jpg';
+import teamWorkingImg from '@/assets/photos/team/team-working.jpg';
+
 type ImagesAboutUsData = {
 	id: number;
-	src: string;
+	src: StaticImageData;
 	alt: string;
 };
 
 export const IMAGES_ABOUTUS_DATA: ImagesAboutUsData[] = [
-	{ id: 1, src: '/Photos/conference-2-unsplash.png', alt: 'Description' },
-	{ id: 2, src: '/Photos/Premiere.png', alt: 'Description' },
-	{ id: 3, src: '/Photos/Concert-unsplash.png', alt: 'Description' },
-	{ id: 4, src: '/Photos/Corporate-event-2-ChatGPT.png', alt: 'Description' },
-	{ id: 5, src: '/Photos/Singer-unsplash.jpg', alt: 'Description' },
-	{ id: 6, src: '/Photos/outdoor-party.png', alt: 'Description' },
-	{ id: 7, src: '/Photos/Group-of-people-Chat-GPT.png', alt: 'Description' },
-	{ id: 8, src: '/Photos/Group-of-people-ChatGPT.png', alt: 'Description' }
+	{ id: 1, src: conference2Img, alt: 'Konferencja' },
+	{ id: 2, src: festivalCrowdImg, alt: 'Festiwal' },
+	{ id: 3, src: concertUnsplashImg, alt: 'Koncert' },
+	{ id: 4, src: corporateEventCheckImg, alt: 'Event korporacyjny' },
+	{ id: 5, src: singerUnsplashImg, alt: 'Piosenkarz na scenie' },
+	{ id: 6, src: gardenEventTentImg, alt: 'Event plenerowy' },
+	{ id: 7, src: corporateNetworkingImg, alt: 'Networking korporacyjny' },
+	{ id: 8, src: weddingPartyImg, alt: 'Przyjęcie weselne' }
 ];
 
 type IconName = 'UserStar' | 'ClockCheck' | 'Expand';
@@ -39,21 +53,21 @@ export const ACHIEVEMENTS_DATA: AchievementsData[] = [
 	{ id: 4, title: 'Zadowolonych klientów', number: '1000', mark: '+' }
 ];
 
-type TEAM_DATA = {
+type TeamMemberData = {
 	id: number;
 	name: string;
 	jobTitle: string;
-	src: string;
+	imageSrc: StaticImageData;
 	alt: string;
 	socialMediaURLs: { facebook: string; instagram: string };
 };
 
-export const TEAM_DATA = [
+export const TEAM_DATA: TeamMemberData[] = [
 	{
 		id: 1,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: '/Team/Dominik-Berwertz.png',
+		imageSrc: dominikBerwertzImg,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -64,7 +78,7 @@ export const TEAM_DATA = [
 		id: 2,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: '/Team/Dominik-Berwertz.png',
+		imageSrc: dominikBerwertzImg,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -75,7 +89,7 @@ export const TEAM_DATA = [
 		id: 3,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: '/Team/Dominik-Berwertz.png',
+		imageSrc: teamPlanningImg,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -86,7 +100,7 @@ export const TEAM_DATA = [
 		id: 4,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: '/Team/Dominik-Berwertz.png',
+		imageSrc: teamWorkingImg,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',

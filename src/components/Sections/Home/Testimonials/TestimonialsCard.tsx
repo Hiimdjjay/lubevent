@@ -1,7 +1,7 @@
 import { Google } from '@/components/UI/Icons/Google';
 import { Star } from '@/components/UI/Icons/Star';
 import Image from 'next/image';
-import TESTIMONIAL from '../../../../../public/testimonials/1-man.jpg';
+import TESTIMONIAL from '@/assets/photos/testimonials/1-man.jpg';
 
 type TestimonialsCardProps = {
 	name: string;

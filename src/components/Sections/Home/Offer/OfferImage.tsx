@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import CORPORATE_NETWORKING from '../../../../../public/photos/home/corporate-networking.jpg';
+import CORPORATE_NETWORKING from '@/assets/photos/home/corporate-networking.jpg';
 
 export function OfferImage() {
 	return (

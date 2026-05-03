@@ -1,20 +1,20 @@
 import { StaticImageData } from 'next/image';
 
-import CONFERENCE from '../../public/photos/hero/conference-pexels.jpg';
-import STUDIO from '../../public/photos/hero/studio-conference.jpg';
-import CORPORATE_EVENT from '../../public/photos/hero/corporate-event-check.jpg';
-import FESTIVAL_CROWD from '../../public/photos/hero/festival-crowd-shutterstuck.jpg';
-import GARDEN_EVENT from '../../public/photos/hero/garden-event-tent.jpg';
-import CONCERTE from '../../public/photos/hero/concert-unsplash.jpg';
-import MASCOT_SPORT from '../../public/photos/hero/mascot-event-sport.jpg';
-import WEDDING_PARTY from '../../public/photos/hero/wedding-party.jpg';
-import NEWLYWEDS from '../../public/photos/hero/newlyweds-unsplash.jpg';
-import SINGER from '../../public/photos/hero/singer-unsplash.jpg';
-import CONFERENCE_SECOND from '../../public/photos/hero/conference-2-shutterstock.jpg';
-import TEAM from '../../public/photos/hero/team-celebration-confetti.jpg';
-import LARGE_SCREEN from '../../public/photos/home/large-screen-conference.jpg';
-import WEDDING_TOAST from '../../public/photos/home/wedding-toast.jpg';
-import CONFERECE_GUY from '../../public/photos/team/conference-guy.png';
+import CONFERENCE from '@/assets/photos/hero/conference-pexels.jpg';
+import STUDIO from '@/assets/photos/hero/studio-conference.jpg';
+import CORPORATE_EVENT from '@/assets/photos/hero/corporate-event-check.jpg';
+import FESTIVAL_CROWD from '@/assets/photos/hero/festival-crowd-shutterstuck.jpg';
+import GARDEN_EVENT from '@/assets/photos/hero/garden-event-tent.jpg';
+import CONCERTE from '@/assets/photos/hero/concert-unsplash.jpg';
+import MASCOT_SPORT from '@/assets/photos/hero/mascot-event-sport.jpg';
+import WEDDING_PARTY from '@/assets/photos/hero/wedding-party.jpg';
+import NEWLYWEDS from '@/assets/photos/hero/newlyweds-unsplash.jpg';
+import SINGER from '@/assets/photos/hero/singer-unsplash.jpg';
+import CONFERENCE_SECOND from '@/assets/photos/hero/conference-2-shutterstock.jpg';
+import TEAM from '@/assets/photos/hero/team-celebration-confetti.jpg';
+import LARGE_SCREEN from '@/assets/photos/home/large-screen-conference.jpg';
+import WEDDING_TOAST from '@/assets/photos/home/wedding-toast.jpg';
+import CONFERECE_GUY from '@/assets/photos/team/conference-guy.png';
 
 import { ListCheck, HandCoins, AlarmClock, UserStar, type LucideIcon } from 'lucide-react';
 

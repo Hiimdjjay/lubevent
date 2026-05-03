@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 
 type ServiceProps = {
@@ -6,7 +6,7 @@ type ServiceProps = {
 	title: string;
 	subtitle: string;
 	category: string;
-	imageSrc: string;
+	imageSrc: StaticImageData;
 	alt: string;
 	path: string;
 };

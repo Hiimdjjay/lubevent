@@ -4,7 +4,7 @@ import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import Image from 'next/image';
-import BACKGROUND from '../../../../public/photos/hero/conference-pexels.jpg';
+import BACKGROUND from '@/assets/photos/hero/conference-pexels.jpg';
 
 type CtaSectionProps = {
 	primaryText: string;

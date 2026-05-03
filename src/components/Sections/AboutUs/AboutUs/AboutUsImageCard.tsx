@@ -1,7 +1,8 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+import dominikBerwertzImg from '@/assets/photos/team/domonik-berwertz.jpg';
 
 type ImageCardProps = {
-	src: string;
+	src: StaticImageData;
 	alt: string;
 	quote: string;
 };
@@ -15,7 +16,7 @@ export function AboutUsImageCard({ src, alt, quote }: ImageCardProps) {
 				<div className='flex items-center gap-3 text-sm font-medium '>
 					<div className='relative w-9 h-9 rounded-full overflow-hidden '>
 						<Image
-							src='/Photos/Dominik-Berwertz.jpg'
+							src={dominikBerwertzImg}
 							width={50}
 							height={50}
 							alt='Dominik Berwertz - CEO'
