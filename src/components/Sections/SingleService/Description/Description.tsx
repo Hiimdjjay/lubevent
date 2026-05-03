@@ -1,7 +1,17 @@
 import { Wrapper } from '@/components/UI/Wrapper';
 import { HowToStart } from './HowToStart';
 
-export function Description({ subpageData: { generalDescription, sideDescription, eventTerms } }) {
+type SubpageDataProps = {
+	subpageData: {
+		generalDescription: string;
+		sideDescription: string;
+		eventTerms: string[];
+	};
+};
+
+export function Description({
+	subpageData: { generalDescription, sideDescription, eventTerms }
+}: SubpageDataProps) {
 	return (
 		<section className='pb-20 md:pb-25 lg:pb-30'>
 			<Wrapper marginForText>
