@@ -1,9 +1,18 @@
 import { MainTitle } from '@/components/UI/MainTitle';
 import { Subtitle } from '@/components/UI/Subtitle';
 import { Wrapper } from '@/components/UI/Wrapper';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
-export function SubpageHero({ subpageData: { title, subtitle, image, alt } }) {
+type SubpageHeroProps = {
+	subpageData: {
+		title: string;
+		subtitle: string;
+		imageSrc: StaticImageData;
+		alt: string;
+	};
+};
+
+export function SubpageHero({ subpageData: { title, subtitle, imageSrc, alt } }: SubpageHeroProps) {
 	return (
 		<section className='pt-30 pb-10 md:pt-45 md:pb-12 lg:pt-60 lg:pb-15'>
 			<Wrapper>
@@ -13,7 +22,7 @@ export function SubpageHero({ subpageData: { title, subtitle, image, alt } }) {
 						<Subtitle textCenter>{subtitle}</Subtitle>
 					</div>
 					<div className='relative w-full aspect-6/3 rounded-3xl overflow-hidden'>
-						<Image src={image} alt={alt} fill className='object-cover' />
+						<Image src={imageSrc} alt={alt} fill className='object-cover' />
 					</div>
 				</div>
 			</Wrapper>

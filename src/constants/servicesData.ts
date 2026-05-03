@@ -1,20 +1,20 @@
 import type { StaticImageData } from 'next/image';
 
-import salaWeselnaImg from '@/assets/photos/sala-weselna.png';
-import weddingPartyImg from '@/assets/photos/hero/wedding-party.jpg';
-import teamCelebrationImg from '@/assets/photos/hero/team-celebration-confetti.jpg';
-import corporateEventCheckImg from '@/assets/photos/hero/corporate-event-check.jpg';
-import weddingToastImg from '@/assets/photos/home/wedding-toast.jpg';
-import studioConferenceImg from '@/assets/photos/hero/studio-conference.jpg';
-import largeScreenConferenceImg from '@/assets/photos/home/large-screen-conference.jpg';
-import concertUnsplashImg from '@/assets/photos/hero/concert-unsplash.jpg';
-import singerUnsplashImg from '@/assets/photos/hero/singer-unsplash.jpg';
-import festivalCrowdImg from '@/assets/photos/hero/festival-crowd-shutterstuck.jpg';
-import conference2Img from '@/assets/photos/hero/conference-2-shutterstock.jpg';
-import corporateNetworkingImg from '@/assets/photos/home/corporate-networking.jpg';
-import newlywedsImg from '@/assets/photos/hero/newlyweds-unsplash.jpg';
-import gardenEventTentImg from '@/assets/photos/hero/garden-event-tent.jpg';
-import conferenceGuyImg from '@/assets/photos/team/conference-guy.png';
+import SALA_WESELNA_IMG from '@/assets/photos/sala-weselna.png';
+import WEDDING_PARTY_IMG from '@/assets/photos/hero/wedding-party.jpg';
+import TEAM_CELEBRATION_IMG from '@/assets/photos/hero/team-celebration-confetti.jpg';
+import CORPORATE_EVENT_CHECK_IMG from '@/assets/photos/hero/corporate-event-check.jpg';
+import WEDDING_TOAST_IMG from '@/assets/photos/home/wedding-toast.jpg';
+import STUDIO_CONFERENCE_IMG from '@/assets/photos/hero/studio-conference.jpg';
+import LARGE_SCREEN_CONFERENCE_IMG from '@/assets/photos/home/large-screen-conference.jpg';
+import CONCERT_UNSPLASH_IMG from '@/assets/photos/hero/concert-unsplash.jpg';
+import SINGER_UNSPLASH_IMG from '@/assets/photos/hero/singer-unsplash.jpg';
+import FESTIVAL_CROWD_IMG from '@/assets/photos/hero/festival-crowd-shutterstuck.jpg';
+import CONFERENCE_2_IMG from '@/assets/photos/hero/conference-2-shutterstock.jpg';
+import CORPORATE_NETWORKING_IMG from '@/assets/photos/home/corporate-networking.jpg';
+import NEWLYWEDS_IMG from '@/assets/photos/hero/newlyweds-unsplash.jpg';
+import GARDEN_EVENT_TENT_IMG from '@/assets/photos/hero/garden-event-tent.jpg';
+import CONFERENCE_GUY_IMG from '@/assets/photos/team/conference-guy.png';
 
 export type ServiceData = {
 	id: number;
@@ -36,7 +36,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Wesela & Studniówki',
 		subtitle: 'Kompleksowa oprawa muzyczna i techniczna Waszego wyjątkowego wieczoru.',
 		category: 'Uroczystości',
-		imageSrc: salaWeselnaImg,
+		imageSrc: SALA_WESELNA_IMG,
 		alt: 'Wesele i Studniówka',
 		path: '/uslugi/wesele',
 		generalDescription:
@@ -54,7 +54,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: '18-nastki',
 		subtitle: 'Wyjątkowe urodziny, które zapamiętasz na całe życie.',
 		category: 'Uroczystości',
-		imageSrc: weddingPartyImg,
+		imageSrc: WEDDING_PARTY_IMG,
 		alt: '18-nastka',
 		path: '/uslugi/18-nastka',
 		generalDescription:
@@ -72,7 +72,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Imprezy tematyczne',
 		subtitle: 'Twój pomysł, nasza realizacja — bez ograniczeń.',
 		category: 'Uroczystości',
-		imageSrc: teamCelebrationImg,
+		imageSrc: TEAM_CELEBRATION_IMG,
 		alt: 'Impreza tematyczna',
 		path: '/uslugi/impreza-tematyczna',
 		generalDescription:
@@ -91,7 +91,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Gale & Bankiety',
 		subtitle: 'Elegancka oprawa dla prestiżowych wydarzeń firmowych.',
 		category: 'Gale i Jubileusze',
-		imageSrc: corporateEventCheckImg,
+		imageSrc: CORPORATE_EVENT_CHECK_IMG,
 		alt: 'Gala i bankiet',
 		path: '/uslugi/gala-bankiet',
 		generalDescription:
@@ -109,7 +109,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Jubileusze',
 		subtitle: 'Świętuj ważne rocznice w wielkim stylu.',
 		category: 'Gale i Jubileusze',
-		imageSrc: weddingToastImg,
+		imageSrc: WEDDING_TOAST_IMG,
 		alt: 'Jubileusz',
 		path: '/uslugi/jubileusz',
 		generalDescription:
@@ -127,7 +127,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Konferencje',
 		subtitle: 'Profesjonalna obsługa techniczna Twoich eventów biznesowych.',
 		category: 'Gale i Jubileusze',
-		imageSrc: studioConferenceImg,
+		imageSrc: STUDIO_CONFERENCE_IMG,
 		alt: 'Konferencja',
 		path: '/uslugi/konferencja',
 		generalDescription:
@@ -145,7 +145,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Eventy marketingowe',
 		subtitle: 'Eventy, które budują markę i angażują uczestników.',
 		category: 'Gale i Jubileusze',
-		imageSrc: largeScreenConferenceImg,
+		imageSrc: LARGE_SCREEN_CONFERENCE_IMG,
 		alt: 'Event marketingowy',
 		path: '/uslugi/event-marketingowy',
 		generalDescription:
@@ -164,7 +164,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'DJ & Wodzirej',
 		subtitle: 'Muzyka i prowadzenie, które rozkręcą każdą imprezę.',
 		category: 'DJ & Wodzirej',
-		imageSrc: concertUnsplashImg,
+		imageSrc: CONCERT_UNSPLASH_IMG,
 		alt: 'DJ i Wodzirej',
 		path: '/uslugi/dj-wodzirej',
 		generalDescription:
@@ -182,7 +182,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'DJ Sportowy & Speaker',
 		subtitle: 'Dynamiczna oprawa muzyczna i komentarz na wydarzeniach sportowych.',
 		category: 'DJ & Wodzirej',
-		imageSrc: singerUnsplashImg,
+		imageSrc: SINGER_UNSPLASH_IMG,
 		alt: 'DJ Sportowy i Speaker sportowy',
 		path: '/uslugi/dj-sportowy-speaker',
 		generalDescription:
@@ -201,7 +201,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Technika sceniczna',
 		subtitle: 'Profesjonalny sprzęt i obsługa na każdą okazję.',
 		category: 'Technika sceniczna',
-		imageSrc: festivalCrowdImg,
+		imageSrc: FESTIVAL_CROWD_IMG,
 		alt: 'Technika sceniczna',
 		path: '/uslugi/technika-sceniczna',
 		generalDescription:
@@ -219,7 +219,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Wynajem sprzętu',
 		subtitle: 'Sceny, nagłośnienie i oświetlenie na wynajem.',
 		category: 'Technika sceniczna',
-		imageSrc: conference2Img,
+		imageSrc: CONFERENCE_2_IMG,
 		alt: 'Wynajem sprzętu estradowego',
 		path: '/uslugi/wynajem-sprzetu',
 		generalDescription:
@@ -238,7 +238,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'LubBar',
 		subtitle: 'Przenośny bar mobilny — drink w każdym miejscu.',
 		category: 'Atrakcje',
-		imageSrc: corporateNetworkingImg,
+		imageSrc: CORPORATE_NETWORKING_IMG,
 		alt: 'LubBar przenośny bar',
 		path: '/uslugi/lubbar',
 		generalDescription:
@@ -256,7 +256,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Fotobudka',
 		subtitle: 'Klasyczna fotobudka — pamiątka dla każdego gościa.',
 		category: 'Atrakcje',
-		imageSrc: newlywedsImg,
+		imageSrc: NEWLYWEDS_IMG,
 		alt: 'Fotobudka klasyczna',
 		path: '/uslugi/fotobudka',
 		generalDescription:
@@ -274,7 +274,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Animatorzy',
 		subtitle: 'Profesjonalni animatorzy dla dzieci i dorosłych.',
 		category: 'Atrakcje',
-		imageSrc: gardenEventTentImg,
+		imageSrc: GARDEN_EVENT_TENT_IMG,
 		alt: 'Animatorzy',
 		path: '/uslugi/animatorzy',
 		generalDescription:
@@ -293,7 +293,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Konferansjer',
 		subtitle: 'Profesjonalne prowadzenie każdego wydarzenia.',
 		category: 'Konferansjer',
-		imageSrc: conferenceGuyImg,
+		imageSrc: CONFERENCE_GUY_IMG,
 		alt: 'Konferansjer',
 		path: '/uslugi/konferansjer',
 		generalDescription:
