@@ -2,8 +2,9 @@ import { MainTitle } from '@/components/UI/MainTitle';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { Subtitle } from '@/components/UI/Subtitle';
 import { SubpageHeroCardList } from './SubpageHeroCardList';
+import CONTACT from '@/assets/photos/contact/contact-subpage-hero.jpg';
 import Image from 'next/image';
-import CONTACT from '../../../../../public/photos/contact/contact-subpage-hero.jpg';
+
 export function SubpageHero() {
 	return (
 		<section className='flex flex-col bg-bg-sectionLabel lg:flex-row lg:gap-5'>
