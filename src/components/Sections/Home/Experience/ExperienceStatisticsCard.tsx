@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import { StaticImageData } from 'next/image';
 import { ExperienceCardCounter } from './ExperienceCardCounter';
 
 type StatisticsCardProps = {
 	title: string;
-	src?: string;
+	imageSrc?: StaticImageData;
 	target: number;
 	content: string;
 	imageAlt?: string;
@@ -13,7 +14,7 @@ type StatisticsCardProps = {
 
 export function ExperienceStatisticsCard({
 	title,
-	src,
+	imageSrc,
 	target,
 	content,
 	imageAlt,
@@ -30,13 +31,14 @@ export function ExperienceStatisticsCard({
 						<p className={`w-[85%] font-medium ${classNameText} `}>{content}</p>
 					</div>
 				</div>
-				{src && (
+				{imageSrc && (
 					<Image
+						src={imageSrc}
+						alt={imageAlt ?? ''}
+						placeholder='blur'
 						width={300}
 						height={300}
-						src={src}
 						className='absolute w-75 -right-5 -bottom-40 self-end md:-right-10'
-						alt={imageAlt ?? ''}
 					/>
 				)}
 			</div>

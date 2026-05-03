@@ -35,7 +35,7 @@ type AchievementsData = {
 export const ACHIEVEMENTS_DATA: AchievementsData[] = [
 	{ id: 1, title: 'Zrealizowanych wydarzeń', number: '1,500', mark: '+' },
 	{ id: 2, title: 'Doświadczenie zawodowe', number: '10', mark: '+ Lat' },
-	{ id: 3, title: 'Rozpoznawalne Marki', number: '20', mark: '+' },
+	{ id: 3, title: 'Rozpoznawalne marki', number: '20', mark: '+' },
 	{ id: 4, title: 'Zadowolonych klientów', number: '1000', mark: '+' }
 ];
 

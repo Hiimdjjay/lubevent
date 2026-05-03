@@ -1,9 +1,9 @@
 import { MainTitle } from '@/components/UI/MainTitle';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { Subtitle } from '@/components/UI/Subtitle';
-import { ContactCards } from './ContactCards';
+import { SubpageHeroCardList } from './SubpageHeroCardList';
 import Image from 'next/image';
-
+import CONTACT from '../../../../../public/photos/contact/contact-subpage-hero.jpg';
 export function SubpageHero() {
 	return (
 		<section className='flex flex-col bg-bg-sectionLabel lg:flex-row lg:gap-5'>
@@ -16,17 +16,24 @@ export function SubpageHero() {
 								Skontaktuj się <br />z nami
 							</MainTitle>
 							<Subtitle>
-								Jesteśmy tutaj, aby pomóc Ci stworzyć dopracowane wydarzenie. Skontaktuj
-								się z nami telefonicznie, mailowo lub przez formularz — odpowiemy szybko i
-								zajmiemy się wszystkim od koncepcji po realizację.
+								Jesteśmy tutaj, aby pomóc Ci stworzyć dopracowane wydarzenie. Skontaktuj się z nami
+								telefonicznie, mailowo lub przez formularz — odpowiemy szybko i zajmiemy się wszystkim od
+								koncepcji po realizację.
 							</Subtitle>
 						</div>
-						<ContactCards />
+						<SubpageHeroCardList />
 					</div>
 				</div>
 			</div>
-			<div className='relative w-full aspect-3/4 md:aspect-square lg:w-1/2'>
-				<Image src='/Photos/contact.png' fill alt='sdf' className='object-cover' />
+			<div className='overflow-hidden relative w-full aspect-3/4 md:aspect-square lg:w-1/2'>
+				<Image
+					src={CONTACT}
+					alt='Dominik Berwertz, założyciel firmy, podczas pracy nad planowaniem wydarzenia'
+					quality={100}
+					placeholder='blur'
+					fill
+					className='object-cover'
+				/>
 			</div>
 		</section>
 	);

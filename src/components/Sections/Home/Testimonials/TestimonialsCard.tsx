@@ -1,6 +1,7 @@
 import { Google } from '@/components/UI/Icons/Google';
 import { Star } from '@/components/UI/Icons/Star';
 import Image from 'next/image';
+import TESTIMONIAL from '../../../../../public/testimonials/1-man.jpg';
 
 type TestimonialsCardProps = {
 	name: string;
@@ -26,11 +27,11 @@ export function TestimonialsCard({ name, surname, content }: TestimonialsCardPro
 			<div className='flex gap-3 border-t border-black/20 pt-5 '>
 				<div className='relative w-18 h-18 rounded-xl overflow-hidden'>
 					<Image
-						src='/Testimonials/1-man.jpg'
-						fill
-						sizes='80px'
-						className='object-cover object-top'
+						src={TESTIMONIAL}
 						alt='Miniaturka zdjęcia, osoby wyrażającej opinie'
+						placeholder='blur'
+						fill
+						className='object-cover object-top'
 					/>
 				</div>
 				<div className='flex flex-col'>

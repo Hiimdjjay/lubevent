@@ -33,12 +33,10 @@ export function TestimonialsCarousel() {
 				<div
 					style={{ transform: `translateX(-${value * (100 / visiableCards)}%) ` }}
 					className={`flex w-full transition-transform duration-300 `}>
-					{TESTIMONIALS.map(testimonial => {
+					{TESTIMONIALS.map(({ id, name, surname, content }) => {
 						return (
-							<div
-								key={testimonial.id}
-								className='w-full px-4 shrink-0 md:w-1/2 md:px-2 xl:w-1/3 largeScreen'>
-								<TestimonialsCard {...testimonial} />
+							<div key={id} className='w-full px-4 shrink-0 md:w-1/2 md:px-2 xl:w-1/3 largeScreen'>
+								<TestimonialsCard name={name} surname={surname} content={content} />
 							</div>
 						);
 					})}

@@ -4,6 +4,7 @@ import { PrimaryButton } from '@/components/UI/Buttons/PrimaryButton';
 import { SectionLabel } from '@/components/UI/SectionLabel';
 import { SectionTitle } from '@/components/UI/SectionTitle';
 import Image from 'next/image';
+import BACKGROUND from '../../../../public/photos/hero/conference-pexels.jpg';
 
 type CtaSectionProps = {
 	primaryText: string;
@@ -16,10 +17,11 @@ export function CtaSection({ primaryText, primaryPath, secondaryText, secondaryP
 	return (
 		<section className='relative py-20 md:py-25 lg:py-30'>
 			<Image
-				src='/Photos/Conference-new.jpg'
+				src={BACKGROUND}
+				alt='Koncert - tło sekcji kontaktowej'
+				placeholder='blur'
 				fill
 				className='object-cover -z-2'
-				alt='Koncer - tło sekcji kontaktowej'
 			/>
 			<div className='absolute inset-0 bg-black/70 -z-1'></div>
 			<Wrapper>

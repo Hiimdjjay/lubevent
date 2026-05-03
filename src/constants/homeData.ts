@@ -1,27 +1,45 @@
+import { StaticImageData } from 'next/image';
+
+import CONFERENCE from '../../public/photos/hero/conference-pexels.jpg';
+import STUDIO from '../../public/photos/hero/studio-conference.jpg';
+import CORPORATE_EVENT from '../../public/photos/hero/corporate-event-check.jpg';
+import FESTIVAL_CROWD from '../../public/photos/hero/festival-crowd-shutterstuck.jpg';
+import GARDEN_EVENT from '../../public/photos/hero/garden-event-tent.jpg';
+import CONCERTE from '../../public/photos/hero/concert-unsplash.jpg';
+import MASCOT_SPORT from '../../public/photos/hero/mascot-event-sport.jpg';
+import WEDDING_PARTY from '../../public/photos/hero/wedding-party.jpg';
+import NEWLYWEDS from '../../public/photos/hero/newlyweds-unsplash.jpg';
+import SINGER from '../../public/photos/hero/singer-unsplash.jpg';
+import CONFERENCE_SECOND from '../../public/photos/hero/conference-2-shutterstock.jpg';
+import TEAM from '../../public/photos/hero/team-celebration-confetti.jpg';
+import LARGE_SCREEN from '../../public/photos/home/large-screen-conference.jpg';
+import WEDDING_TOAST from '../../public/photos/home/wedding-toast.jpg';
+import CONFERECE_GUY from '../../public/photos/team/conference-guy.png';
+
 import { ListCheck, HandCoins, AlarmClock, UserStar, type LucideIcon } from 'lucide-react';
 
 type ImageProps = {
 	id: number;
-	src: string;
+	imageSrc: StaticImageData;
 	alt: string;
 };
 
 export const IMAGES_HERO_1: ImageProps[] = [
-	{ id: 1, src: '/Photos/Corporate-event-2-ChatGPT.png', alt: 'Description' },
-	{ id: 2, src: '/Photos/Concert-unsplash.png', alt: 'Description' },
-	{ id: 3, src: '/Photos/conference-2-unsplash.png', alt: 'Description' },
-	{ id: 4, src: '/Photos/Group-of-people-ChatGPT.png', alt: 'Description' },
-	{ id: 5, src: '/Photos/outdoor-party.png', alt: 'Description' },
-	{ id: 6, src: '/Photos/Premiere.png', alt: 'Description' }
+	{ id: 1, imageSrc: CONFERENCE, alt: 'Description' },
+	{ id: 2, imageSrc: STUDIO, alt: 'Description' },
+	{ id: 3, imageSrc: CORPORATE_EVENT, alt: 'Description' },
+	{ id: 4, imageSrc: FESTIVAL_CROWD, alt: 'Description' },
+	{ id: 5, imageSrc: GARDEN_EVENT, alt: 'Description' },
+	{ id: 6, imageSrc: CONCERTE, alt: 'Description' }
 ];
 
 export const IMAGES_HERO_2: ImageProps[] = [
-	{ id: 1, src: '/Photos/wedding-party.webp', alt: 'Description' },
-	{ id: 2, src: '/Photos/newlyweds-unsplash.png', alt: 'Description' },
-	{ id: 3, src: '/Photos/Corporate-event-ChatGPT.png', alt: 'Description' },
-	{ id: 4, src: '/Photos/Singer-unsplash.jpg', alt: 'Description' },
-	{ id: 5, src: '/Photos/conference-grok.png', alt: 'Description' },
-	{ id: 6, src: '/Photos/Group-of-people-Chat-GPT.png', alt: 'Description' }
+	{ id: 1, imageSrc: MASCOT_SPORT, alt: 'Description' },
+	{ id: 2, imageSrc: WEDDING_PARTY, alt: 'Description' },
+	{ id: 3, imageSrc: NEWLYWEDS, alt: 'Description' },
+	{ id: 4, imageSrc: SINGER, alt: 'Description' },
+	{ id: 5, imageSrc: CONFERENCE_SECOND, alt: 'Description' },
+	{ id: 6, imageSrc: TEAM, alt: 'Description' }
 ];
 
 type AboutUsCardsData = {
@@ -44,7 +62,7 @@ type StatisticsCardData = {
 	target: number;
 	content: string;
 	className?: string;
-	src?: string;
+	imageSrc?: StaticImageData;
 	alt?: string;
 	classNameText?: string;
 };
@@ -52,7 +70,7 @@ type StatisticsCardData = {
 type ImageCardData = {
 	id: number;
 	variant: 'image';
-	src: string;
+	imageSrc: StaticImageData;
 	alt: string;
 	className?: string;
 };
@@ -67,7 +85,7 @@ export const EXPERIENCE_DATA: CardData[] = [
 		target: 300,
 		content:
 			'Od eventów firmowych po duże realizacje sceniczne. Scena, dźwięk, światło i koordynacja w jednym miejscu.',
-		src: '/Photos/Conference-guy.png',
+		imageSrc: CONFERECE_GUY,
 		alt: 'Zdjęcie konfenansjera przemawiąjącego do publiczności',
 		className:
 			' text-white bg-linear-to-r from-bg-btn-blue to-bg-btn-purple h-110 md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2',
@@ -76,7 +94,7 @@ export const EXPERIENCE_DATA: CardData[] = [
 	{
 		id: 2,
 		variant: 'image',
-		src: '/Photos/wedding-toast.png',
+		imageSrc: WEDDING_TOAST,
 		alt: 'Rozbawieni zadowoleni goście',
 		className: 'md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3'
 	},
@@ -92,7 +110,7 @@ export const EXPERIENCE_DATA: CardData[] = [
 	{
 		id: 4,
 		variant: 'image',
-		src: '/Photos/Business-meeting2.jpg',
+		imageSrc: LARGE_SCREEN,
 		alt: 'Prezentacja produktu na sali wypełnionej ludźmi i dobrą atmosferą',
 		className: 'md:h-full md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-4'
 	},
