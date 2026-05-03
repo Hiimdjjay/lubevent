@@ -88,7 +88,7 @@ export const EXPERIENCE_DATA: CardData[] = [
 		imageSrc: CONFERECE_GUY,
 		alt: 'Zdjęcie konfenansjera przemawiąjącego do publiczności',
 		className:
-			' text-white bg-linear-to-r from-bg-btn-blue to-bg-btn-purple h-110 md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2',
+			'text-white bg-linear-to-r from-bg-btn-blue to-bg-btn-purple h-110 md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2',
 		classNameText: 'md:w-[50%]'
 	},
 	{
