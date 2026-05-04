@@ -22,7 +22,7 @@ export function SubpageHero({ subpageData: { title, subtitle, imageSrc, alt } }:
 						<Subtitle textCenter>{subtitle}</Subtitle>
 					</div>
 					<div className='relative w-full aspect-6/3 rounded-3xl overflow-hidden'>
-						<Image src={imageSrc} alt={alt} fill className='object-cover' />
+						<Image src={imageSrc} alt={alt} placeholder='blur' fill className='object-cover' />
 					</div>
 				</div>
 			</Wrapper>

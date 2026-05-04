@@ -1,32 +1,30 @@
 import type { StaticImageData } from 'next/image';
 
-import conference2Img from '@/assets/photos/hero/conference-2-shutterstock.jpg';
-import festivalCrowdImg from '@/assets/photos/hero/festival-crowd-shutterstuck.jpg';
-import concertUnsplashImg from '@/assets/photos/hero/concert-unsplash.jpg';
-import corporateEventCheckImg from '@/assets/photos/hero/corporate-event-check.jpg';
-import singerUnsplashImg from '@/assets/photos/hero/singer-unsplash.jpg';
-import gardenEventTentImg from '@/assets/photos/hero/garden-event-tent.jpg';
-import corporateNetworkingImg from '@/assets/photos/home/corporate-networking.jpg';
-import weddingPartyImg from '@/assets/photos/hero/wedding-party.jpg';
-import dominikBerwertzImg from '@/assets/photos/team/domonik-berwertz.jpg';
-import teamPlanningImg from '@/assets/photos/team/team-planning.jpg';
-import teamWorkingImg from '@/assets/photos/team/team-working.jpg';
+import CONFERENCE_2_IMG from '@/assets/photos/hero-and-offer/conference-2-shutterstock.jpg';
+import FESTIVAL_CROWD_IMG from '@/assets/photos/hero-and-offer/festival-crowd-shutterstuck.jpg';
+import CONCERT_UNSPLASH_IMG from '@/assets/photos/hero-and-offer/concert-unsplash.jpg';
+import CORPORATE_EVENT_CHECK_IMG from '@/assets/photos/hero-and-offer/corporate-event-check.jpg';
+import SINGER_UNSPLASH_IMG from '@/assets/photos/hero-and-offer/singer-unsplash.jpg';
+import GARDEN_EVENT_TENT_IMG from '@/assets/photos/hero-and-offer/garden-event-tent.jpg';
+import CORPORATE_NETWORKING_IMG from '@/assets/photos/home/corporate-networking.jpg';
+import WEDDING_PARTY_IMG from '@/assets/photos/hero-and-offer/wedding-party.jpg';
+import DOMINIK_BERWERTZ_IMG from '@/assets/photos/team/domonik-berwertz.jpg';
 
 type ImagesAboutUsData = {
 	id: number;
-	src: StaticImageData;
+	imageSrc: StaticImageData;
 	alt: string;
 };
 
 export const IMAGES_ABOUTUS_DATA: ImagesAboutUsData[] = [
-	{ id: 1, src: conference2Img, alt: 'Konferencja' },
-	{ id: 2, src: festivalCrowdImg, alt: 'Festiwal' },
-	{ id: 3, src: concertUnsplashImg, alt: 'Koncert' },
-	{ id: 4, src: corporateEventCheckImg, alt: 'Event korporacyjny' },
-	{ id: 5, src: singerUnsplashImg, alt: 'Piosenkarz na scenie' },
-	{ id: 6, src: gardenEventTentImg, alt: 'Event plenerowy' },
-	{ id: 7, src: corporateNetworkingImg, alt: 'Networking korporacyjny' },
-	{ id: 8, src: weddingPartyImg, alt: 'Przyjęcie weselne' }
+	{ id: 1, imageSrc: CONFERENCE_2_IMG, alt: 'Konferencja' },
+	{ id: 2, imageSrc: FESTIVAL_CROWD_IMG, alt: 'Festiwal' },
+	{ id: 3, imageSrc: CONCERT_UNSPLASH_IMG, alt: 'Koncert' },
+	{ id: 4, imageSrc: CORPORATE_EVENT_CHECK_IMG, alt: 'Event korporacyjny' },
+	{ id: 5, imageSrc: SINGER_UNSPLASH_IMG, alt: 'Piosenkarz na scenie' },
+	{ id: 6, imageSrc: GARDEN_EVENT_TENT_IMG, alt: 'Event plenerowy' },
+	{ id: 7, imageSrc: CORPORATE_NETWORKING_IMG, alt: 'Networking korporacyjny' },
+	{ id: 8, imageSrc: WEDDING_PARTY_IMG, alt: 'Przyjęcie weselne' }
 ];
 
 type IconName = 'UserStar' | 'ClockCheck' | 'Expand';
@@ -67,7 +65,7 @@ export const TEAM_DATA: TeamMemberData[] = [
 		id: 1,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: dominikBerwertzImg,
+		imageSrc: DOMINIK_BERWERTZ_IMG,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -78,7 +76,7 @@ export const TEAM_DATA: TeamMemberData[] = [
 		id: 2,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: dominikBerwertzImg,
+		imageSrc: DOMINIK_BERWERTZ_IMG,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -89,7 +87,7 @@ export const TEAM_DATA: TeamMemberData[] = [
 		id: 3,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: teamPlanningImg,
+		imageSrc: DOMINIK_BERWERTZ_IMG,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',
@@ -100,7 +98,7 @@ export const TEAM_DATA: TeamMemberData[] = [
 		id: 4,
 		name: 'Dominik Berwertz',
 		jobTitle: 'Founder & CEO',
-		imageSrc: teamWorkingImg,
+		imageSrc: DOMINIK_BERWERTZ_IMG,
 		alt: 'Zdjęcie prezentujące CEO & Founder',
 		socialMediaURLs: {
 			facebook: 'https://www.facebook.com/',

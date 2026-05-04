@@ -9,7 +9,7 @@ export function TeamCards() {
 				return (
 					<div key={id} className='relative '>
 						<div className='relative w-full aspect-square rounded-3xl overflow-hidden'>
-							<Image src={imageSrc} fill alt={alt} className='object-cover' />
+							<Image src={imageSrc} alt={alt} placeholder='blur' fill className='object-cover' />
 						</div>
 						<div className='p-2'>
 							<h3 className='font-semibold text-xl'>{name}</h3>

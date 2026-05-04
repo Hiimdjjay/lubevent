@@ -1,9 +1,9 @@
 import { ButtonsBox } from '../ButtonsBox';
-import { Select } from '../Inputs/Select';
+import { Select } from '../../../UI/Inputs/Select';
 import { useState } from 'react';
 import { FormStepHeader } from '../FormStepHeader';
-import { Input } from '../Inputs/Input';
-import { Textarea } from '../Inputs/Textarea';
+import { Input } from '../../../UI/Inputs/Input';
+import { Textarea } from '../../../UI/Inputs/Textarea';
 import { FieldValues, UseFormRegister, UseFormTrigger } from 'react-hook-form';
 
 type AdditionalMessageProps = {

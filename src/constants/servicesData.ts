@@ -1,20 +1,21 @@
 import type { StaticImageData } from 'next/image';
 
-import SALA_WESELNA_IMG from '@/assets/photos/sala-weselna.png';
-import WEDDING_PARTY_IMG from '@/assets/photos/hero/wedding-party.jpg';
-import TEAM_CELEBRATION_IMG from '@/assets/photos/hero/team-celebration-confetti.jpg';
-import CORPORATE_EVENT_CHECK_IMG from '@/assets/photos/hero/corporate-event-check.jpg';
+import WEDDING_HALL_IMG from '@/assets/photos/hero-and-offer/wedding-main-hall.png';
+import WEDDING_PARTY_IMG from '@/assets/photos/hero-and-offer/wedding-party.jpg';
 import WEDDING_TOAST_IMG from '@/assets/photos/home/wedding-toast.jpg';
-import STUDIO_CONFERENCE_IMG from '@/assets/photos/hero/studio-conference.jpg';
+import THEMED_EVENTS_IMG from '@/assets/photos/hero-and-offer/themed-events.jpg';
+import TEAM_CELEBRATION_IMG from '@/assets/photos/hero-and-offer/team-celebration-confetti.jpg';
+import CORPORATE_EVENT_CHECK_IMG from '@/assets/photos/hero-and-offer/corporate-event-check.jpg';
 import LARGE_SCREEN_CONFERENCE_IMG from '@/assets/photos/home/large-screen-conference.jpg';
-import CONCERT_UNSPLASH_IMG from '@/assets/photos/hero/concert-unsplash.jpg';
-import SINGER_UNSPLASH_IMG from '@/assets/photos/hero/singer-unsplash.jpg';
-import FESTIVAL_CROWD_IMG from '@/assets/photos/hero/festival-crowd-shutterstuck.jpg';
-import CONFERENCE_2_IMG from '@/assets/photos/hero/conference-2-shutterstock.jpg';
-import CORPORATE_NETWORKING_IMG from '@/assets/photos/home/corporate-networking.jpg';
-import NEWLYWEDS_IMG from '@/assets/photos/hero/newlyweds-unsplash.jpg';
-import GARDEN_EVENT_TENT_IMG from '@/assets/photos/hero/garden-event-tent.jpg';
-import CONFERENCE_GUY_IMG from '@/assets/photos/team/conference-guy.png';
+import STUDIO_CONFERENCE_IMG from '@/assets/photos/hero-and-offer/studio-conference.jpg';
+import DJ_IMG from '@/assets/photos/hero-and-offer/dj.jpg';
+import SPEAKER_IMG from '@/assets/photos/hero-and-offer/speaker.jpg';
+import CONFERENCE_IMG from '@/assets/photos/hero-and-offer/conference-dominik-berwertz.jpg';
+import LUBBAR_IMG from '@/assets/photos/hero-and-offer/lubbar.jpg';
+import PHOTO_BOOTH_IMG from '@/assets/photos/hero-and-offer/photo-booth.jpg';
+import MASCOT_IMG from '@/assets/photos/hero-and-offer/mascot-event-sport.jpg';
+import STAGE_IMG from '@/assets/photos/hero-and-offer/stage.jpg';
+import EVENT_EQUIPMENT_IMG from '@/assets/photos/hero-and-offer/event-equipment.jpg';
 
 export type ServiceData = {
 	id: number;
@@ -36,7 +37,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Wesela & Studniówki',
 		subtitle: 'Kompleksowa oprawa muzyczna i techniczna Waszego wyjątkowego wieczoru.',
 		category: 'Uroczystości',
-		imageSrc: SALA_WESELNA_IMG,
+		imageSrc: WEDDING_HALL_IMG,
 		alt: 'Wesele i Studniówka',
 		path: '/uslugi/wesele',
 		generalDescription:
@@ -69,46 +70,9 @@ export const SERVICES_DATA: ServiceData[] = [
 	},
 	{
 		id: 3,
-		title: 'Imprezy tematyczne',
-		subtitle: 'Twój pomysł, nasza realizacja — bez ograniczeń.',
-		category: 'Uroczystości',
-		imageSrc: TEAM_CELEBRATION_IMG,
-		alt: 'Impreza tematyczna',
-		path: '/uslugi/impreza-tematyczna',
-		generalDescription:
-			'Imprezy tematyczne to nasza specjalność — uwielbiamy wyzwania i niestandardowe realizacje wymagające kreatywnego podejścia. Lata 80., maskarada, hawajskie lato, wieczór w stylu filmowym — cokolwiek sobie wymarzysz, my to zrealizujemy z pełnym profesjonalizmem.\n\nKluczem do udanej imprezy tematycznej jest spójność — muzyka, oświetlenie i zachowanie prowadzącego muszą budować jeden klimat. Przed każdą realizacją spotykamy się z organizatorem, żeby dokładnie omówić wizję i zaplanować każdy element oprawy.',
-		sideDescription:
-			'Dostosowujemy oprawę muzyczną i oświetlenie do wybranego motywu imprezy — każdy detal buduje spójny klimat wieczoru.',
-		eventTerms: [
-			'Muzyka i oświetlenie w 100% dopasowane do wybranego tematu.',
-			'Prowadzący wchodzi w charakter imprezy i angażuje gości.',
-			'Doradzamy i pomagamy w wyborze motywu jeśli potrzebujesz inspiracji.'
-		]
-	},
-	// ── GALE I JUBILEUSZE ────────────────────────────────────────────────────
-	{
-		id: 4,
-		title: 'Gale & Bankiety',
-		subtitle: 'Elegancka oprawa dla prestiżowych wydarzeń firmowych.',
-		category: 'Gale i Jubileusze',
-		imageSrc: CORPORATE_EVENT_CHECK_IMG,
-		alt: 'Gala i bankiet',
-		path: '/uslugi/gala-bankiet',
-		generalDescription:
-			'Gale i bankiety to wydarzenia, które wymagają bezbłędnej oprawy — każdy detal musi być dopracowany, a atmosfera musi odzwierciedlać rangę uroczystości. Rozumiemy, że tego typu wydarzenia są wizytówką firmy, dlatego podchodzimy do każdej realizacji z najwyższą starannością.\n\nZapewniamy profesjonalne nagłośnienie gwarantujące doskonałą jakość dźwięku, eleganckie oświetlenie budujące odpowiedni nastrój oraz doświadczonego konferansjera, który sprawnie poprowadzi cały program wieczoru.',
-		sideDescription:
-			'Kompleksowa obsługa techniczna i artystyczna gal firmowych oraz bankietów — od pierwszej nuty do ostatniego oklasku.',
-		eventTerms: [
-			'Profesjonalne nagłośnienie i oświetlenie dostosowane do charakteru sali.',
-			'Doświadczony konferansjer prowadzący program wieczoru.',
-			'Oprawa muzyczna na żywo lub DJ — w zależności od preferencji.'
-		]
-	},
-	{
-		id: 5,
 		title: 'Jubileusze',
 		subtitle: 'Świętuj ważne rocznice w wielkim stylu.',
-		category: 'Gale i Jubileusze',
+		category: 'Uroczystości',
 		imageSrc: WEDDING_TOAST_IMG,
 		alt: 'Jubileusz',
 		path: '/uslugi/jubileusz',
@@ -123,28 +87,65 @@ export const SERVICES_DATA: ServiceData[] = [
 		]
 	},
 	{
-		id: 6,
-		title: 'Konferencje',
-		subtitle: 'Profesjonalna obsługa techniczna Twoich eventów biznesowych.',
-		category: 'Gale i Jubileusze',
-		imageSrc: STUDIO_CONFERENCE_IMG,
-		alt: 'Konferencja',
-		path: '/uslugi/konferencja',
+		id: 4,
+		title: 'Imprezy tematyczne',
+		subtitle: 'Twój pomysł, nasza realizacja — bez ograniczeń.',
+		category: 'Uroczystości',
+		imageSrc: THEMED_EVENTS_IMG,
+		alt: 'Impreza tematyczna',
+		path: '/uslugi/impreza-tematyczna',
 		generalDescription:
-			'Profesjonalna konferencja wymaga niezawodnej techniki — awaria nagłośnienia podczas ważnej prezentacji jest scenariuszem, którego nikt nie chce doświadczyć. Dlatego dostarczamy wyłącznie sprawdzony sprzęt najwyższej jakości i zapewniamy pełną obsługę techniczną przez cały czas trwania wydarzenia.\n\nNasi technicy pojawiają się na miejscu z odpowiednim wyprzedzeniem, żeby dokładnie sprawdzić i skonfigurować każdy element systemu. Obsługujemy zarówno małe konferencje w salach hotelowych, jak i duże eventy na kilkaset osób.',
+			'Imprezy tematyczne to nasza specjalność — uwielbiamy wyzwania i niestandardowe realizacje wymagające kreatywnego podejścia. Lata 80., maskarada, hawajskie lato, wieczór w stylu filmowym — cokolwiek sobie wymarzysz, my to zrealizujemy z pełnym profesjonalizmem.\n\nKluczem do udanej imprezy tematycznej jest spójność — muzyka, oświetlenie i zachowanie prowadzącego muszą budować jeden klimat. Przed każdą realizacją spotykamy się z organizatorem, żeby dokładnie omówić wizję i zaplanować każdy element oprawy.',
 		sideDescription:
-			'Zapewniamy kompletną obsługę techniczną konferencji — sprzęt, konfiguracja i technik na miejscu przez cały czas trwania wydarzenia.',
+			'Dostosowujemy oprawę muzyczną i oświetlenie do wybranego motywu imprezy — każdy detal buduje spójny klimat wieczoru.',
 		eventTerms: [
-			'Mikrofony, system PA, ekrany i oświetlenie sceniczne w jednym pakiecie.',
-			'Technik na miejscu przez cały czas — zero stresu o sprzęt.',
-			'Obsługa konferencji od 20 do kilkuset uczestników.'
+			'Muzyka i oświetlenie w 100% dopasowane do wybranego tematu.',
+			'Prowadzący wchodzi w charakter imprezy i angażuje gości.',
+			'Doradzamy i pomagamy w wyborze motywu jeśli potrzebujesz inspiracji.'
+		]
+	},
+	// ── WYDARZENIE BIZNESOWE ─────────────────────────────────────────────────
+	{
+		id: 5,
+		title: 'Gale & Bankiety',
+		subtitle: 'Elegancka oprawa dla prestiżowych wydarzeń firmowych.',
+		category: 'Wydarzenie biznesowe',
+		imageSrc: CORPORATE_EVENT_CHECK_IMG,
+		alt: 'Gala i bankiet',
+		path: '/uslugi/gala-bankiet',
+		generalDescription:
+			'Gale i bankiety to wydarzenia, które wymagają bezbłędnej oprawy — każdy detal musi być dopracowany, a atmosfera musi odzwierciedlać rangę uroczystości. Rozumiemy, że tego typu wydarzenia są wizytówką firmy, dlatego podchodzimy do każdej realizacji z najwyższą starannością.\n\nZapewniamy profesjonalne nagłośnienie gwarantujące doskonałą jakość dźwięku, eleganckie oświetlenie budujące odpowiedni nastrój oraz doświadczonego konferansjera, który sprawnie poprowadzi cały program wieczoru.',
+		sideDescription:
+			'Kompleksowa obsługa techniczna i artystyczna gal firmowych oraz bankietów — od pierwszej nuty do ostatniego oklasku.',
+		eventTerms: [
+			'Profesjonalne nagłośnienie i oświetlenie dostosowane do charakteru sali.',
+			'Doświadczony konferansjer prowadzący program wieczoru.',
+			'Oprawa muzyczna na żywo lub DJ — w zależności od preferencji.'
+		]
+	},
+	{
+		id: 6,
+		title: 'Imprezy firmowe',
+		subtitle: 'Profesjonalna oprawa eventów integracyjnych i firmowych.',
+		category: 'Wydarzenie biznesowe',
+		imageSrc: TEAM_CELEBRATION_IMG,
+		alt: 'Impreza firmowa',
+		path: '/uslugi/impreza-firmowa',
+		generalDescription:
+			'Impreza firmowa to doskonała okazja do integracji zespołu, świętowania sukcesów i budowania relacji między pracownikami. Niezależnie od skali wydarzenia — kameralny wyjazd integracyjny czy wielka gala dla kilkuset osób — zapewniamy kompleksową oprawę, która sprawi, że każdy uczestnik będzie wspominał ten wieczór długo po jego zakończeniu.\n\nRozumiemy, że event firmowy musi realizować konkretne cele — integrację, motywację lub wzmocnienie kultury organizacyjnej. Dlatego zawsze zaczynamy od rozmowy z organizatorem, by dopasować oprawę muzyczną, oświetlenie i program do charakteru firmy i oczekiwań uczestników.',
+		sideDescription:
+			'Kompleksowo obsługujemy imprezy firmowe — od nagłośnienia i oświetlenia po animacje i prowadzenie wieczoru, dbając o integrację całego zespołu.',
+		eventTerms: [
+			'Muzyka i program dopasowane do charakteru firmy i grupy uczestników.',
+			'DJ, wodzirej lub konferansjer — w zależności od rodzaju eventu.',
+			'Obsługa imprez od kilkudziesięciu do kilkuset uczestników.'
 		]
 	},
 	{
 		id: 7,
 		title: 'Eventy marketingowe',
 		subtitle: 'Eventy, które budują markę i angażują uczestników.',
-		category: 'Gale i Jubileusze',
+		category: 'Wydarzenie biznesowe',
 		imageSrc: LARGE_SCREEN_CONFERENCE_IMG,
 		alt: 'Event marketingowy',
 		path: '/uslugi/event-marketingowy',
@@ -158,13 +159,31 @@ export const SERVICES_DATA: ServiceData[] = [
 			'Doświadczenie w eventach B2B i B2C dla firm różnych branż.'
 		]
 	},
-	// ── DJ & WODZIREJ ────────────────────────────────────────────────────────
 	{
 		id: 8,
+		title: 'Konferencje',
+		subtitle: 'Profesjonalna obsługa techniczna Twoich eventów biznesowych.',
+		category: 'Wydarzenie biznesowe',
+		imageSrc: STUDIO_CONFERENCE_IMG,
+		alt: 'Konferencja',
+		path: '/uslugi/konferencja',
+		generalDescription:
+			'Profesjonalna konferencja wymaga niezawodnej techniki — awaria nagłośnienia podczas ważnej prezentacji jest scenariuszem, którego nikt nie chce doświadczyć. Dlatego dostarczamy wyłącznie sprawdzony sprzęt najwyższej jakości i zapewniamy pełną obsługę techniczną przez cały czas trwania wydarzenia.\n\nNasi technicy pojawiają się na miejscu z odpowiednim wyprzedzeniem, żeby dokładnie sprawdzić i skonfigurować każdy element systemu. Obsługujemy zarówno małe konferencje w salach hotelowych, jak i duże eventy na kilkaset osób.',
+		sideDescription:
+			'Zapewniamy kompletną obsługę techniczną konferencji — sprzęt, konfiguracja i technik na miejscu przez cały czas trwania wydarzenia.',
+		eventTerms: [
+			'Mikrofony, system PA, ekrany i oświetlenie sceniczne w jednym pakiecie.',
+			'Technik na miejscu przez cały czas — zero stresu o sprzęt.',
+			'Obsługa konferencji od 20 do kilkuset uczestników.'
+		]
+	},
+	// ── PROWADZĄCY ───────────────────────────────────────────────────────────
+	{
+		id: 9,
 		title: 'DJ & Wodzirej',
 		subtitle: 'Muzyka i prowadzenie, które rozkręcą każdą imprezę.',
-		category: 'DJ & Wodzirej',
-		imageSrc: CONCERT_UNSPLASH_IMG,
+		category: 'Prowadzący',
+		imageSrc: DJ_IMG,
 		alt: 'DJ i Wodzirej',
 		path: '/uslugi/dj-wodzirej',
 		generalDescription:
@@ -178,11 +197,11 @@ export const SERVICES_DATA: ServiceData[] = [
 		]
 	},
 	{
-		id: 9,
+		id: 10,
 		title: 'DJ Sportowy & Speaker',
 		subtitle: 'Dynamiczna oprawa muzyczna i komentarz na wydarzeniach sportowych.',
-		category: 'DJ & Wodzirej',
-		imageSrc: SINGER_UNSPLASH_IMG,
+		category: 'Prowadzący',
+		imageSrc: SPEAKER_IMG,
 		alt: 'DJ Sportowy i Speaker sportowy',
 		path: '/uslugi/dj-sportowy-speaker',
 		generalDescription:
@@ -195,41 +214,22 @@ export const SERVICES_DATA: ServiceData[] = [
 			'Obsługa turniejów, rozgrywek ligowych i eventów sportowych każdej skali.'
 		]
 	},
-	// ── TECHNIKA SCENICZNA ───────────────────────────────────────────────────
-	{
-		id: 10,
-		title: 'Technika sceniczna',
-		subtitle: 'Profesjonalny sprzęt i obsługa na każdą okazję.',
-		category: 'Technika sceniczna',
-		imageSrc: FESTIVAL_CROWD_IMG,
-		alt: 'Technika sceniczna',
-		path: '/uslugi/technika-sceniczna',
-		generalDescription:
-			'Profesjonalna technika sceniczna to fundament każdego udanego wydarzenia — bez odpowiedniego nagłośnienia i oświetlenia nawet najlepszy artysta nie wypadnie tak, jak powinien. Dysponujemy nowoczesnym sprzętem najwyższej klasy, sprawdzającym się zarówno na kameralnych jak i plenerowych wydarzeniach.\n\nZajmujemy się transportem sprzętu na miejsce, profesjonalnym rozstawieniem i konfiguracją, obsługą podczas całego eventu oraz sprawnym demontażem po zakończeniu. Pracujemy z dbałością o bezpieczeństwo uczestników i zgodność z obowiązującymi przepisami.',
-		sideDescription:
-			'Dostarczamy i obsługujemy kompletne systemy nagłośnienia i oświetlenia scenicznego — nasi technicy czuwają przez cały czas trwania wydarzenia.',
-		eventTerms: [
-			'Profesjonalny sprzęt nagłośnieniowy i oświetleniowy najwyższej klasy.',
-			'Transport, rozstawienie, obsługa i demontaż w jednym pakiecie.',
-			'Technicy na miejscu przez cały czas — pełne bezpieczeństwo realizacji.'
-		]
-	},
 	{
 		id: 11,
-		title: 'Wynajem sprzętu',
-		subtitle: 'Sceny, nagłośnienie i oświetlenie na wynajem.',
-		category: 'Technika sceniczna',
-		imageSrc: CONFERENCE_2_IMG,
-		alt: 'Wynajem sprzętu estradowego',
-		path: '/uslugi/wynajem-sprzetu',
+		title: 'Konferansjer',
+		subtitle: 'Profesjonalne prowadzenie każdego wydarzenia.',
+		category: 'Prowadzący',
+		imageSrc: CONFERENCE_IMG,
+		alt: 'Konferansjer',
+		path: '/uslugi/konferansjer',
 		generalDescription:
-			'Wynajem profesjonalnego sprzętu estradowego to idealne rozwiązanie dla organizatorów dysponujących własnym personelem technicznym lub szukających elastycznej opcji dopasowanej do budżetu. Nasz park maszynowy obejmuje szeroką gamę sprzętu — od kompaktowych systemów nagłośnieniowych po potężne systemy liniowe i zaawansowane systemy oświetleniowe z DMX.\n\nKażdy sprzęt przed wypożyczeniem przechodzi szczegółowy przegląd techniczny. Oferujemy wynajem z dostawą i odbiorem lub możliwość samodzielnego odbioru — na życzenie zapewniamy technika do obsługi podczas eventu.',
+			'Doświadczony konferansjer to jeden z kluczowych elementów udanego wydarzenia — osoba, która spaja cały program w jedną całość i sprawia, że każdy gość czuje się częścią wyjątkowej uroczystości. To profesjonalista z doświadczeniem w prowadzeniu wydarzeń od kameralnych uroczystości po duże konferencje biznesowe.\n\nPosiada naturalną charyzmę, doskonałą dykcję i umiejętność improwizacji. Przed każdym wydarzeniem dokładnie poznaje program i preferencje organizatora, żeby jego prowadzenie było w pełni spersonalizowane i idealnie dopasowane do charakteru eventu.',
 		sideDescription:
-			'Wypożyczamy profesjonalny sprzęt estradowy z dostawą na miejsce — możliwość wynajmu z lub bez obsługi technicznej.',
+			'Nasz konferansjer prowadzi event zgodnie z ustalonym scenariuszem — dba o płynność programu i angażuje publiczność przez cały wieczór.',
 		eventTerms: [
-			'Szeroki park maszynowy — nagłośnienie, oświetlenie, sceny mobilne.',
-			'Każdy sprzęt przed wypożyczeniem przechodzi przegląd techniczny.',
-			'Dostawa i odbiór lub samodzielny odbiór — dopasuj opcję do siebie.'
+			'Prowadzenie zgodne z ustalonym scenariuszem i planem wieczoru.',
+			'Naturalna charyzma i doskonała dykcja — profesjonalizm na każdym kroku.',
+			'Sprawdza się na galach, weselach, konferencjach i uroczystościach każdego rodzaju.'
 		]
 	},
 	// ── ATRAKCJE ─────────────────────────────────────────────────────────────
@@ -238,7 +238,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'LubBar',
 		subtitle: 'Przenośny bar mobilny — drink w każdym miejscu.',
 		category: 'Atrakcje',
-		imageSrc: CORPORATE_NETWORKING_IMG,
+		imageSrc: LUBBAR_IMG,
 		alt: 'LubBar przenośny bar',
 		path: '/uslugi/lubbar',
 		generalDescription:
@@ -256,7 +256,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Fotobudka',
 		subtitle: 'Klasyczna fotobudka — pamiątka dla każdego gościa.',
 		category: 'Atrakcje',
-		imageSrc: NEWLYWEDS_IMG,
+		imageSrc: PHOTO_BOOTH_IMG,
 		alt: 'Fotobudka klasyczna',
 		path: '/uslugi/fotobudka',
 		generalDescription:
@@ -274,7 +274,7 @@ export const SERVICES_DATA: ServiceData[] = [
 		title: 'Animatorzy',
 		subtitle: 'Profesjonalni animatorzy dla dzieci i dorosłych.',
 		category: 'Atrakcje',
-		imageSrc: GARDEN_EVENT_TENT_IMG,
+		imageSrc: MASCOT_IMG,
 		alt: 'Animatorzy',
 		path: '/uslugi/animatorzy',
 		generalDescription:
@@ -287,23 +287,41 @@ export const SERVICES_DATA: ServiceData[] = [
 			'Program dostosowany do wieku uczestników i charakteru imprezy.'
 		]
 	},
-	// ── KONFERANSJER ─────────────────────────────────────────────────────────
+	// ── INFRASTRUKTURA EVENTOWA ──────────────────────────────────────────────
 	{
 		id: 15,
-		title: 'Konferansjer',
-		subtitle: 'Profesjonalne prowadzenie każdego wydarzenia.',
-		category: 'Konferansjer',
-		imageSrc: CONFERENCE_GUY_IMG,
-		alt: 'Konferansjer',
-		path: '/uslugi/konferansjer',
+		title: 'Technika sceniczna',
+		subtitle: 'Profesjonalny sprzęt i obsługa na każdą okazję.',
+		category: 'Infrastruktura eventowa',
+		imageSrc: STAGE_IMG,
+		alt: 'Technika sceniczna',
+		path: '/uslugi/technika-sceniczna',
 		generalDescription:
-			'Doświadczony konferansjer to jeden z kluczowych elementów udanego wydarzenia — osoba, która spaja cały program w jedną całość i sprawia, że każdy gość czuje się częścią wyjątkowej uroczystości. To profesjonalista z doświadczeniem w prowadzeniu wydarzeń od kameralnych uroczystości po duże konferencje biznesowe.\n\nPosiada naturalną charyzmę, doskonałą dykcję i umiejętność improwizacji. Przed każdym wydarzeniem dokładnie poznaje program i preferencje organizatora, żeby jego prowadzenie było w pełni spersonalizowane i idealnie dopasowane do charakteru eventu.',
+			'Profesjonalna technika sceniczna to fundament każdego udanego wydarzenia — bez odpowiedniego nagłośnienia i oświetlenia nawet najlepszy artysta nie wypadnie tak, jak powinien. Dysponujemy nowoczesnym sprzętem najwyższej klasy, sprawdzającym się zarówno na kameralnych jak i plenerowych wydarzeniach.\n\nZajmujemy się transportem sprzętu na miejsce, profesjonalnym rozstawieniem i konfiguracją, obsługą podczas całego eventu oraz sprawnym demontażem po zakończeniu. Pracujemy z dbałością o bezpieczeństwo uczestników i zgodność z obowiązującymi przepisami.',
 		sideDescription:
-			'Nasz konferansjer prowadzi event zgodnie z ustalonym scenariuszem — dba o płynność programu i angażuje publiczność przez cały wieczór.',
+			'Dostarczamy i obsługujemy kompletne systemy nagłośnienia i oświetlenia scenicznego — nasi technicy czuwają przez cały czas trwania wydarzenia.',
 		eventTerms: [
-			'Prowadzenie zgodne z ustalonym scenariuszem i planem wieczoru.',
-			'Naturalna charyzma i doskonała dykcja — profesjonalizm na każdym kroku.',
-			'Sprawdza się na galach, weselach, konferencjach i uroczystościach każdego rodzaju.'
+			'Profesjonalny sprzęt nagłośnieniowy i oświetleniowy najwyższej klasy.',
+			'Transport, rozstawienie, obsługa i demontaż w jednym pakiecie.',
+			'Technicy na miejscu przez cały czas — pełne bezpieczeństwo realizacji.'
+		]
+	},
+	{
+		id: 16,
+		title: 'Wynajem sprzętu',
+		subtitle: 'Sceny, nagłośnienie i oświetlenie na wynajem.',
+		category: 'Infrastruktura eventowa',
+		imageSrc: EVENT_EQUIPMENT_IMG,
+		alt: 'Wynajem sprzętu estradowego',
+		path: '/uslugi/wynajem-sprzetu',
+		generalDescription:
+			'Wynajem profesjonalnego sprzętu estradowego to idealne rozwiązanie dla organizatorów dysponujących własnym personelem technicznym lub szukających elastycznej opcji dopasowanej do budżetu. Nasz park maszynowy obejmuje szeroką gamę sprzętu — od kompaktowych systemów nagłośnieniowych po potężne systemy liniowe i zaawansowane systemy oświetleniowe z DMX.\n\nKażdy sprzęt przed wypożyczeniem przechodzi szczegółowy przegląd techniczny. Oferujemy wynajem z dostawą i odbiorem lub możliwość samodzielnego odbioru — na życzenie zapewniamy technika do obsługi podczas eventu.',
+		sideDescription:
+			'Wypożyczamy profesjonalny sprzęt estradowy z dostawą na miejsce — możliwość wynajmu z lub bez obsługi technicznej.',
+		eventTerms: [
+			'Szeroki park maszynowy — nagłośnienie, oświetlenie, sceny mobilne.',
+			'Każdy sprzęt przed wypożyczeniem przechodzi przegląd techniczny.',
+			'Dostawa i odbiór lub samodzielny odbiór — dopasuj opcję do siebie.'
 		]
 	}
 ];

@@ -15,7 +15,7 @@ export function ServicesCard({ title, subtitle, category, imageSrc, alt, path }:
 	return (
 		<div className='flex flex-col justify-between gap-2 p-4 h-full rounded-2xl bg-white'>
 			<div className='overflow-hidden relative flex flex-col items-end w-full p-3 aspect-4.5/3 rounded-xl md:'>
-				<Image src={imageSrc} alt={alt} fill className='object-cover' />
+				<Image src={imageSrc} alt={alt} placeholder='blur' fill className='object-cover' />
 				<div className='px-2.5 py-1.5 z-2 rounded-full bg-white'>
 					<span className='font-semibold text-black/70 text-sm'>{category}</span>
 				</div>

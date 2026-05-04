@@ -1,7 +1,7 @@
-import { Checkbox } from '../Inputs/Checkbox';
+import { Checkbox } from '../../../UI/Inputs/Checkbox';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { Input } from '../Inputs/Input';
+import { Input } from '../../../UI/Inputs/Input';
 import { FieldValues, UseFormRegister, UseFormTrigger } from 'react-hook-form';
 import { SERVICE_TYPE } from '@/constants/formData';
 

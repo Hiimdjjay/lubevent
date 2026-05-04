@@ -1,5 +1,4 @@
 /* Home Page */
-
 .animate-carousel-1 {
 	animation: carousel-left 120s linear infinite;
 }
@@ -47,7 +46,6 @@
 }
 
 /* AboutUs SubPage */
-
 .aboutUsCarousel {
 	animation: aboutUsCarousel 60s linear infinite;
 }
@@ -69,9 +67,9 @@
 
 @media (min-width: 1024px) {
 	.animate-carousel-1 {
-		animation: carousel-up 160s linear infinite;
+		animation: carousel-up 150s linear infinite;
 	}
 	.animate-carousel-2 {
-		animation: carousel-down 160s linear infinite;
+		animation: carousel-down 150s linear infinite;
 	}
 }

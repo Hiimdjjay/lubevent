@@ -1,5 +1,5 @@
-import { Input } from '../Inputs/Input';
-import { Select } from '../Inputs/Select';
+import { Input } from '../../../UI/Inputs/Input';
+import { Select } from '../../../UI/Inputs/Select';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
 import { FieldValues, UseFormRegister, UseFormTrigger, UseFormUnregister } from 'react-hook-form';

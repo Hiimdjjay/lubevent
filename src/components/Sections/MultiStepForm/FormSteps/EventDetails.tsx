@@ -1,7 +1,7 @@
-import { Select } from '../Inputs/Select';
-import { Input } from '../Inputs/Input';
+import { Select } from '../../../UI/Inputs/Select';
+import { Input } from '../../../UI/Inputs/Input';
 import { useState } from 'react';
-import { ButtonsSelect } from '../Inputs/ButtonsSelect';
+import { ButtonsSelect } from '../../../UI/Inputs/ButtonsSelect';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
 import {

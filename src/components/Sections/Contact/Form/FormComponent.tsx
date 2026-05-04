@@ -20,13 +20,13 @@ export function FormComponent() {
 	} = useForm<Message>({ mode: 'onBlur' });
 
 	async function onSubmit(data: Message) {
-		const { privacyPolicy, ...dataNoCheckbox } = data;
+		const { privacyPolicy, ...dataView } = data;
 
 		try {
 			const response = await fetch('/api/send/', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(dataNoCheckbox)
+				body: JSON.stringify(dataView)
 			});
 
 			if (!response.ok) throw new Error();
@@ -38,7 +38,7 @@ export function FormComponent() {
 	return (
 		<form
 			noValidate
-			className='flex flex-col gap-5 w-full bg-bg-sectionLabel p-5 rounded-2xl text-[17px] md:p-10 md:gap-7 lg:gap-10'
+			className='flex flex-col gap-2 w-full  p-5 rounded-2xl  bg-bg-sectionLabel md:p-10 md:gap-7 lg:gap-10'
 			onSubmit={handleSubmit(data => onSubmit(data))}>
 			<div className='flex flex-col gap-2'>
 				<label className='font-semibold text-black/70 md:text-lg' htmlFor='name'>
@@ -55,7 +55,7 @@ export function FormComponent() {
 					})}></input>
 				{errors.name && <span className='text-sm text-red-500'>{errors.name.message as string}</span>}
 			</div>
-			<div className='flex flex-col gap-5 md:flex-row md:gap-7 lg:gap-10'>
+			<div className='flex flex-col gap-2 md:flex-row md:gap-7 lg:gap-10'>
 				<div className='flex flex-col gap-2 md:w-1/2'>
 					<label className='font-semibold text-black/70 md:text-lg' htmlFor='email'>
 						Adres e-mail
