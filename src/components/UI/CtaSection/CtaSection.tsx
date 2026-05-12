@@ -15,7 +15,7 @@ type CtaSectionProps = {
 
 export function CtaSection({ primaryText, primaryPath, secondaryText, secondaryPath }: CtaSectionProps) {
 	return (
-		<section className='relative py-20 md:py-25 lg:py-30'>
+		<section className='relative py-20 md:py-25 lg:py-30 2xl:py-40'>
 			<Image
 				src={BACKGROUND}
 				alt='Koncert - tło sekcji kontaktowej'
