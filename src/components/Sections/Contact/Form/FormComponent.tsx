@@ -1,129 +1,65 @@
 'use client';
 
+import { Input } from '@/components/UI/Inputs/Input';
 import { useForm } from 'react-hook-form';
-import Spinner from '../../../UI/Spinner';
-
-type Message = {
-	name: string;
-	email: string;
-	tel: string;
-	privacyPolicy: boolean;
-	message: string;
-};
+import { zodResolver } from '@hookform/resolvers/zod';
+import { contactFormSchema } from '@/validation/contactFormSchema';
+import { Button } from '@/components/UI/Buttons/Button';
+import { Textarea } from '@/components/UI/Inputs/Textarea';
+import { Checkbox } from '@/components/UI/Inputs/Checkbox';
+import Spinner from '@/components/UI/Spinner';
+import { Submitted } from '../../../UI/Submitted';
+import { contactFormInputs } from '@/constants/contactData';
 
 export function FormComponent() {
 	const {
 		register,
 		handleSubmit,
 		setError,
-		formState: { errors, isSubmitSuccessful, isSubmitting }
-	} = useForm<Message>({ mode: 'onBlur' });
+		formState: { errors, isSubmitting, isSubmitSuccessful }
+	} = useForm({ resolver: zodResolver(contactFormSchema) });
 
-	async function onSubmit(data: Message) {
-		const { privacyPolicy, ...dataView } = data;
+	async function onSubmit(data) {
+		const { privacyPolicy, ...restData } = data;
 
 		try {
-			const response = await fetch('/api/send/', {
+			const response = await fetch('/api/send', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(dataView)
+				body: JSON.stringify(restData)
 			});
-
-			if (!response.ok) throw new Error();
+			if (!response.ok) {
+				throw new Error('Server error');
+			}
 		} catch {
-			setError('root', { message: 'Wystąpił błąd, spróbuj ponownie' });
+			setError('root', { message: 'Błąd wysyłania wiadomości. Spróbuj ponownie wysłać wiadomość!' });
 		}
 	}
 
+	if (isSubmitSuccessful) return <Submitted bgColor='bg-bg-sectionLabel' />;
+
 	return (
 		<form
-			noValidate
-			className='flex flex-col gap-2 w-full  p-5 rounded-2xl  bg-bg-sectionLabel md:p-10 md:gap-7 lg:gap-10'
-			onSubmit={handleSubmit(data => onSubmit(data))}>
+			onSubmit={handleSubmit(onSubmit)}
+			className='flex flex-col gap-6 w-full p-5 rounded-2xl bg-bg-sectionLabel md:p-10'>
 			<div className='flex flex-col gap-2'>
-				<label className='font-semibold text-black/70 md:text-lg' htmlFor='name'>
-					Imię i nazwisko
-				</label>
-				<input
-					className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
-					id='name'
-					type='text'
-					placeholder='Jan Kowalski'
-					{...register('name', {
-						required: 'Podaj swoje imię i nazwisko',
-						validate: name => name.includes(' ') || 'Podaj imię oraz nazwisko'
-					})}></input>
-				{errors.name && <span className='text-sm text-red-500'>{errors.name.message as string}</span>}
-			</div>
-			<div className='flex flex-col gap-2 md:flex-row md:gap-7 lg:gap-10'>
-				<div className='flex flex-col gap-2 md:w-1/2'>
-					<label className='font-semibold text-black/70 md:text-lg' htmlFor='email'>
-						Adres e-mail
-					</label>
-					<input
-						className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
-						id='email'
-						type='email'
-						placeholder='jankowalski@domena.pl'
-						{...register('email', {
-							required: 'Podaj swój adres e-mail',
-							pattern: {
-								value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-								message: 'Podaj poprawny adres e-mail'
-							}
-						})}></input>
-					{errors.email && <span className='text-sm text-red-500'>{errors.email.message as string}</span>}
+				<Input {...contactFormInputs[0]} register={register} error={errors.name} />
+				<div className='flex flex-col gap-2 md:flex-row md:gap-5'>
+					<Input {...contactFormInputs[1]} register={register} error={errors.email} />
+					<Input {...contactFormInputs[2]} register={register} error={errors.tel} />
 				</div>
-				<div className='flex flex-col gap-2 md:w-1/2'>
-					<label className='font-semibold text-black/70 md:text-lg' htmlFor='tel'>
-						Numer telefonu
-					</label>
-					<input
-						className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 placeholder-black/50'
-						id='tel'
-						type='tel'
-						placeholder='+48555201201'
-						{...register('tel', {
-							required: 'Podaj numer telefonu',
-							minLength: { value: 9, message: 'Podaj prawidłowy numer telefonu' }
-						})}></input>
-					{errors.tel && <span className='text-sm text-red-500'>{errors.tel.message as string}</span>}
-				</div>
+				<Textarea {...contactFormInputs[3]} register={register} error={errors.message} />
+				<Checkbox
+					{...contactFormInputs[4]}
+					register={register}
+					error={errors.privacyPolicy}
+					questionMark={false}
+				/>
 			</div>
-			<div className='flex flex-col gap-2'>
-				<label className='font-semibold text-black/70 md:text-lg' htmlFor='message'>
-					Wiadomość
-				</label>
-				<textarea
-					className='bg-white text-black/60 font-medium px-5 py-2.5 rounded-xl border border-black/15 min-h-30 max-h-100 placeholder-black/50'
-					id='message'
-					placeholder='Tu wpisz treść swojej wiadomości'
-					{...register('message', { required: 'Podaj treść wiadomości' })}></textarea>
-				{errors.message && <span className='text-sm text-red-500'>{errors.message.message as string}</span>}
-			</div>
-			<div className='flex flex-col gap-2'>
-				<label className='font-semibold text-black/70  md:text-lg' htmlFor='privacyPolicy'>
-					<input
-						className='mr-2'
-						id='privacyPolicy'
-						type='checkbox'
-						{...register('privacyPolicy', {
-							required: 'Akceptuj politykę prywatności'
-						})}
-					/>
-					Akceptuję <a href='politykę prywatności'>polityką prywatności</a>
-				</label>
-				{errors.privacyPolicy && (
-					<span className='text-sm text-red-500'>{errors.privacyPolicy.message as string}</span>
-				)}
-			</div>
-			<button
-				className='overflow-hidden relative w-fit py-3 px-4 text-white/90 font-semibold capitalize bg-linear-to-r from-bg-btn-blue to-bg-btn-purple rounded-lg  lg:text-base lg:px-6 lg:py-4 lg:font-medium transition duration-800 hover:text-white hover:from-bg-btn-purple hover:to-bg-btn-blue'
-				type='submit'
-				disabled={isSubmitSuccessful}>
-				{isSubmitSuccessful ? 'Formularz został wysłany!' : isSubmitting ? <Spinner /> : 'Wyslij'}
-			</button>
-			{errors.root && <span className='text-sm text-red-500'>{errors.root.message as string}</span>}
+			<Button variant='primary' type='submit'>
+				{isSubmitting ? <Spinner /> : 'Wyślij'}
+			</Button>
+			{errors.root && <span className='text-sm text-red-400 font-medium ml-1'>{errors.root?.message}</span>}
 		</form>
 	);
 }

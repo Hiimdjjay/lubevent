@@ -10,7 +10,7 @@ import { Services } from './FormSteps/Services';
 import { AdditionalMessage } from './FormSteps/AdditionalMessage';
 import { Summary } from './FormSteps/Summary';
 import { useForm, FieldValues } from 'react-hook-form';
-import { Submitted } from './FormSteps/Submitted';
+import { Submitted } from '../../UI/Submitted';
 
 export function Form() {
 	const [showStep, setShowStep] = useState<number>(0);

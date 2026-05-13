@@ -3,14 +3,20 @@ import { SectionTitle } from '@/components/UI/SectionTitle';
 import { Subtitle } from '@/components/UI/Subtitle';
 import { Check } from 'lucide-react';
 
-export function Submitted() {
+type SubmittedProps = {
+	bgColor?: string;
+
+};
+
+export function Submitted({ bgColor = '#fff', }: SubmittedProps) {
 	return (
-		<div className='flex flex-col justify-center items-center gap-2 bg-white px-5 py-10 rounded-2xl '>
+		<div className={`flex flex-col justify-center items-center gap-2 $ px-5 py-10 rounded-2xl ${bgColor} `}>
 			<div className='flex justify-center items-center w-20 h-20 bg-green-200 rounded-full'>
 				<Check size={50} className='text-green-700' />
 			</div>
 			<SectionTitle>Wysłane!</SectionTitle>
 			<Subtitle>Twój formularz został wysłany poprawnie.</Subtitle>
+
 			<div className='mt-5'>
 				<PrimaryButton path={'/'}>Wróć na stronę główną</PrimaryButton>
 			</div>

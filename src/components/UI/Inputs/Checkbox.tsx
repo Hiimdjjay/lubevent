@@ -1,31 +1,24 @@
 import { CircleQuestionMark } from 'lucide-react';
-import { FieldError, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import { FieldError, UseFormRegister } from 'react-hook-form';
 
 type checkboxProps = {
-	children: React.ReactNode;
-	id: string;
+	label: string;
+	name: string;
 	questionMark?: boolean;
-	register: UseFormRegister<FieldValues>;
-	registerOptions?: RegisterOptions<FieldValues>;
-	isError?: FieldError;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	register: UseFormRegister<any>;
+	error?: FieldError;
 };
 
-export function Checkbox({
-	children,
-	id,
-	questionMark = true,
-	register,
-	registerOptions,
-	isError
-}: checkboxProps) {
+export function Checkbox({ label, name, questionMark = true, register, error }: checkboxProps) {
 	if (questionMark) {
 		return (
 			<div className='flex justify-between items-center bg-bg-sectionLabel rounded-xl'>
 				<label
-					htmlFor={id}
+					htmlFor={name}
 					className='flex items-center justify-start gap-3 w-full py-2 px-5 font-semibold text-black/70 capitalize md:text-lg'>
-					<input id={id} type='checkbox' {...register(`services.${id}`)} />
-					{children}
+					<input id={name} type='checkbox' {...register(name)} />
+					{label}
 				</label>
 				{questionMark && (
 					<div className='py-2 px-5'>
@@ -37,14 +30,12 @@ export function Checkbox({
 	}
 
 	return (
-		<div className='flex flex-col gap-3'>
-			<div className='flex justify-between px-4 py-2 gap-3 items-center bg-bg-sectionLabel rounded-xl'>
-				<label htmlFor={id} className='  w-full font-semibold text-black/70 md:text-lg'>
-					<input id={id} type='checkbox' className='mr-3' {...register(id, registerOptions)} />
-					{children}
-				</label>
-			</div>
-			{isError && <span className='text-sm text-red-500 '>{isError.message}</span>}
+		<div className='flex flex-col gap-2 mt-2'>
+			<label htmlFor={name} className='w-full font-semibold px-2 text-black/70 text-justify md:text-lg'>
+				<input id={name} type='checkbox' className='mr-3' {...register(name)} />
+				{label}
+			</label>
+			{error && <span className='text-sm text-red-400 font-medium ml-1'>{error.message}</span>}
 		</div>
 	);
 }
