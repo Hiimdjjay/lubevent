@@ -1,40 +1,38 @@
 import { Button } from '@/components/UI/Buttons/Button';
 import { useContext } from 'react';
-import { QuoteContext } from '@/context/QuoteContext';
+import { FormContext } from '@/context/FormContext';
 import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
-import { FieldValues, UseFormTrigger } from 'react-hook-form';
 import Spinner from '@/components/UI/Spinner';
+import { useFormContext } from 'react-hook-form';
+import { FormData } from '@/validation/multiStepFormSchema';
 
-type ButtonsBoxProps = {
-	trigger?: UseFormTrigger<FieldValues>;
-	extraFields?: string[];
-	isSubmitting?: boolean;
-};
+export function ButtonsBox() {
+	const { step, setStep } = useContext(FormContext)!;
+	const {
+		trigger,
+		formState: { isSubmitting }
+	} = useFormContext<FormData>();
 
-const stepFields: Record<number, string[]> = {
-	1: [
-		'personalDetails.name',
-		'personalDetails.surname',
-		'personalDetails.email',
-		'personalDetails.telephone'
-	],
-	2: ['date', 'place.isPlaceChoosed'],
-	3: ['eventType.eventType', 'guestsQuantity', 'eventType.budgetSelected']
-};
-
-export function ButtonsBox({ trigger, extraFields = [], isSubmitting }: ButtonsBoxProps) {
-	const [stepShow, setShowStep] = useContext(QuoteContext);
+	const valuesToValidate = {
+		1: [
+			'personalDetails.name',
+			'personalDetails.surname',
+			'personalDetails.email',
+			'personalDetails.telephone',
+			'personalDetails.companyName'
+		],
+		2: ['placeAndDate.date', 'placeAndDate.isPlaceChoosed', 'placeAndDate.city', 'placeAndDate.adress']
+	};
 
 	async function handleNext() {
-		const fields = [...(stepFields[stepShow] ?? []), ...extraFields];
-		const isValid = !trigger || fields.length === 0 || (await trigger(fields));
-		if (isValid) setShowStep(prev => prev + 1);
+		const isValid = await trigger(valuesToValidate[step as keyof typeof valuesToValidate]);
+		if (isValid) setStep(prev => prev + 1);
 	}
 
-	if (stepShow === 0) {
+	if (step === 0) {
 		return (
 			<div className='flex flex-col justidy-center items-center gap-2 '>
-				<Button variant='primary' onClick={() => setShowStep(prev => prev + 1)}>
+				<Button variant='primary' onClick={() => setStep(prev => prev + 1)}>
 					Rozpocznij wycenę
 				</Button>
 				<SecondaryButton path='/'>Wróć na stronę główną</SecondaryButton>
@@ -42,13 +40,13 @@ export function ButtonsBox({ trigger, extraFields = [], isSubmitting }: ButtonsB
 		);
 	}
 
-	if (stepShow === 6) {
+	if (step === 6) {
 		return (
 			<div className='flex justify-between'>
-				<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
+				<Button variant='secondary' onClick={() => setStep(prev => prev - 1)}>
 					Wstecz
 				</Button>
-				<Button variant='primary' type='submit'>
+				<Button variant='primary' type='submit' isSubmitting={isSubmitting}>
 					{isSubmitting ? <Spinner /> : 'Wyślij'}
 				</Button>
 			</div>
@@ -57,7 +55,7 @@ export function ButtonsBox({ trigger, extraFields = [], isSubmitting }: ButtonsB
 
 	return (
 		<div className='flex justify-between'>
-			<Button variant='secondary' onClick={() => setShowStep(prev => prev - 1)}>
+			<Button variant='secondary' onClick={() => setStep(prev => prev - 1)}>
 				Wstecz
 			</Button>
 			<Button variant='primary' onClick={handleNext}>

@@ -2,78 +2,34 @@ import { Input } from '../../../UI/Inputs/Input';
 import { Select } from '../../../UI/Inputs/Select';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import { FieldValues, UseFormRegister, UseFormTrigger, UseFormUnregister } from 'react-hook-form';
+import { useContext } from 'react';
+import { FormContext } from '../../../../context/FormContext';
+import { placeAndDateFields } from '@/constants/multiStepForm';
+import { FormData } from '@/validation/multiStepFormSchema';
+import { useFormContext } from 'react-hook-form';
 
-type PlaceAndDateProps = {
-	register: UseFormRegister<FieldValues>;
-	unregister: UseFormUnregister<FieldValues>;
-	errors: any;
-	trigger: UseFormTrigger<FieldValues>;
-	place: string;
-};
-
-const placeData = [
-	{ id: 0, name: 'Wybierz jedną z opcji' },
-	{ id: 1, name: 'Tak, miejsce jest wybrane' },
-	{ id: 2, name: 'Nie, miejsce nie jest jeszcze wybrane' },
-	{ id: 3, name: 'Nie chce podawać miejsca' }
-];
-export function PlaceAndDate({ register, unregister, errors, trigger, place }: PlaceAndDateProps) {
-	function handlePlaceName(value: string) {
-		if (value !== 'Tak, miejsce jest wybrane') {
-			unregister('place.place');
-			unregister('place.venuePlace');
-		}
-	}
+export function PlaceAndDate() {
+	const { step } = useContext(FormContext)!;
+	const {
+		register,
+		formState: { errors }
+	} = useFormContext<FormData>();
 
 	return (
 		<div className='flex flex-col gap-5'>
-			<FormStepHeader label='Krok 2 z 6' title='Miejsce i data' subtitle='Opisz nam swoje wydarzenie' />
+			<FormStepHeader label={`Krok ${step} z 6`} title='Miejsce i data' subtitle='Opisz nam swoje wydarzenie' />
 			<div className='flex flex-col gap-2'>
-				<Input
-					id='date'
-					type='date'
-					register={register}
-					registerOptions={{ required: 'Podaj datę wydarzenia' }}
-					isError={errors.date}>
-					Data wydarzenia
-				</Input>
+				<Input {...placeAndDateFields.date} register={register} error={errors.placeAndDate?.date} />
 				<Select
-					id='place.isPlaceChoosed'
-					selectData={placeData}
-					setter={handlePlaceName}
+					{...placeAndDateFields.isPlaceChoosed}
 					register={register}
-					registerOptions={{ required: 'Wybierz jedną z opcji' }}
-					isError={errors.place?.isPlaceChoosed}>
-					Czy mają państwo wybrane miejsce?
-				</Select>
-				{place === 'Tak, miejsce jest wybrane' && (
-					<>
-						<Input
-							id='place.place'
-							type='text'
-							placeholder='np. Lublin'
-							register={register}
-							registerOptions={{ required: 'Podaj miejscowość' }}
-							isError={errors.place?.place}>
-							Miejscowość
-						</Input>
-						<Input
-							id='place.venuePlace'
-							type='text'
-							placeholder='np. Rezydencja w szczerym polu'
-							register={register}
-							registerOptions={{ required: 'Podaj adres lub nazwę lokalu' }}
-							isError={errors.place?.venuePlace}>
-							Adres lub nazwa lokalu
-						</Input>
-					</>
-				)}
+					error={errors.placeAndDate?.isPlaceChoosed}
+				/>
+
+				<Input {...placeAndDateFields.city} register={register} error={errors.placeAndDate?.city} />
+				<Input {...placeAndDateFields.adress} register={register} error={errors.placeAndDate?.adress} />
 			</div>
-			<ButtonsBox
-				trigger={trigger}
-				extraFields={place === 'Tak, miejsce jest wybrane' ? ['place.place', 'place.venuePlace'] : []}
-			/>
+			<ButtonsBox />
 		</div>
 	);
 }

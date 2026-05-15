@@ -1,55 +1,33 @@
-import { FieldError, FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
+import { FieldError, UseFormRegister } from 'react-hook-form';
 
-type Event = {
-	id: number;
+type SelectType = {
+	label: string;
 	name: string;
+	selectOptions: string[];
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	register: UseFormRegister<any>;
+	error?: FieldError;
 };
 
-type InputProps = {
-	children: React.ReactNode;
-	id: string;
-	selectData: Event[];
-	placeholder?: string;
-	setter: (value: string) => void;
-	register: UseFormRegister<FieldValues>;
-	registerOptions?: RegisterOptions;
-	isError?: FieldError;
-};
-
-export function Select({ children, id, selectData, setter, register, registerOptions, isError }: InputProps) {
-	const { onChange, ...rest } = register(id, registerOptions);
-
+export function Select({ label, name, selectOptions, register, error }: SelectType) {
 	return (
-		<div className='flex flex-col  w-full'>
-			<label htmlFor={id} className='font-semibold text-black/70 mb-2 md:text-lg'>
-				{children}
+		<div className='flex flex-col w-full'>
+			<label htmlFor={name} className='font-semibold text-black/70 mb-2 md:text-lg'>
+				{label}
 			</label>
 			<select
-				id={id}
 				defaultValue=''
-				required
-				{...rest}
-				onChange={e => {
-					onChange(e);
-					setter(e.target.value);
-				}}
-				className='bg-white font-medium px-5 py-2.5 mb-1 rounded-xl border border-black/15 focus:outline-bg-btn-purple'>
-				{selectData.map(({ id, name }) => {
-					if (id === 0) {
-						return (
-							<option key={id} value='' disabled>
-								{name}
-							</option>
-						);
-					}
+				{...register(name)}
+				className={`bg-white font-medium px-5 py-2.5 mb-1 rounded-xl border border-black/15 focus:outline-bg-btn-purple`}>
+				{selectOptions.map((option, index) => {
 					return (
-						<option key={id} value={name}>
-							{name}
+						<option key={option} disabled={index === 0} value={index === 0 ? '' : option}>
+							{option}
 						</option>
 					);
 				})}
 			</select>
-			{isError && <span className='text-sm text-red-500 font-medium ml-1'>{isError.message}</span>}
+			{error && <span className='text-sm text-red-400 font-medium ml-1'>{error.message}</span>}
 		</div>
 	);
 }

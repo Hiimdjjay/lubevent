@@ -32,18 +32,18 @@ type contactFormInputsTypes = {
 	id: number;
 	label: string;
 	name: string;
-	placeholder: string;
+	placeholder?: string;
+	type?: string;
 };
 
-export const contactFormInputs = [
-	{ id: 1, label: 'Imię i nazwisko', name: 'name', placeholder: 'Jan Kowalski' },
-	{ id: 2, label: 'Ares e-mail', name: 'email', placeholder: 'jankowalski@gmail.com' },
-	{ id: 3, label: 'Numer telefonu (opcjonalnie)', name: 'tel', placeholder: '+48 500 200 100' },
-	{ id: 4, label: 'Wiadomość', name: 'message', placeholder: 'Podaj treść swojej wiadomości' },
+export const contactFormInputs: contactFormInputsTypes[] = [
+	{ id: 1, label: 'Imię i nazwisko', name: 'name', placeholder: 'Jan Kowalski', type: 'text' },
+	{ id: 2, label: 'Ares e-mail', name: 'email', placeholder: 'jankowalski@gmail.com', type: 'email' },
+	{ id: 3, label: 'Numer telefonu (opcjonalnie)', name: 'tel', placeholder: '+48 500 200 100', type: 'tel' },
+	{ id: 4, label: 'Wiadomość', name: 'message', placeholder: 'Podaj treść swojej wiadomości', type: 'text' },
 	{
 		id: 5,
 		label: 'Akceptując politykę prywatności, potwierdzasz, że zapoznałeś się z informacjami o tym, kto jest administratorem Twoich danych osobowy.',
-		name: 'privacyPolicy',
-		placeholder: ''
+		name: 'privacyPolicy'
 	}
 ];

@@ -3,7 +3,7 @@ import { FieldError, UseFormRegister } from 'react-hook-form';
 type TextareaProps = {
 	label: string;
 	name: string;
-	placeholder: string;
+	placeholder?: string;
 	autoComplete?: string;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	register: UseFormRegister<any>;

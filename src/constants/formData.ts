@@ -1,3 +1,15 @@
+type quoteInfoType = {
+	id: number;
+	value: string;
+	label: string;
+};
+
+export const quoteInfo: quoteInfoType[] = [
+	{ id: 1, value: '6', label: 'kroków' },
+	{ id: 2, value: '~5', label: 'minut' },
+	{ id: 3, value: '100%', label: 'bezpłatnie' }
+];
+
 export const SERVICE_TYPE = [
 	{ id: 1, label: 'DJ' },
 	{ id: 2, label: 'Wodzirej' },
@@ -6,5 +18,5 @@ export const SERVICE_TYPE = [
 	{ id: 5, label: 'Technika sceniczna' },
 	{ id: 6, label: 'LubBar' },
 	{ id: 7, label: 'Fotobudka' },
-	{ id: 8, label: 'Animatorzy' },
+	{ id: 8, label: 'Animatorzy' }
 ];
