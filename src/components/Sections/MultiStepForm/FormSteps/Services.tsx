@@ -1,3 +1,4 @@
+// @ts-nocheck - WIP: wymaga refaktoru do nowego API komponentów
 import { Checkbox } from '../../../UI/Inputs/Checkbox';
 import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';

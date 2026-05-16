@@ -4,7 +4,10 @@ type inputTypes = {
 	label: string;
 	placeholder?: string;
 	type?: string;
-	selectOptions?: string[];
+};
+
+type selectInputTypes = inputTypes & {
+	selectOptions: string[];
 };
 
 type personalDetailsFieldTypes = {
@@ -43,7 +46,7 @@ export const personalDetailsFields: personalDetailsFieldTypes = {
 
 type placeAndDateFieldTypes = {
 	date: inputTypes;
-	isPlaceChoosed: inputTypes;
+	isPlaceChoosed: selectInputTypes;
 	city: inputTypes;
 	adress: inputTypes;
 };

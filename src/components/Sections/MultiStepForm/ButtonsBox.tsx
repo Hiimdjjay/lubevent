@@ -5,6 +5,9 @@ import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import Spinner from '@/components/UI/Spinner';
 import { useFormContext } from 'react-hook-form';
 import { FormData } from '@/validation/multiStepFormSchema';
+import { FieldPath } from 'react-hook-form';
+
+type FormFields = FieldPath<FormData>;
 
 export function ButtonsBox() {
 	const { step, setStep } = useContext(FormContext)!;
@@ -13,7 +16,7 @@ export function ButtonsBox() {
 		formState: { isSubmitting }
 	} = useFormContext<FormData>();
 
-	const valuesToValidate = {
+	const valuesToValidate: Record<number, FormFields[]> = {
 		1: [
 			'personalDetails.name',
 			'personalDetails.surname',
@@ -25,7 +28,7 @@ export function ButtonsBox() {
 	};
 
 	async function handleNext() {
-		const isValid = await trigger(valuesToValidate[step as keyof typeof valuesToValidate]);
+		const isValid = await trigger(valuesToValidate[step]);
 		if (isValid) setStep(prev => prev + 1);
 	}
 

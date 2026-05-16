@@ -4,6 +4,9 @@ import { Input } from '@/components/UI/Inputs/Input';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactFormSchema } from '@/validation/contactFormSchema';
+import { z } from 'zod';
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 import { Button } from '@/components/UI/Buttons/Button';
 import { Textarea } from '@/components/UI/Inputs/Textarea';
 import { Checkbox } from '@/components/UI/Inputs/Checkbox';
@@ -19,7 +22,7 @@ export function FormComponent() {
 		formState: { errors, isSubmitting, isSubmitSuccessful }
 	} = useForm({ resolver: zodResolver(contactFormSchema) });
 
-	async function onSubmit(data) {
+	async function onSubmit(data: ContactFormData) {
 		const { privacyPolicy, ...restData } = data;
 
 		try {

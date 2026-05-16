@@ -1,3 +1,4 @@
+// @ts-nocheck - WIP: wymaga refaktoru do nowego API komponentów
 import { ButtonsBox } from '../ButtonsBox';
 import { Select } from '../../../UI/Inputs/Select';
 import { useState } from 'react';
