@@ -1,48 +1,44 @@
-// @ts-nocheck - WIP: wymaga refaktoru do nowego API komponentów
-import { ButtonsBox } from '../ButtonsBox';
 import { Select } from '../../../UI/Inputs/Select';
-import { useState } from 'react';
 import { FormStepHeader } from '../FormStepHeader';
 import { Input } from '../../../UI/Inputs/Input';
 import { Textarea } from '../../../UI/Inputs/Textarea';
-import { FieldValues, UseFormRegister, UseFormTrigger } from 'react-hook-form';
+import { Button } from '@/components/UI/Buttons/Button';
+import { FormContext } from '@/context/FormContext';
+import { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { additionalMessageSchema } from '@/validation/multiStepFormSchema';
+import { ADDITIONAL_MESSAGE } from '@/constants/multiStepFormData';
 
-type AdditionalMessageProps = {
-	register: UseFormRegister<FieldValues>;
-	trigger: UseFormTrigger<FieldValues>;
-};
+export function AdditionalMessage() {
+	const { currentStep, formData, prevStep, nextStepSaveData } = useContext(FormContext)!;
+	const { register, handleSubmit, watch } = useForm({
+		resolver: zodResolver(additionalMessageSchema),
+		defaultValues: formData
+	});
 
-const referralData = [
-	{ id: 0, name: 'Wybierz' },
-	{ id: 1, name: 'Social media' },
-	{ id: 2, name: 'Google' },
-	{ id: 3, name: 'Od znajomych' },
-	{ id: 4, name: 'Inne' }
-];
-
-export function AdditionalMessage({ register, trigger }: AdditionalMessageProps) {
-	const [referralOption, setReferralOption] = useState('');
 	return (
-		<div className='flex flex-col gap-5'>
-			<FormStepHeader label='Krok 5 z 6' title='Dodatkowe informacje' subtitle='Dodaj swoje pytania' />
-			<div className='flex flex-col gap-5'>
-				<Textarea id='message' autoComplete='off' register={register}>
-					Opis, pytania lub szczegółowe wymagania
-				</Textarea>
-				<Select id='referralSource' selectData={referralData} setter={setReferralOption} register={register}>
-					Skąd dowiedzieli się Państwo o nas? (Opcjonalnie)
-				</Select>
-				{referralOption === 'Inne' && (
-					<Input
-						id='additionalReferralSource'
-						type='text'
-						placeholder='np. Bawiłem się na weselu organizowanych przez państwa agencje'
-						register={register}>
-						Nie ma Twojej opcji? Napisz skąd nas znasz
-					</Input>
+		<form className='flex flex-col gap-5' onSubmit={handleSubmit(nextStepSaveData)}>
+			<FormStepHeader
+				label={`Krok ${currentStep} z 6`}
+				title='Dodatkowe informacje'
+				subtitle='Dodaj swoje pytania'
+			/>
+			<div className='flex flex-col gap-2'>
+				<Textarea {...ADDITIONAL_MESSAGE.message} autoComplete='off' register={register} />
+				<Select {...ADDITIONAL_MESSAGE.referralSource} register={register} />
+				{watch('message.referralSource') === 'Inne' && (
+					<Input {...ADDITIONAL_MESSAGE.additionalReferralSource} register={register} />
 				)}
 			</div>
-			<ButtonsBox trigger={trigger} />
-		</div>
+			<div className='flex justify-between'>
+				<Button variant='secondary' onClick={prevStep}>
+					Wróc
+				</Button>
+				<Button variant='primary' type='submit'>
+					Dalej
+				</Button>
+			</div>
+		</form>
 	);
 }

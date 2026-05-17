@@ -1,125 +1,66 @@
-// @ts-nocheck - WIP: wymaga refaktoru do nowego API komponentów
 import { Select } from '../../../UI/Inputs/Select';
 import { Input } from '../../../UI/Inputs/Input';
-import { useState } from 'react';
 import { ButtonsSelect } from '../../../UI/Inputs/ButtonsSelect';
-import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
-import {
-	UseFormRegister,
-	FieldValues,
-	Control,
-	Controller,
-	UseFormSetValue,
-	UseFormUnregister,
-	UseFormTrigger
-} from 'react-hook-form';
+import { Button } from '@/components/UI/Buttons/Button';
+import { useForm } from 'react-hook-form';
+import { eventDetailsSchema, EventDetailsSchemaType } from '@/validation/multiStepFormSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { FormContext } from '@/context/FormContext';
+import { useContext } from 'react';
+import { EVENT_DETAILS_FIELDS } from '@/constants/multiStepFormData';
 
-type EventOption = {
-	id: number;
-	name: string;
-};
-
-type EventDetailsProps = {
-	register: UseFormRegister<FieldValues>;
-	control: Control<FieldValues>;
-	setValue: UseFormSetValue<FieldValues>;
-	unregister: UseFormUnregister<FieldValues>;
-	trigger: UseFormTrigger<FieldValues>;
-	errors: any;
-	eventType: string;
-};
-
-const eventTypeData: EventOption[] = [
-	{ id: 0, name: 'Wybierz typ wydarzenia ' },
-	{ id: 1, name: 'Wesele' },
-	{ id: 2, name: 'Gala / bankiet' },
-	{ id: 3, name: 'Studniówka' },
-	{ id: 4, name: '18-nastka' },
-	{ id: 5, name: 'Jubileusz' },
-	{ id: 6, name: 'Konferencja' },
-	{ id: 7, name: 'Wydarzenie marketingowe' },
-	{ id: 8, name: 'Wydarzenie sportowe' },
-	{ id: 9, name: 'Inne' }
-];
-
-const budgetData: string[] = [
-	'do 5 000 zł',
-	'5 000-15 000 zł',
-	'15 000-30 000 zł',
-	'powyżej 30 000 zł',
-	'Nie chce podawać'
-];
-
-export function EventDetails({
-	register,
-	control,
-	setValue,
-	unregister,
-	trigger,
-	errors,
-	eventType
-}: EventDetailsProps) {
-	function handleEventTypeChange(value: string) {
-		if (value !== 'Inne') {
-			unregister('eventType.describeEventType');
-		}
-	}
+export function EventDetails() {
+	const { currentStep, formData, prevStep, nextStepSaveData } = useContext(FormContext)!;
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		watch,
+		formState: { errors }
+	} = useForm<EventDetailsSchemaType>({ resolver: zodResolver(eventDetailsSchema), defaultValues: formData });
 
 	return (
-		<div className='flex flex-col gap-5 '>
-			<FormStepHeader label='Krok 3 z 6' title='Rodzaj wydarzenia' subtitle='Opisz nam swoje wydarzenie' />
-			<div className='flex flex-col gap-5 '>
+		<form className='flex flex-col gap-5' onSubmit={handleSubmit(nextStepSaveData)}>
+			<FormStepHeader
+				label={`Krok ${currentStep} z 6`}
+				title='Rodzaj wydarzenia'
+				subtitle='Opisz nam swoje wydarzenie'
+			/>
+			<div className='flex flex-col gap-2'>
 				<Select
-					id='eventType.eventType'
-					selectData={eventTypeData}
-					setter={handleEventTypeChange}
+					{...EVENT_DETAILS_FIELDS.eventType}
 					register={register}
-					registerOptions={{ required: 'Wybierz typ wydarzenia' }}
-					isError={errors.eventType?.eventType}>
-					Typ wydarzenia
-				</Select>
-				{eventType === 'Inne' && (
+					error={errors.eventDetails?.eventType}
+				/>
+				{watch('eventDetails.eventType') === 'Inne' && (
 					<Input
-						id='eventType.describeEventType'
-						type='text'
-						placeholder='Jeśli wybrałeś inne to wpisz typ wydarzenia'
+						{...EVENT_DETAILS_FIELDS.eventDescription}
 						register={register}
-						registerOptions={{ required: 'Wpisz typ wydarzenia' }}
-						isError={errors.eventType?.describeEventType}>
-						Wpisz typ wydarzenia
-					</Input>
+						error={errors.eventDetails?.eventDescription}
+					/>
 				)}
+
 				<Input
-					id='guestsQuantity'
-					type='text'
-					placeholder='np. 150'
+					{...EVENT_DETAILS_FIELDS.totalGuests}
 					autoComplete='off'
 					register={register}
-					registerOptions={{ required: 'Wpisz liczbę członków/gości' }}
-					isError={errors.guestsQuantity}>
-					Liczba członków/gości
-				</Input>
-				<Controller
-					name='eventType.budgetSelected'
-					control={control}
-					rules={{ required: 'Wybierz szacunkowy budżet' }}
-					render={({ field, fieldState }) => (
-						<ButtonsSelect
-							id='eventType.budgetSelected'
-							budgetData={budgetData}
-							onChange={field.onChange}
-							value={field.value}
-							isError={fieldState.error}>
-							Szacunkowy budżet
-						</ButtonsSelect>
-					)}
+					error={errors.eventDetails?.totalGuests}
+				/>
+				<ButtonsSelect
+					{...EVENT_DETAILS_FIELDS.estimatedBudget}
+					onClick={value => setValue('eventDetails.estimatedBudget', value, { shouldValidate: true })}
+					value={watch('eventDetails.estimatedBudget')}
 				/>
 			</div>
-			<ButtonsBox
-				trigger={trigger}
-				extraFields={eventType === 'Inne' ? ['eventType.describeEventType'] : []}
-			/>
-		</div>
+			<div className='flex justify-between'>
+				<Button variant='secondary' onClick={prevStep}>
+					Wróc
+				</Button>
+				<Button variant='primary' type='submit'>
+					Dalej
+				</Button>
+			</div>
+		</form>
 	);
 }

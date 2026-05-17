@@ -18,7 +18,7 @@ export function Select({ label, name, selectOptions, register, error }: SelectTy
 			<select
 				defaultValue=''
 				{...register(name)}
-				className={`bg-white font-medium px-5 py-2.5 mb-1 rounded-xl border border-black/15 focus:outline-bg-btn-purple`}>
+				className={`bg-white font-medium px-4 py-2.5 mb-1 rounded-xl border border-black/15 focus:outline-bg-btn-purple`}>
 				{selectOptions.map((option, index) => {
 					return (
 						<option key={option} disabled={index === 0} value={index === 0 ? '' : option}>

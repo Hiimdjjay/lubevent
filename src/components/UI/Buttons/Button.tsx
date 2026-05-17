@@ -1,8 +1,10 @@
+import { StepFormData } from '@/validation/multiStepFormSchema';
+
 type PrimaryButtonProps = {
 	children: React.ReactNode;
 	variant: string;
 	type?: 'button' | 'submit';
-	onClick?: () => void;
+	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	isSubmitting?: boolean;
 };
 

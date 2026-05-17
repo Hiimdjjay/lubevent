@@ -5,10 +5,10 @@ export async function POST(request: Request) {
 	const resend = new Resend(process.env.RESEND_API_KEY);
 	const data = await request.json();
 
-	const { personalDetails, date, place, eventType, guestsQuantity, services, message, referralSource, additionalReferralSource } = data;
+	const { personalDetails, placeAndDate, eventDetails, services, message, additionalServices } = data;
 
 	const selectedServices = Object.entries(services ?? {})
-		.filter(([key, value]) => key !== 'additionalService' && value === true)
+		.filter(([, value]) => value === true)
 		.map(([key]) => key)
 		.join(', ');
 
@@ -20,25 +20,26 @@ Telefon: ${personalDetails?.telephone}
 Firma: ${personalDetails?.companyName || 'Nie podano'}
 
 MIEJSCE I DATA
-Data: ${date}
-Wybrane miejsce: ${place?.isPlaceChoosed}
-${place?.place ? `Miejscowość: ${place.place}` : ''}
-${place?.venuePlace ? `Adres / nazwa lokalu: ${place.venuePlace}` : ''}
+Data: ${placeAndDate?.date}
+Wybrane miejsce: ${placeAndDate?.isPlaceChoosed}
+${placeAndDate?.city ? `Miejscowość: ${placeAndDate.city}` : ''}
+${placeAndDate?.adress ? `Adres / nazwa lokalu: ${placeAndDate.adress}` : ''}
 
 RODZAJ WYDARZENIA
-Typ: ${eventType?.eventType}
-${eventType?.describeEventType ? `Opis (inne): ${eventType.describeEventType}` : ''}
-Liczba gości: ${guestsQuantity}
-Budżet: ${eventType?.budgetSelected}
+Typ: ${eventDetails?.eventType}
+${eventDetails?.eventDescription ? `Opis (inne): ${eventDetails.eventDescription}` : ''}
+Liczba gości: ${eventDetails?.totalGuests}
+Budżet: ${eventDetails?.estimatedBudget || 'Nie podano'}
 
 USŁUGI
 Wybrane usługi: ${selectedServices || 'Brak'}
-${services?.additionalService ? `Dodatkowe usługi: ${services.additionalService}` : ''}
+${additionalServices ? `Dodatkowe usługi: ${additionalServices}` : ''}
 
 DODATKOWE INFORMACJE
-Wiadomość: ${message || 'Brak'}
-Skąd o nas: ${referralSource || 'Nie podano'}
-${additionalReferralSource ? `Inne źródło: ${additionalReferralSource}` : ''}
+Wiadomość: ${message?.message || 'Brak'}
+
+Skąd się o nas doweidziałeś: ${message?.referralSource || 'Nie podano'}
+${message?.additionalReferralSource ? `Inne źródło: ${message.additionalReferralSource}` : ''}
 `.trim();
 
 	const { error } = await resend.emails.send({

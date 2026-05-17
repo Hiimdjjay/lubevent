@@ -1,23 +1,21 @@
 type ButtonsSelectedProps = {
-	children: React.ReactNode;
-	budgetData: string[];
-	id: string;
-	onChange?: (value: string) => void;
-	value?: string;
-	isError: any;
+	label: React.ReactNode;
+	name: string;
+	selectOptions: string[];
+	onClick: (value: string) => void;
+	value: string | undefined;
 };
 
-export function ButtonsSelect({ children, budgetData, id, onChange, value, isError }: ButtonsSelectedProps) {
+export function ButtonsSelect({ label, name, selectOptions, onClick, value }: ButtonsSelectedProps) {
 	return (
 		<div className='flex flex-col w-full'>
-			<label htmlFor={id} className='font-semibold text-black/70 mb-2 md:text-lg'>
-				{children}
+			<label htmlFor={name} className='font-semibold text-black/70 mb-2 md:text-lg'>
+				{label}
 			</label>
-			<div className='flex flex-wrap gap-3 font-medium text-black/70 md:text-lg mb-1'>
-				{budgetData.map(budget => (
+			<div id={name} className='flex flex-wrap gap-3 font-medium text-black/70 md:text-lg mb-1'>
+				{selectOptions.map(budget => (
 					<button
-						onClick={() => onChange?.(budget)}
-						id={budget}
+						onClick={() => onClick(budget)}
 						key={budget}
 						type='button'
 						className={`py-2 px-4 border rounded-full whitespace-nowrap transition-colors text-sm md:text-base ${
@@ -29,7 +27,6 @@ export function ButtonsSelect({ children, budgetData, id, onChange, value, isErr
 					</button>
 				))}
 			</div>
-			{isError && <span className='text-sm text-red-500 font-medium ml-1 '>{isError.message}</span>}
 		</div>
 	);
 }

@@ -2,8 +2,8 @@ import { CircleQuestionMark } from 'lucide-react';
 import { FieldError, UseFormRegister } from 'react-hook-form';
 
 type checkboxProps = {
-	label: string;
-	name: string;
+	label: string ;
+	name: string ;
 	questionMark?: boolean;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	register: UseFormRegister<any>;

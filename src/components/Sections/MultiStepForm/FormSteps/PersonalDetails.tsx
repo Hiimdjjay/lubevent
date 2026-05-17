@@ -1,46 +1,55 @@
 import { Input } from '../../../UI/Inputs/Input';
-import { ButtonsBox } from '../ButtonsBox';
 import { FormStepHeader } from '../FormStepHeader';
+import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
-import { FormContext } from '../../../../context/FormContext';
-import { personalDetailsFields } from '../../../../constants/multiStepForm';
-import { useFormContext } from 'react-hook-form';
-import { FormData } from '@/validation/multiStepFormSchema';
+import { FormContext } from '@/context/FormContext';
+import { Button } from '@/components/UI/Buttons/Button';
+import { personalDetailsSchema, PersonalInfoSchemaType } from '@/validation/multiStepFormSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { PERSONAL_DETAILS_FIELDS } from '@/constants/multiStepFormData';
 
 export function PersonalDetails() {
-	const { step } = useContext(FormContext)!;
+	const { currentStep, formData, prevStep, nextStepSaveData } = useContext(FormContext)!;
 	const {
 		register,
+		handleSubmit,
 		formState: { errors }
-	} = useFormContext<FormData>();
+	} = useForm<PersonalInfoSchemaType>({ resolver: zodResolver(personalDetailsSchema), defaultValues: formData });
 
 	return (
-		<div className='flex flex-col gap-5'>
+		<form className='flex flex-col gap-5' onSubmit={handleSubmit(nextStepSaveData)}>
 			<FormStepHeader
-				label={`Krok ${step} z 6`}
+				label={`Krok ${currentStep} z 6`}
 				title='Dane osobowe'
 				subtitle='Podaj swoje dane osobowe oraz kontaktowe'
 			/>
 			<div className='flex flex-col gap-2'>
 				<div className='flex flex-col justify-between gap-2 md:flex-row'>
-					<Input {...personalDetailsFields.name} register={register} error={errors.personalDetails?.name} />
+					<Input {...PERSONAL_DETAILS_FIELDS.name} register={register} error={errors.personalDetails?.name} />
 					<Input
-						{...personalDetailsFields.surname}
+						{...PERSONAL_DETAILS_FIELDS.surname}
 						register={register}
 						error={errors.personalDetails?.surname}
 					/>
 				</div>
-				<Input {...personalDetailsFields.email} register={register} error={errors.personalDetails?.email} />
+				<Input {...PERSONAL_DETAILS_FIELDS.email} register={register} error={errors.personalDetails?.email} />
 
 				<Input
-					{...personalDetailsFields.telephone}
+					{...PERSONAL_DETAILS_FIELDS.telephone}
 					register={register}
 					error={errors.personalDetails?.telephone}
 				/>
 
-				<Input {...personalDetailsFields.companyName} autoComplete='off' register={register} />
+				<Input {...PERSONAL_DETAILS_FIELDS.companyName} autoComplete='off' register={register} />
 			</div>
-			<ButtonsBox />
-		</div>
+			<div className='flex justify-between'>
+				<Button variant='secondary' onClick={prevStep}>
+					Wróc
+				</Button>
+				<Button variant='primary' type='submit'>
+					Dalej
+				</Button>
+			</div>
+		</form>
 	);
 }

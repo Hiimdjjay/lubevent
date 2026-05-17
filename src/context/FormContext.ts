@@ -1,8 +1,12 @@
 import { createContext } from 'react';
+import { StepFormData } from '@/validation/multiStepFormSchema';
 
 type FormContextType = {
-	step: number;
-	setStep: React.Dispatch<React.SetStateAction<number>>;
+	currentStep: number;
+	formData: any;
+	nextStep: () => void;
+	prevStep: () => void;
+	nextStepSaveData: (data: StepFormData) => void;
 };
 
 export const FormContext = createContext<FormContextType | null>(null);

@@ -1,36 +1,39 @@
-// @ts-nocheck - WIP: wymaga refaktoru do nowego API komponentów
-import { Checkbox } from '../../../UI/Inputs/Checkbox';
-import { ButtonsBox } from '../ButtonsBox';
+import { Button } from '@/components/UI/Buttons/Button';
 import { FormStepHeader } from '../FormStepHeader';
-import { Input } from '../../../UI/Inputs/Input';
-import { FieldValues, UseFormRegister, UseFormTrigger } from 'react-hook-form';
-import { SERVICE_TYPE } from '@/constants/formData';
+import { useForm } from 'react-hook-form';
+import { useContext } from 'react';
+import { FormContext } from '@/context/FormContext';
+import { Checkbox } from '@/components/UI/Inputs/Checkbox';
+import { SERVICE_FIELDS } from '@/constants/multiStepFormData';
+import { Input } from '@/components/UI/Inputs/Input';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { servicesSchema } from '@/validation/multiStepFormSchema';
 
-type ServicesProps = {
-	register: UseFormRegister<FieldValues>;
-	trigger: UseFormTrigger<FieldValues>;
-};
+export function Services() {
+	const { currentStep, formData, prevStep, nextStepSaveData } = useContext(FormContext)!;
 
-export function Services({ register, trigger }: ServicesProps) {
+	const { register, handleSubmit } = useForm({ resolver: zodResolver(servicesSchema), defaultValues: formData });
 	return (
-		<div className='flex flex-col gap-5'>
-			<FormStepHeader label='Krok 4 z 6' title='Usługi' subtitle='Wybierz usługi, które Cie interesują' />
+		<form className='flex flex-col gap-5' onSubmit={handleSubmit(nextStepSaveData)}>
+			<FormStepHeader
+				label={`Krok ${currentStep} z 6`}
+				title='Usługi'
+				subtitle='Wybierz usługi, które Cie interesują'
+			/>
 			<div className='grid grid-cols-1 gap-x-5 gap-y-5 '>
-				{SERVICE_TYPE.map(({ id, label }) => (
-					<Checkbox key={id} id={label} register={register}>
-						{label}
-					</Checkbox>
+				{SERVICE_FIELDS.services.map(({ id, name, label }) => (
+					<Checkbox key={id} name={name} label={label} register={register} questionMark />
 				))}
 			</div>
-			<Input
-				id='services.additionalService'
-				type='text'
-				placeholder='np. Fotograf'
-				autoComplete='off'
-				register={register}>
-				Nie znalazłeś swojej usługi na liście? Opisz ją poniżej (Opcjonalnie)
-			</Input>
-			<ButtonsBox trigger={trigger} />
-		</div>
+			<Input {...SERVICE_FIELDS.additionalServices} autoComplete='off' register={register} />
+			<div className='flex justify-between'>
+				<Button variant='secondary' onClick={prevStep}>
+					Wróc
+				</Button>
+				<Button variant='primary' type='submit'>
+					Dalej
+				</Button>
+			</div>
+		</form>
 	);
 }

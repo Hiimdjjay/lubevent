@@ -1,8 +1,12 @@
+import { Button } from '@/components/UI/Buttons/Button';
+import { SecondaryButton } from '@/components/UI/Buttons/SecondaryButton';
 import { SectionTitle } from '@/components/UI/SectionTitle';
-import { ButtonsBox } from '../ButtonsBox';
-import { quoteInfo } from '@/constants/formData';
+import { CARDS_DATA } from '@/constants/multiStepFormData';
+import { FormContext } from '@/context/FormContext';
+import { useContext } from 'react';
 
 export function InitialInfo() {
+	const { nextStep } = useContext(FormContext)!;
 	return (
 		<div className='flex flex-col justify-center items-center gap-6'>
 			<div className='flex flex-col items-center gap-5'>
@@ -13,7 +17,7 @@ export function InitialInfo() {
 				</p>
 			</div>
 			<div className='flex justify-center items-center gap-3 w-full '>
-				{quoteInfo.map(({ id, value, label }) => {
+				{CARDS_DATA.map(({ id, value, label }) => {
 					return (
 						<div
 							key={id}
@@ -28,7 +32,12 @@ export function InitialInfo() {
 				Zanim zaczniesz wypełniać — pamiętaj, że każda pominięta informacja może utrudnić przygotowanie trafnej
 				wyceny.
 			</p>
-			<ButtonsBox />
+			<div className='flex flex-col justidy-center items-center gap-2'>
+				<Button variant='primary' onClick={nextStep}>
+					Zacznij wypełniać
+				</Button>
+				<SecondaryButton path='/'>Wróc na strone główną</SecondaryButton>
+			</div>
 		</div>
 	);
 }
